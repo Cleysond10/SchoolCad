@@ -23,6 +23,7 @@ public class MainSchool extends Application {
             Scene scene = new Scene(fxmlMenu,800,600);
             
             stage.setTitle("SCHOOLCAD");
+            //asd
             stage.setScene(scene);
             stage.show();
             setStage(stage);
