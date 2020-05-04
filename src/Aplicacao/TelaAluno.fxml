@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<Pane fx:id="JanelaPaneA" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="383.0" prefWidth="532.0" style="-fx-background-color: #4ce4ff;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Aplicacao.MainSchoolController">
+   <children>
+      <JFXButton fx:id="btCadAluno" buttonType="RAISED" layoutX="189.0" layoutY="60.0" onAction="#actionBtCadPane" prefHeight="37.0" prefWidth="155.0" ripplerFill="#ff4c71" style="-fx-background-color: white; -fx-background-radius: 5cm; -fx-border-radius: 5cm;" text="Cadastrar" textFill="#4ce4ff">
+         <font>
+            <Font name="Arial" size="12.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="btAltAluno" buttonType="RAISED" layoutX="189.0" layoutY="108.0" onAction="#actionBtAltPane" prefHeight="37.0" prefWidth="155.0" ripplerFill="#ff4c71" style="-fx-background-color: white; -fx-background-radius: 5cm; -fx-border-radius: 5cm;" text="Alterar" textFill="#4ce4ff">
+         <font>
+            <Font name="Arial" size="12.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="btExbAluno" buttonType="RAISED" layoutX="189.0" layoutY="156.0" onAction="#actionBtExbPane" prefHeight="37.0" prefWidth="155.0" ripplerFill="#ff4d73" style="-fx-background-color: white; -fx-background-radius: 5cm; -fx-border-radius: 5cm;" text="Exibir" textFill="#4ce4ff">
+         <font>
+            <Font name="Arial" size="12.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="btRemAluno" buttonType="RAISED" layoutX="189.0" layoutY="204.0" onAction="#actionBtRemPane" prefHeight="37.0" prefWidth="155.0" ripplerFill="#ff4c71" style="-fx-background-color: white; -fx-background-radius: 5cm; -fx-border-radius: 5cm;" text="Remover" textFill="#4ce4ff">
+         <font>
+            <Font name="Arial" size="12.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="btListAluno" buttonType="RAISED" layoutX="189.0" layoutY="252.0" onAction="#actionBtListPane" prefHeight="37.0" prefWidth="155.0" ripplerFill="#ff4d73" style="-fx-background-color: white; -fx-background-radius: 5cm; -fx-border-radius: 5cm;" text="Listar" textFill="#4ce4ff">
+         <font>
+            <Font name="Arial" size="12.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="btBuscAluno" buttonType="RAISED" layoutX="189.0" layoutY="300.0" onAction="#actionBtBuscPane" prefHeight="37.0" prefWidth="155.0" ripplerFill="#ff4c71" style="-fx-background-color: white; -fx-background-radius: 5cm; -fx-border-radius: 5cm;" text="Buscar" textFill="#4ce4ff">
+         <font>
+            <Font name="Arial" size="12.0" />
+         </font>
+      </JFXButton>
+   </children>
+</Pane>
