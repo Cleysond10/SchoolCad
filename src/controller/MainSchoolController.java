@@ -3,8 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Aplicacao;
+package controller;
 
+import Aplicacao.CadAluno;
 import com.jfoenix.controls.JFXButton;
 import static java.awt.Color.red;
 import java.io.IOException;
@@ -25,6 +26,7 @@ import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import static javafx.scene.paint.Color.WHITE;
 import javafx.scene.paint.Paint;
+import javafx.stage.Stage;
 
 
 /**
@@ -55,15 +57,15 @@ public class MainSchoolController implements Initializable {
     @FXML
     void actionAluno(ActionEvent event) throws IOException {
         if(event.getSource().equals(btAluno)) {
-            Pane pane = FXMLLoader.load(getClass().getResource("TelaAluno.fxml"));        
+            Pane pane = (Pane)FXMLLoader.load(getClass().getResource("/FXML/TelaAluno.fxml"));        
             JanelaPane.getChildren().add(pane);
-            paneStatus.setBackground(new Background(new BackgroundFill(Paint.valueOf("#4ce4ff"), CornerRadii.EMPTY, Insets.EMPTY)));
+            paneStatus.setBackground(new Background(new BackgroundFill(Paint.valueOf("#050453"), CornerRadii.EMPTY, Insets.EMPTY)));
             labelStatus.setText("ALUNO");
         }
         else if(event.getSource().equals(btProf)) {
-            Pane pane = FXMLLoader.load(getClass().getResource("TEST.fxml"));        
+            Pane pane = (Pane)FXMLLoader.load(getClass().getResource("/FXML/TelaProfessor.fxml"));        
             JanelaPane.getChildren().add(pane);
-            paneStatus.setBackground(new Background(new BackgroundFill(Paint.valueOf("#da35a5"), CornerRadii.EMPTY, Insets.EMPTY)));
+            paneStatus.setBackground(new Background(new BackgroundFill(Paint.valueOf("#050453"), CornerRadii.EMPTY, Insets.EMPTY)));
             labelStatus.setText("PROFESSOR");
         }
         
@@ -93,8 +95,13 @@ public class MainSchoolController implements Initializable {
 
     @FXML
     void actionBtCadPane(ActionEvent event) throws IOException {
-        /*Pane pane = FXMLLoader.load(getClass().getResource("TEST.fxml"));        
-        JanelaPane.getChildren().add(pane);*/
+        CadAluno ca = new CadAluno();
+        
+        try {
+    		ca.start(new Stage());    		
+    	}catch(Exception ex) {
+    		ex.printStackTrace();
+    	}
 
     }
 

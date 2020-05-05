@@ -25,7 +25,7 @@ public class MainSchool extends Application {
         try {
             stage = primaryStage;
 
-            AnchorPane fxmlMenu = (AnchorPane)FXMLLoader.load(getClass().getResource("MainSchool.fxml"));
+            AnchorPane fxmlMenu = (AnchorPane)FXMLLoader.load(getClass().getResource("/FXML/MainSchool.fxml"));
             /*
             //grab your root here
             fxmlMenu.setOnMousePressed(event -> {
