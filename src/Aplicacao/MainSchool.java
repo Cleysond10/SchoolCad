@@ -1,6 +1,5 @@
 package Aplicacao;
 
-import animatefx.animation.FadeIn;
 import java.awt.Dimension;
 import java.awt.Toolkit;
 import javafx.application.Application;
