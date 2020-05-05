@@ -39,7 +39,7 @@ public class CadAluno extends Application {
             stage.setScene(scene);
             //stage.setMaximized(true);
             //ESSA FUNÇÃO A BAIXO FAZ A TELA FICAR CHEIA
-            //stage.setFullScreen(true); 
+            //stage.setFullScreen(true);
             //stage.initModality(Modality.WINDOW_MODAL);
             stage.show();
             setStage(stage);
