@@ -85,11 +85,25 @@ public class MainSchoolController implements Initializable {
     //ACÕES DO BOTÕES DA PANE ALUNO
     @FXML
     void actionBtAltPane(ActionEvent event) {
+        CadAluno ca = new CadAluno();
+        
+        try {
+    		ca.start(new Stage());    		
+    	}catch(Exception ex) {
+    		ex.printStackTrace();
+    	}
 
     }
 
     @FXML
     void actionBtBuscPane(ActionEvent event) {
+        CadAluno ca = new CadAluno();
+        
+        try {
+    		ca.start(new Stage());    		
+    	}catch(Exception ex) {
+    		ex.printStackTrace();
+    	}
 
     }
 
@@ -107,18 +121,41 @@ public class MainSchoolController implements Initializable {
 
     @FXML
     void actionBtExbPane(ActionEvent event) {
+        CadAluno ca = new CadAluno();
+        
+        try {
+    		ca.start(new Stage());    		
+    	}catch(Exception ex) {
+    		ex.printStackTrace();
+    	}
 
     }
 
     @FXML
     void actionBtListPane(ActionEvent event) {
+        CadAluno ca = new CadAluno();
+        
+        try {
+    		ca.start(new Stage());    		
+    	}catch(Exception ex) {
+    		ex.printStackTrace();
+    	}
 
     }
 
     @FXML
     void actionBtRemPane(ActionEvent event) {
+        CadAluno ca = new CadAluno();
+        
+        try {
+    		ca.start(new Stage());    		
+    	}catch(Exception ex) {
+    		ex.printStackTrace();
+    	}
 
     }
+    
+    //ACÕES DO BOTÕES DA PANE PROFESSOR
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
