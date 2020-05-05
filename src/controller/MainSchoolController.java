@@ -66,7 +66,7 @@ public class MainSchoolController implements Initializable {
             Pane pane = (Pane)FXMLLoader.load(getClass().getResource("/FXML/TelaProfessor.fxml"));        
             JanelaPane.getChildren().add(pane);
             paneStatus.setBackground(new Background(new BackgroundFill(Paint.valueOf("#050453"), CornerRadii.EMPTY, Insets.EMPTY)));
-            labelStatus.setText("PROFESSOR");
+            labelStatus.setText("PROFESSOR");            
         }
         
         
