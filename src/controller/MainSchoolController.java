@@ -8,6 +8,11 @@ package controller;
 import Aplicacao.AltCadAluno;
 import Aplicacao.BuscaAluno;
 import Aplicacao.RemoverAluno;
+import Aplicacao.CadProf;
+import Aplicacao.AltProf;
+import Aplicacao.BuscProf;
+import Aplicacao.ExbProf;
+import Aplicacao.RemProf;
 import Aplicacao.CadAluno;
 import com.jfoenix.controls.JFXButton;
 import static java.awt.Color.red;
@@ -54,7 +59,14 @@ public class MainSchoolController implements Initializable {
     @FXML private JFXButton btRemAluno;
     @FXML private JFXButton btListAluno;
     @FXML private JFXButton btBuscAluno;
-    
+    // VARIAVEIS PANE PROFESSOR
+    @FXML private JFXButton btCadProf;
+    @FXML private JFXButton btAltProf;
+    @FXML private JFXButton btExbProf;
+    @FXML private JFXButton btRemProf;
+    @FXML private JFXButton btListProf;
+    @FXML private JFXButton btBuscProf;
+
     
     //ACÕES DO BOTÕES DA BARRA LATERAL
     @FXML
@@ -159,6 +171,66 @@ public class MainSchoolController implements Initializable {
     }
     
     //ACÕES DO BOTÕES DA PANE PROFESSOR
+    
+    @FXML
+    void actionBtCadProfPane(ActionEvent event) {
+        CadProf cp = new CadProf();
+        
+        try {
+            cp.start(new Stage());    		
+    	}catch(Exception ex) {
+            ex.printStackTrace();
+    	}
+    }
+    
+    @FXML
+    void actionBtAltProfPane(ActionEvent event) {
+        AltProf ap = new AltProf();
+        
+        try {
+            ap.start(new Stage());    		
+    	}catch(Exception ex) {
+            ex.printStackTrace();
+    	}
+    }
+
+    @FXML
+    void actionBtBuscProfPane(ActionEvent event) {
+        BuscProf bp = new BuscProf();
+        
+        try {
+            bp.start(new Stage());    		
+    	}catch(Exception ex) {
+            ex.printStackTrace();
+    	}
+    }
+
+    @FXML
+    void actionBtExbProfPane(ActionEvent event) {
+        ExbProf ep = new ExbProf();
+        
+        try {
+            ep.start(new Stage());    		
+    	}catch(Exception ex) {
+            ex.printStackTrace();
+    	}
+    }
+
+    @FXML
+    void actionBtListProfPane(ActionEvent event) {
+
+    }
+
+    @FXML
+    void actionBtRemProfPane(ActionEvent event) {
+        RemProf rp = new RemProf();
+        
+        try {
+            rp.start(new Stage());    		
+    	}catch(Exception ex) {
+            ex.printStackTrace();
+    	}
+    }
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {

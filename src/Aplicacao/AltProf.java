@@ -1,10 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Aplicacao;
-
 
 import java.io.IOException;
 import java.util.logging.Level;
@@ -17,10 +11,9 @@ import javafx.stage.Stage;
 
 /**
  *
- * @author Neto
+ * @author Lenovo
  */
-public class CadAluno extends Application {
-    
+public class AltProf extends Application {
     private static Stage stage;
     
     @Override
@@ -28,14 +21,12 @@ public class CadAluno extends Application {
         try {
             stage = primaryStage;
 
-            AnchorPane fxmlMenu = (AnchorPane)FXMLLoader.load(getClass().getResource("/FXML/CadAluno.fxml"));
-                        
+            AnchorPane fxmlMenu = (AnchorPane)FXMLLoader.load(getClass().getResource("/FXML/AltProf.fxml"));
             
-            Scene scene = new Scene(fxmlMenu,600,500);           
+            Scene scene = new Scene(fxmlMenu,600,400);           
             scene.getStylesheets().add(getClass().getResource("/CSS/CSSMainSchool.css").toExternalForm());          
             
-            
-            stage.setTitle("CADALUNO");            
+            stage.setTitle("Alterar Dados - PROFESSOR");            
             stage.setScene(scene);
             //stage.setMaximized(true);
             //ESSA FUNÇÃO A BAIXO FAZ A TELA FICAR CHEIA
@@ -54,11 +45,13 @@ public class CadAluno extends Application {
     }
 
     public static void setStage(Stage stage) {
-        CadAluno.stage = stage;
+        AltProf.stage = stage;
     }
-    
+        
+    /**
+     * @param args the command line arguments
+     */
     public static void main(String[] args) {
         launch(args);
-    }
-    
+    }        
 }
