@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <JFXTextField layoutX="69.0" layoutY="30.0" prefHeight="33.0" prefWidth="463.0" promptText="Nome Completo" />
+      <JFXTextField layoutX="68.0" layoutY="69.0" prefHeight="33.0" prefWidth="223.0" promptText="C.P.F." />
+      <JFXTextField layoutX="300.0" layoutY="69.0" prefHeight="33.0" prefWidth="234.0" promptText="R.G." />
+      <JFXTextField layoutX="68.0" layoutY="151.0" prefHeight="33.0" prefWidth="463.0" promptText="Telefone" />
+      <JFXButton buttonType="RAISED" layoutX="235.0" layoutY="342.0" prefHeight="25.0" prefWidth="108.0" ripplerFill="#750505" text="CADASTRAR" />
+      <JFXTextField layoutX="69.0" layoutY="200.0" prefHeight="33.0" prefWidth="463.0" promptText="Endereço" />
+      <JFXTextField layoutX="66.0" layoutY="111.0" prefHeight="33.0" prefWidth="223.0" promptText="Data de Nascimento" />
+      <JFXTextField layoutX="299.0" layoutY="111.0" prefHeight="33.0" prefWidth="234.0" promptText="Sexo" />
+      <JFXTextField layoutX="69.0" layoutY="241.0" prefHeight="33.0" prefWidth="463.0" promptText="E-mail" />
+      <JFXTextField layoutX="67.0" layoutY="282.0" prefHeight="33.0" prefWidth="223.0" promptText="Formação Acadêmica" />
+      <JFXTextField layoutX="300.0" layoutY="282.0" prefHeight="33.0" prefWidth="234.0" promptText="Turmas" />
+   </children>
+</AnchorPane>
