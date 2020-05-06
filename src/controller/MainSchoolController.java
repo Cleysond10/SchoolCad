@@ -5,6 +5,9 @@
  */
 package controller;
 
+import Aplicacao.AltCadAluno;
+import Aplicacao.BuscaAluno;
+import Aplicacao.RemoverAluno;
 import Aplicacao.CadAluno;
 import com.jfoenix.controls.JFXButton;
 import static java.awt.Color.red;
@@ -84,11 +87,11 @@ public class MainSchoolController implements Initializable {
     
     //ACÕES DO BOTÕES DA PANE ALUNO
     @FXML
-    void actionBtAltPane(ActionEvent event) {
-        CadAluno ca = new CadAluno();
+    void actionBtAltPaneAluno(ActionEvent event) {
+        BuscaAluno alt = new BuscaAluno();
         
         try {
-    		ca.start(new Stage());    		
+    		alt.start(new Stage());    		
     	}catch(Exception ex) {
     		ex.printStackTrace();
     	}
@@ -97,7 +100,7 @@ public class MainSchoolController implements Initializable {
 
     @FXML
     void actionBtBuscPane(ActionEvent event) {
-        CadAluno ca = new CadAluno();
+        AltCadAluno ca = new AltCadAluno();
         
         try {
     		ca.start(new Stage());    		
@@ -108,7 +111,7 @@ public class MainSchoolController implements Initializable {
     }
 
     @FXML
-    void actionBtCadPane(ActionEvent event) throws IOException {
+    void actionBtCadPaneAluno(ActionEvent event) throws IOException {
         CadAluno ca = new CadAluno();
         
         try {
@@ -144,8 +147,8 @@ public class MainSchoolController implements Initializable {
     }
 
     @FXML
-    void actionBtRemPane(ActionEvent event) {
-        CadAluno ca = new CadAluno();
+    void actionBtRemPaneAluno(ActionEvent event) {
+        RemoverAluno ca = new RemoverAluno();
         
         try {
     		ca.start(new Stage());    		

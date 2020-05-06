@@ -17,8 +17,8 @@ import javafx.fxml.Initializable;
  *
  * @author Neto
  */
-public class CadAlunoController implements Initializable {
-    
+public class AltCadAlunoController implements Initializable {
+
     @FXML private JFXTextField tfNome;
     @FXML private JFXTextField tfCPF;
     @FXML private JFXTextField tfRG;
@@ -37,7 +37,6 @@ public class CadAlunoController implements Initializable {
     void acaoBtSalvar(ActionEvent event) {
 
     }
-
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {

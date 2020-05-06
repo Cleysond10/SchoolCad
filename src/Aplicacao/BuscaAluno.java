@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Aplicacao;
 
 
@@ -17,9 +12,9 @@ import javafx.stage.Stage;
 
 /**
  *
- * @author Neto
+ * @author Neto Cleyson
  */
-public class CadAluno extends Application {
+public class BuscaAluno extends Application {
     
     private static Stage stage;
     
@@ -28,7 +23,7 @@ public class CadAluno extends Application {
         try {
             stage = primaryStage;
 
-            AnchorPane fxmlMenu = (AnchorPane)FXMLLoader.load(getClass().getResource("/FXML/CadAluno.fxml"));
+            AnchorPane fxmlMenu = (AnchorPane)FXMLLoader.load(getClass().getResource("/FXML/BuscaAluno.fxml"));
                         
             
             Scene scene = new Scene(fxmlMenu,600,500);           
@@ -46,7 +41,6 @@ public class CadAluno extends Application {
         }   catch (IOException ex) {
             Logger.getLogger(CadAluno.class.getName()).log(Level.SEVERE, null, ex);
         }
-
     }
 
     public static Stage getStage() {
@@ -54,7 +48,7 @@ public class CadAluno extends Application {
     }
 
     public static void setStage(Stage stage) {
-        CadAluno.stage = stage;
+        BuscaAluno.stage = stage;
     }
     
     public static void main(String[] args) {

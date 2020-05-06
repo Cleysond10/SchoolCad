@@ -5,7 +5,7 @@
  */
 package Aplicacao;
 
-
+import static Aplicacao.CadAluno.setStage;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -17,9 +17,9 @@ import javafx.stage.Stage;
 
 /**
  *
- * @author Neto
+ * @author Neto e Cleyson
  */
-public class CadAluno extends Application {
+public class AltCadAluno extends Application {
     
     private static Stage stage;
     
@@ -28,14 +28,14 @@ public class CadAluno extends Application {
         try {
             stage = primaryStage;
 
-            AnchorPane fxmlMenu = (AnchorPane)FXMLLoader.load(getClass().getResource("/FXML/CadAluno.fxml"));
+            AnchorPane fxmlMenu = (AnchorPane)FXMLLoader.load(getClass().getResource("/FXML/AltCadAluno.fxml"));
                         
             
             Scene scene = new Scene(fxmlMenu,600,500);           
             scene.getStylesheets().add(getClass().getResource("/CSS/CSSMainSchool.css").toExternalForm());          
             
             
-            stage.setTitle("CADALUNO");            
+            stage.setTitle("ALTCADALUNO");            
             stage.setScene(scene);
             //stage.setMaximized(true);
             //ESSA FUNÇÃO A BAIXO FAZ A TELA FICAR CHEIA
@@ -46,7 +46,6 @@ public class CadAluno extends Application {
         }   catch (IOException ex) {
             Logger.getLogger(CadAluno.class.getName()).log(Level.SEVERE, null, ex);
         }
-
     }
 
     public static Stage getStage() {
@@ -54,7 +53,7 @@ public class CadAluno extends Application {
     }
 
     public static void setStage(Stage stage) {
-        CadAluno.stage = stage;
+        AltCadAluno.stage = stage;
     }
     
     public static void main(String[] args) {
