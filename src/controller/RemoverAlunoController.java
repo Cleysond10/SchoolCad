@@ -27,13 +27,7 @@ public class RemoverAlunoController implements Initializable {
 
     @FXML
     void acaoBtBuscar(ActionEvent event) {
-        AltCadAluno aca = new AltCadAluno();
         
-        try {
-    		aca.start(new Stage());    		
-    	}catch(Exception ex) {
-    		ex.printStackTrace();
-    	}
         fechar();
 
     }

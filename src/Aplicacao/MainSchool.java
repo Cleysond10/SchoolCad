@@ -1,5 +1,6 @@
 package Aplicacao;
 
+import estruturadados.LDE;
 import java.awt.Dimension;
 import java.awt.Toolkit;
 import javafx.application.Application;
@@ -8,6 +9,7 @@ import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
+import tidosdados.Aluno;
 
 /**
  *
@@ -16,8 +18,9 @@ import javafx.stage.Stage;
 public class MainSchool extends Application {
     
     private static Stage stage;
-    private double xOffset = 0;
-    private double yOffset = 0;
+    private static LDE<Aluno> ldeAlunoPP;
+    //private double xOffset = 0;
+    //private double yOffset = 0;
     
     @Override
     public void start(Stage primaryStage) {
@@ -69,7 +72,7 @@ public class MainSchool extends Application {
     public static void setStage(Stage stage) {
         MainSchool.stage = stage;
     }
-
+    
     public static void main(String[] args) {
         launch(args);
     }
@@ -87,6 +90,16 @@ public class MainSchool extends Application {
             return d.height;
         }        
     }*/
+
+    public static LDE<Aluno> getLdeAlunoPP() {
+        return ldeAlunoPP;
+    }
+
+    public static void setLdeAlunoPP(LDE<Aluno> ldeAlunoPP) {
+        MainSchool.ldeAlunoPP = ldeAlunoPP;
+    }
+
+    
     
 }
 

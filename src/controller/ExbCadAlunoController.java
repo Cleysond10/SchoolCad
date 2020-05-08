@@ -1,11 +1,7 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package controller;
 
-import Aplicacao.AltCadAluno;
+import Aplicacao.BuscaExbAluno;
+import Aplicacao.ExbCadAluno;
 import com.jfoenix.controls.JFXTextField;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -18,8 +14,8 @@ import javafx.fxml.Initializable;
  *
  * @author Neto
  */
-public class AltCadAlunoController implements Initializable {
-
+public class ExbCadAlunoController implements Initializable {
+    
     @FXML private JFXTextField tfNome;
     @FXML private JFXTextField tfCPF;
     @FXML private JFXTextField tfRG;
@@ -38,14 +34,22 @@ public class AltCadAlunoController implements Initializable {
     void acaoBtSalvar(ActionEvent event) {
 
     }
+
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
-    } 
-    
+    tfNome.setDisable(true);
+    tfCPF.setDisable(true);
+    tfRG.setDisable(true);
+    tfData.setDisable(true);
+    tfSexo.setDisable(true);
+    tfEnd.setDisable(true);
+    tfTel.setDisable(true);
+    tfEmail.setDisable(true);
+    }
+
     public void fechar() {
-        AltCadAluno.getStage().close();
+        ExbCadAluno.getStage().close();
     }
     
 }

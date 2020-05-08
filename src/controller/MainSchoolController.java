@@ -11,11 +11,14 @@ import Aplicacao.RemoverAluno;
 import Aplicacao.CadProf;
 import Aplicacao.AltProf;
 import Aplicacao.BuscProf;
+import Aplicacao.BuscaExbAluno;
 import Aplicacao.ExbProf;
 import Aplicacao.RemProf;
 import Aplicacao.CadAluno;
+import Aplicacao.ListarAluno;
+import Aplicacao.MainSchool;
 import com.jfoenix.controls.JFXButton;
-import static java.awt.Color.red;
+import estruturadados.LDE;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -31,10 +34,9 @@ import javafx.scene.layout.Background;
 import javafx.scene.layout.BackgroundFill;
 import javafx.scene.layout.CornerRadii;
 import javafx.scene.layout.Pane;
-import javafx.scene.paint.Color;
-import static javafx.scene.paint.Color.WHITE;
 import javafx.scene.paint.Paint;
 import javafx.stage.Stage;
+import tidosdados.Aluno;
 
 
 /**
@@ -42,6 +44,8 @@ import javafx.stage.Stage;
  * @author Neto
  */
 public class MainSchoolController implements Initializable {
+    
+    private LDE<Aluno> ldeAlunoP;
     
     @FXML private JFXButton btAluno;
     @FXML private JFXButton btProf;
@@ -135,8 +139,8 @@ public class MainSchoolController implements Initializable {
     }
 
     @FXML
-    void actionBtExbPane(ActionEvent event) {
-        CadAluno ca = new CadAluno();
+    void actionBtExbPaneAluno(ActionEvent event) {
+        BuscaExbAluno ca = new BuscaExbAluno();
         
         try {
     		ca.start(new Stage());    		
@@ -147,11 +151,11 @@ public class MainSchoolController implements Initializable {
     }
 
     @FXML
-    void actionBtListPane(ActionEvent event) {
-        CadAluno ca = new CadAluno();
+    void actionBtListPaneAluno(ActionEvent event) {
+        ListarAluno la = new ListarAluno();
         
         try {
-    		ca.start(new Stage());    		
+    		la.start(new Stage());    		
     	}catch(Exception ex) {
     		ex.printStackTrace();
     	}
@@ -233,8 +237,22 @@ public class MainSchoolController implements Initializable {
     }
     
     @Override
-    public void initialize(URL url, ResourceBundle rb) {
-        // TODO
-    }    
+    public void initialize(URL url, ResourceBundle rb) {        
+        ldeAlunoP = new LDE();
+        ldeAlunoP.Inicializar("aluno");
+        MainSchool.setLdeAlunoPP(ldeAlunoP);
+    }
+
+    public LDE getLdeAlunoP() {
+        return this.ldeAlunoP;
+    }
+
+    public void setLdeAlunoP(LDE ldeAlunoP) {
+        this.ldeAlunoP = ldeAlunoP;
+    }
+
+    
+
+    
     
 }

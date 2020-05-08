@@ -1,12 +1,9 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package controller;
 
-import Aplicacao.AltCadAluno;
-import Aplicacao.BuscaAluno;
+
+import Aplicacao.BuscaExbAluno;
+import Aplicacao.ExbCadAluno;
+import Aplicacao.RemoverAluno;
 import com.jfoenix.controls.JFXTextField;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -18,16 +15,16 @@ import javafx.stage.Stage;
 /**
  * FXML Controller class
  *
- * @author Neto
+ * @author Neto e Cleyson
  */
-public class BuscaAlunoController implements Initializable {
+public class BuscaExbAlunoController implements Initializable {
       
 
     @FXML private JFXTextField tfBuscaCPF;
 
     @FXML
     void acaoBtBuscar(ActionEvent event) {
-        AltCadAluno aca = new AltCadAluno();
+        ExbCadAluno aca = new ExbCadAluno();
         
         try {
     		aca.start(new Stage());    		
@@ -49,7 +46,7 @@ public class BuscaAlunoController implements Initializable {
     }
     
     public void fechar() {
-        BuscaAluno.getStage().close();
+        BuscaExbAluno.getStage().close();
     }
     
 }

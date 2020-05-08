@@ -5,10 +5,10 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="500.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.RemoverAlunoController">
+<AnchorPane id="AnchorPane" prefHeight="500.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.BuscaExbAlunoController">
    <children>
       <JFXTextField fx:id="tfBuscaCPF" layoutX="37.0" layoutY="171.0" prefHeight="25.0" prefWidth="307.0" promptText="Digite o CPF" unFocusColor="#cd6868" />
-      <JFXButton layoutX="415.0" layoutY="171.0" onAction="#acaoBtBuscar" prefHeight="25.0" prefWidth="106.0" style="-fx-background-color: #050453; -fx-background-radius: 5cm; -fx-border-radius: 5cm;" text="REMOVER" textFill="WHITE">
+      <JFXButton layoutX="415.0" layoutY="171.0" onAction="#acaoBtBuscar" prefHeight="25.0" prefWidth="106.0" style="-fx-background-color: #050453; -fx-background-radius: 5cm; -fx-border-radius: 5cm;" text="BUSCAR" textFill="WHITE">
          <font>
             <Font name="Arial Bold" size="12.0" />
          </font>
