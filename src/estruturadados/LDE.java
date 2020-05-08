@@ -104,6 +104,53 @@ public class LDE <T extends Comparable<T>> {
 		
     }
     
+    public void remover(T info) {
+        NodeLDE<T> aux = this.first.getNext();
+		
+        if(vazio()) {
+            System.out.println("LISTA VAZIA");
+        }		
+        else if(qtd == 1) {
+            if(busca(info) != null) {
+                this.first = null;
+                this.last = null;
+                this.qtd--;
+            }
+            else {
+                System.out.println("NÃO EXISTE O CONTATO");
+            }
+        }
+        else {
+            if(this.first.getInfo().compareTo(info)>0) {
+                System.out.println("NÃO EXISTE O CONTATO");
+            }
+            else if(this.first.getInfo().compareTo(info) == 0) {
+                this.first = this.first.getNext();
+                this.qtd--;
+                this.first.setPrev(this.last);
+                this.last.setNext(this.first);
+            }
+            else if(this.last.getInfo().compareTo(info) < 0) {
+                System.out.println("NÃO EXISTE O CONTATO");
+            }
+            else if(this.last.getInfo().compareTo(info) == 0) {
+                this.last = this.last.getPrev();
+                this.qtd--;
+                this.first.setPrev(this.last);
+                this.last.setNext(this.first);
+            }
+            else if(busca(info) != null){
+                aux = busca(info);
+                aux.getPrev().setNext(aux.getNext());
+                aux.getNext().setPrev(aux.getPrev());
+                this.qtd--;
+            }
+            else {
+                System.out.println("NÃO EXISTE O CONTATO");
+            }
+        }
+    }
+    
     public void Inicializar(String nome) {
 		
         FileInputStream fis;
@@ -159,13 +206,13 @@ public class LDE <T extends Comparable<T>> {
 						
     }
     
-    public int getQtd() {
+    /*public int getQtd() {
         return this.qtd;
     }
 
     public NodeLDE<T> getFirst() {
         return first;
-    }
+    }*/
     
     public Aluno[] listaAluno() {		
 		Aluno[] x = new Aluno[this.qtd];		

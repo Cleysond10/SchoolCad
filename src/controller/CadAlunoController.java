@@ -31,7 +31,7 @@ public class CadAlunoController implements Initializable {
     @FXML private JFXTextField tfEnd;
     @FXML private JFXTextField tfTel;
     @FXML private JFXTextField tfEmail;
-    private LDE<Aluno> ldeAlunoCad;
+    //private LDE<Aluno> ldeAlunoCad;
     private Aluno aluno;
 
     @FXML
@@ -49,9 +49,11 @@ public class CadAlunoController implements Initializable {
         aluno.setRg(tfRG.getText());
         aluno.setSexo(tfSexo.getText());
         aluno.setTelefone(tfTel.getText());
+        MainSchool.getLdeAlunoPP().add(aluno);
         
-        ldeAlunoCad = MainSchool.getLdeAlunoPP();
-        ldeAlunoCad.add(aluno);
+        
+        //ldeAlunoCad = MainSchool.getLdeAlunoPP();
+        //ldeAlunoCad.add(aluno);
         //MainSchool.setLdeAlunoPP(ldeAlunoCad);
         fechar();
         
@@ -61,7 +63,7 @@ public class CadAlunoController implements Initializable {
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        ldeAlunoCad = MainSchool.getLdeAlunoPP();
+        //ldeAlunoCad = MainSchool.getLdeAlunoPP();
     } 
     
     public void fechar() {

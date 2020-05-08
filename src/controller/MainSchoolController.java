@@ -240,7 +240,7 @@ public class MainSchoolController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {        
         ldeAlunoP = new LDE();
         ldeAlunoP.Inicializar("aluno");
-        MainSchool.setLdeAlunoPP(ldeAlunoP);
+        MainSchool.setLdeAlunoPP(ldeAlunoP);        
     }
 
     public LDE getLdeAlunoP() {
