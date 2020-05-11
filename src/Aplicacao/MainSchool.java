@@ -10,6 +10,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import tidosdados.Aluno;
+import tidosdados.Professor;
 
 /**
  *
@@ -19,6 +20,7 @@ public class MainSchool extends Application {
     
     private static Stage stage;
     private static LDE<Aluno> ldeAlunoPP;
+    private static LDE<Professor> ldeProfPP;
     //private double xOffset = 0;
     //private double yOffset = 0;
     
@@ -99,7 +101,13 @@ public class MainSchool extends Application {
         MainSchool.ldeAlunoPP = ldeAlunoPP;
     }
 
-    
+    public static LDE<Professor> getLdeProfPP() {
+        return ldeProfPP;
+    }
+
+    public static void setLdeProfPP(LDE<Professor> ldeProfPP) {
+        MainSchool.ldeProfPP = ldeProfPP;
+    }
     
 }
 
