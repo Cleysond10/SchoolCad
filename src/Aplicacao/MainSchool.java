@@ -10,6 +10,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import tidosdados.Aluno;
+import tidosdados.Professor;
 
 /**
  *
@@ -17,7 +18,8 @@ import tidosdados.Aluno;
  */
 public class MainSchool extends Application {
     
-    private static Stage stage;
+    private static Stage stage;    
+    private static LDE<Professor> ldeProfPP;
     private static LDE<Aluno> ldeAlunoPP = new LDE<Aluno>();
     private static Aluno alunoPP = new Aluno("");
     //private double xOffset = 0;
@@ -100,6 +102,7 @@ public class MainSchool extends Application {
         MainSchool.ldeAlunoPP = ldeAlunoPP;
     }
 
+//<<<<<<< HEAD (0323b65) - Feito as validações dos
     public static Aluno getAlunoPP() {
         return alunoPP;
     }
@@ -111,6 +114,15 @@ public class MainSchool extends Application {
     
 
     
+//=======
+    public static LDE<Professor> getLdeProfPP() {
+        return ldeProfPP;
+    }
+
+    public static void setLdeProfPP(LDE<Professor> ldeProfPP) {
+        MainSchool.ldeProfPP = ldeProfPP;
+    }
+//>>>>>>> origin/master (ce9095f) - Criação da lde
     
 }
 
