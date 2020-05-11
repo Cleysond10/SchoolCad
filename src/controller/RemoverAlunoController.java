@@ -1,11 +1,6 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package controller;
 
-import Aplicacao.AltCadAluno;
+import Aplicacao.MainSchool;
 import Aplicacao.RemoverAluno;
 import com.jfoenix.controls.JFXTextField;
 import java.net.URL;
@@ -13,20 +8,24 @@ import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.stage.Stage;
+import tidosdados.Aluno;
 
 /**
  * FXML Controller class
  *
- * @author Neto
+ * @author Neto e Cleyson
  */
 public class RemoverAlunoController implements Initializable {
       
-
+    private Aluno aluno;
+    //private LDE<Aluno> ldeAlunoRem;
     @FXML private JFXTextField tfBuscaCPF;
 
     @FXML
     void acaoBtBuscar(ActionEvent event) {
+        
+        aluno = new Aluno(tfBuscaCPF.getText());
+        MainSchool.getLdeAlunoPP().remover(aluno);
         
         fechar();
 
@@ -39,7 +38,7 @@ public class RemoverAlunoController implements Initializable {
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+        
     }
     
     public void fechar() {

@@ -47,6 +47,26 @@ public class LDE <T extends Comparable<T>> {
         return null;
     }
     
+    public T consulta(T info) {
+        NodeLDE<T> aux = this.first;
+
+        if (vazio()) {
+            return null;
+        } else {
+            do {
+                if (aux.getInfo().compareTo(info) == 0) {
+                    return aux.getInfo();
+                } else if (aux.getInfo().compareTo(info) > 0) {
+                    return null;
+                } else {
+                    aux = aux.getNext();
+                }
+            } while (aux != this.first);
+        }
+
+        return null;
+    }
+    
     public void add(T info) {
         NodeLDE<T> novo = new NodeLDE<T>(info);
 		
@@ -156,10 +176,10 @@ public class LDE <T extends Comparable<T>> {
         FileInputStream fis;
         ObjectInputStream ois;
         try {
-            fis = new FileInputStream (nome + ".jv");
+            fis = new FileInputStream (nome);
             ois = new ObjectInputStream(fis);
             try {
-                do {
+                do {                    
                     T dados = (T) ois.readObject();
                     add(dados);										
                 }while(true);
@@ -188,13 +208,13 @@ public class LDE <T extends Comparable<T>> {
     public void Finalizar(String nome) {
         NodeLDE aux = this.first;
         try {
-            FileOutputStream fos = new FileOutputStream(nome + ".jv");
+            FileOutputStream fos = new FileOutputStream(nome);
             ObjectOutputStream oos = new ObjectOutputStream(fos);
-            while(aux!=null) {
+            do {
                 oos.writeObject(aux.getInfo());
                 oos.flush();					
                 aux=aux.getNext();								
-            }
+            }while(aux!=this.first);
             oos.close();
 
         } catch (FileNotFoundException e) {
@@ -215,14 +235,31 @@ public class LDE <T extends Comparable<T>> {
     }*/
     
     public Aluno[] listaAluno() {		
-		Aluno[] x = new Aluno[this.qtd];		
-		NodeLDE aux = this.first;
-		for(int i = 0; i<this.qtd;i++) {
-			x[i] = (Aluno) aux.getInfo();
-			aux = aux.getNext();
-		}
-		return x;		
-	}
+        Aluno[] x = new Aluno[this.qtd];		
+        NodeLDE aux = this.first;
+        for(int i = 0; i<this.qtd;i++) {
+            x[i] = (Aluno) aux.getInfo();
+            aux = aux.getNext();
+        }
+        return x;		
+    }
+    
+    
+    public void exibir() {
+        NodeLDE<T> aux = this.first;
+        if(vazio()) {
+            System.out.println("VAZIO");
+        }
+        else {
+            System.out.println(aux.getInfo());
+            aux = aux.getNext();
+            while(aux != this.first) {
+                System.out.println(aux.getInfo());
+                aux = aux.getNext();
+            }
+        }
+        System.out.println(this.qtd);
+    }
     
     
     

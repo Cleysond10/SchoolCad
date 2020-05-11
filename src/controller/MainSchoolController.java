@@ -45,7 +45,7 @@ import tidosdados.Aluno;
  */
 public class MainSchoolController implements Initializable {
     
-    private LDE<Aluno> ldeAlunoP;
+    //private LDE<Aluno> ldeAlunoP;
     
     @FXML private JFXButton btAluno;
     @FXML private JFXButton btProf;
@@ -114,7 +114,7 @@ public class MainSchoolController implements Initializable {
 
     }
 
-    @FXML
+    /*@FXML
     void actionBtBuscPane(ActionEvent event) {
         AltCadAluno ca = new AltCadAluno();
         
@@ -124,7 +124,7 @@ public class MainSchoolController implements Initializable {
     		ex.printStackTrace();
     	}
 
-    }
+    }*/
 
     @FXML
     void actionBtCadPaneAluno(ActionEvent event) throws IOException {
@@ -237,20 +237,24 @@ public class MainSchoolController implements Initializable {
     }
     
     @Override
-    public void initialize(URL url, ResourceBundle rb) {        
-        ldeAlunoP = new LDE();
-        ldeAlunoP.Inicializar("aluno");
-        MainSchool.setLdeAlunoPP(ldeAlunoP);        
+    public void initialize(URL url, ResourceBundle rb) {
+        
+        MainSchool.getLdeAlunoPP().Inicializar("aluno.sc");
+        
+        /*ldeAlunoP = new LDE<Aluno>();
+        ldeAlunoP.Inicializar("aluno.sc");
+        MainSchool.setLdeAlunoPP(ldeAlunoP);
+        */
     }
 
-    public LDE getLdeAlunoP() {
+    /*public LDE getLdeAlunoP() {
         return this.ldeAlunoP;
     }
 
     public void setLdeAlunoP(LDE ldeAlunoP) {
         this.ldeAlunoP = ldeAlunoP;
     }
-
+*/
     
 
     

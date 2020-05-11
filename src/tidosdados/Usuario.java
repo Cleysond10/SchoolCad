@@ -1,10 +1,14 @@
 package tidosdados;
 
+import java.io.Serializable;
+import javax.mail.internet.AddressException;
+import javax.mail.internet.InternetAddress;
+
 /**
  *
  * @author Neto e Cleyson
  */
-public abstract class Usuario {
+public abstract class Usuario implements Serializable {
     private String cpf;
     private String rg;
     private String nome;
@@ -85,6 +89,8 @@ public abstract class Usuario {
     @Override
     public String toString() {
         return "Usuario{" + "cpf=" + cpf + ", nome=" + nome + ", email=" + email + '}';
-    }    
+    }
+    
+    
     
 }

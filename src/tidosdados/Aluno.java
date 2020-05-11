@@ -1,10 +1,12 @@
 package tidosdados;
 
+
+
 /**
  *
  * @author Neto e Cleyson
  */
-public class Aluno extends Usuario implements Comparable<Aluno>{
+public class Aluno extends Usuario implements Comparable<Aluno> {
     
     public Aluno(String cpf) {
         super(cpf);

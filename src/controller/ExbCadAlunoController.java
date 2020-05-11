@@ -2,12 +2,14 @@ package controller;
 
 import Aplicacao.BuscaExbAluno;
 import Aplicacao.ExbCadAluno;
+import Aplicacao.MainSchool;
 import com.jfoenix.controls.JFXTextField;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Label;
 
 /**
  * FXML Controller class
@@ -16,14 +18,14 @@ import javafx.fxml.Initializable;
  */
 public class ExbCadAlunoController implements Initializable {
     
-    @FXML private JFXTextField tfNome;
-    @FXML private JFXTextField tfCPF;
-    @FXML private JFXTextField tfRG;
-    @FXML private JFXTextField tfData;
-    @FXML private JFXTextField tfSexo;
-    @FXML private JFXTextField tfEnd;
-    @FXML private JFXTextField tfTel;
-    @FXML private JFXTextField tfEmail;
+    @FXML private Label lbNome;
+    @FXML private Label lbCPF;
+    @FXML private Label lbRG;
+    @FXML private Label lbDataN;
+    @FXML private Label lbSexo;
+    @FXML private Label lbEnd;
+    @FXML private Label lbTel;
+    @FXML private Label lbEmail;
 
     @FXML
     void acaoBtCancelar(ActionEvent event) {
@@ -34,18 +36,22 @@ public class ExbCadAlunoController implements Initializable {
     void acaoBtSalvar(ActionEvent event) {
 
     }
+    
+    public void carregar() {
+        lbNome.setText(MainSchool.getAlunoPP().getNome());
+        lbCPF.setText(MainSchool.getAlunoPP().getCpf());
+        lbRG.setText(MainSchool.getAlunoPP().getRg());
+        lbDataN.setText(MainSchool.getAlunoPP().getDataN());
+        lbSexo.setText(MainSchool.getAlunoPP().getSexo());
+        lbEnd.setText(MainSchool.getAlunoPP().getEndereço());
+        lbTel.setText(MainSchool.getAlunoPP().getTelefone());
+        lbEmail.setText(MainSchool.getAlunoPP().getEmail());
+    }
 
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-    tfNome.setDisable(true);
-    tfCPF.setDisable(true);
-    tfRG.setDisable(true);
-    tfData.setDisable(true);
-    tfSexo.setDisable(true);
-    tfEnd.setDisable(true);
-    tfTel.setDisable(true);
-    tfEmail.setDisable(true);
+        this.carregar();
     }
 
     public void fechar() {

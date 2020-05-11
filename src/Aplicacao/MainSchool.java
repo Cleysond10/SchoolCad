@@ -18,7 +18,8 @@ import tidosdados.Aluno;
 public class MainSchool extends Application {
     
     private static Stage stage;
-    private static LDE<Aluno> ldeAlunoPP;
+    private static LDE<Aluno> ldeAlunoPP = new LDE<Aluno>();
+    private static Aluno alunoPP = new Aluno("");
     //private double xOffset = 0;
     //private double yOffset = 0;
     
@@ -98,6 +99,16 @@ public class MainSchool extends Application {
     public static void setLdeAlunoPP(LDE<Aluno> ldeAlunoPP) {
         MainSchool.ldeAlunoPP = ldeAlunoPP;
     }
+
+    public static Aluno getAlunoPP() {
+        return alunoPP;
+    }
+
+    public static void setAlunoPP(Aluno alunoPP) {
+        MainSchool.alunoPP = alunoPP;
+    }
+    
+    
 
     
     
