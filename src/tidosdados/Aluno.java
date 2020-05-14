@@ -11,7 +11,7 @@ public class Aluno extends Usuario implements Comparable<Aluno> {
     public Aluno(String cpf) {
         super(cpf);
     }
-
+    
     @Override
     public int compareTo(Aluno a) {
         return super.getCpf().compareTo(a.getCpf());

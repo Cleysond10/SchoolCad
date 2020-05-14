@@ -8,6 +8,7 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import tidosdados.Aluno;
+import tidosdados.Professor;
 
 
 /**
@@ -244,6 +245,15 @@ public class LDE <T extends Comparable<T>> {
         return x;		
     }
     
+    public Professor[] listaProf() {		
+        Professor[] x = new Professor[this.qtd];		
+        NodeLDE aux = this.first;
+        for(int i = 0; i<this.qtd;i++) {
+            x[i] = (Professor) aux.getInfo();
+            aux = aux.getNext();
+        }
+        return x;		
+    }
     
     public void exibir() {
         NodeLDE<T> aux = this.first;

@@ -35,7 +35,7 @@ public class ExbProf extends Application {
             stage.show();
             setStage(stage);
         }   catch (IOException ex) {
-            Logger.getLogger(CadAluno.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(ExbProf.class.getName()).log(Level.SEVERE, null, ex);
         }
 
     }

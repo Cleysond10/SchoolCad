@@ -4,19 +4,17 @@
 <?import com.jfoenix.controls.JFXTextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="controller.AltCadProfController">
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AltCadProfController">
    <children>
-      <JFXTextField layoutX="79.0" layoutY="40.0" prefHeight="33.0" prefWidth="463.0" promptText="Nome Completo" />
-      <JFXTextField layoutX="78.0" layoutY="79.0" prefHeight="33.0" prefWidth="223.0" promptText="C.P.F." />
-      <JFXTextField layoutX="310.0" layoutY="79.0" prefHeight="33.0" prefWidth="234.0" promptText="R.G." />
-      <JFXTextField layoutX="78.0" layoutY="161.0" prefHeight="33.0" prefWidth="463.0" promptText="Telefone" />
-      <JFXButton buttonType="RAISED" layoutX="245.0" layoutY="352.0" prefHeight="25.0" prefWidth="108.0" ripplerFill="#750505" text="EDITAR" />
-      <JFXTextField layoutX="79.0" layoutY="210.0" prefHeight="33.0" prefWidth="463.0" promptText="Endereço" />
-      <JFXTextField layoutX="76.0" layoutY="121.0" prefHeight="33.0" prefWidth="223.0" promptText="Data de Nascimento" />
-      <JFXTextField layoutX="309.0" layoutY="121.0" prefHeight="33.0" prefWidth="234.0" promptText="Sexo" />
-      <JFXTextField layoutX="79.0" layoutY="251.0" prefHeight="33.0" prefWidth="463.0" promptText="E-mail" />
-      <JFXTextField layoutX="77.0" layoutY="292.0" prefHeight="33.0" prefWidth="223.0" promptText="Formação Acadêmica" />
-      <JFXTextField layoutX="310.0" layoutY="292.0" prefHeight="33.0" prefWidth="234.0" promptText="Turmas" />
+      <JFXTextField fx:id="tfNome" layoutX="79.0" layoutY="40.0" prefHeight="33.0" prefWidth="463.0" promptText="Nome Completo" />
+      <JFXTextField fx:id="tfCpf" layoutX="78.0" layoutY="79.0" prefHeight="33.0" prefWidth="223.0" promptText="C.P.F." />
+      <JFXTextField fx:id="tfRg" layoutX="310.0" layoutY="79.0" prefHeight="33.0" prefWidth="234.0" promptText="R.G." />
+      <JFXTextField fx:id="tfTel" layoutX="78.0" layoutY="161.0" prefHeight="33.0" prefWidth="463.0" promptText="Telefone" />
+      <JFXButton buttonType="RAISED" layoutX="245.0" layoutY="352.0" onAction="#acaoBtEditar" prefHeight="25.0" prefWidth="108.0" ripplerFill="#750505" text="EDITAR" />
+      <JFXTextField fx:id="tfEnd" layoutX="79.0" layoutY="210.0" prefHeight="33.0" prefWidth="463.0" promptText="Endereço" />
+      <JFXTextField fx:id="tfDnasc" layoutX="76.0" layoutY="121.0" prefHeight="33.0" prefWidth="223.0" promptText="Data de Nascimento" />
+      <JFXTextField fx:id="tfSexo" layoutX="309.0" layoutY="121.0" prefHeight="33.0" prefWidth="234.0" promptText="Sexo" />
+      <JFXTextField fx:id="tfEmail" layoutX="79.0" layoutY="251.0" prefHeight="33.0" prefWidth="463.0" promptText="E-mail" />
+      <JFXTextField fx:id="tfFormAcad" layoutX="77.0" layoutY="292.0" prefHeight="33.0" prefWidth="463.0" promptText="Formação Acadêmica" />
    </children>
 </AnchorPane>

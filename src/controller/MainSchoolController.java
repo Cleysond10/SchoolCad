@@ -16,6 +16,7 @@ import Aplicacao.ExbProf;
 import Aplicacao.RemProf;
 import Aplicacao.CadAluno;
 import Aplicacao.ListarAluno;
+import Aplicacao.ListarProf;
 import Aplicacao.MainSchool;
 import com.jfoenix.controls.JFXButton;
 import estruturadados.LDE;
@@ -222,7 +223,13 @@ public class MainSchoolController implements Initializable {
 
     @FXML
     void actionBtListProfPane(ActionEvent event) {
-
+        ListarProf lp = new ListarProf();
+        
+        try {
+    		lp.start(new Stage());    		
+    	}catch(Exception ex) {
+    		ex.printStackTrace();
+    	}
     }
 
     @FXML
@@ -240,6 +247,7 @@ public class MainSchoolController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         
         MainSchool.getLdeAlunoPP().Inicializar("aluno.sc");
+        MainSchool.getLdeProf().Inicializar("professor.sc");
         
         /*ldeAlunoP = new LDE<Aluno>();
         ldeAlunoP.Inicializar("aluno.sc");

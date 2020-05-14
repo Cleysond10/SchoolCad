@@ -19,7 +19,8 @@ import tidosdados.Professor;
 public class MainSchool extends Application {
     
     private static Stage stage;    
-    private static LDE<Professor> ldeProfPP;
+    private static LDE<Professor> ldeProf = new LDE<Professor>();
+    private static Professor prof; //= new Professor("");
     private static LDE<Aluno> ldeAlunoPP = new LDE<Aluno>();
     private static Aluno alunoPP;
     //private double xOffset = 0;
@@ -115,14 +116,23 @@ public class MainSchool extends Application {
 
     
 //=======
-    public static LDE<Professor> getLdeProfPP() {
-        return ldeProfPP;
+    public static LDE<Professor> getLdeProf() {
+        return ldeProf;
     }
 
-    public static void setLdeProfPP(LDE<Professor> ldeProfPP) {
-        MainSchool.ldeProfPP = ldeProfPP;
+    public static void setLdeProf(LDE<Professor> ldeProf) {
+        MainSchool.ldeProf = ldeProf;
     }
-//>>>>>>> origin/master (ce9095f) - Criação da lde
     
+    public static Professor getProf() {
+        return prof;
+    }
+
+    public static void setProf(Professor prof) {
+        MainSchool.prof = prof;
+    }
+    
+//>>>>>>> origin/master (ce9095f) - Criação da lde
+       
 }
 
