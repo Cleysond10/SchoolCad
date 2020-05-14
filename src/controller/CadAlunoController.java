@@ -60,8 +60,10 @@ public class CadAlunoController implements Initializable {
             }
         }      
         
+        System.out.println(cpf);
         
         if(valida.isValidData(tfData.getText())==0 && valida.isValidEmail(tfEmail.getText())==0 && valida.isValidNome(tfNome.getText())==0 && valida.isValidCPF(cpf)==0) {
+            System.out.println(tfCPF.getText());
             aluno = new Aluno(tfCPF.getText());
             aluno.setEmail(tfEmail.getText());
             aluno.setDataN(tfData.getText());
@@ -79,10 +81,18 @@ public class CadAlunoController implements Initializable {
             endereco = endereco.toUpperCase();
             aluno.setEndereço(endereco);            
             
-            aluno.setSexo(tfSexo.getText());
+            String sexo;
+            sexo = tfSexo.getText();
+            sexo = sexo.toUpperCase();
+            aluno.setSexo(sexo);
             
             
             MainSchool.getLdeAlunoPP().add(aluno);
+            
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("VALIDAÇÃO");
+            alert.setContentText("Cadastro Salvo com Sucesso.");
+            alert.show();                
             
             fechar();
         }

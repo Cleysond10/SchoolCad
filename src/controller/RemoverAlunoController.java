@@ -3,11 +3,14 @@ package controller;
 import Aplicacao.MainSchool;
 import Aplicacao.RemoverAluno;
 import com.jfoenix.controls.JFXTextField;
+import interfaceValidacao.MascaraFX;
+import interfaceValidacao.ValidacaoDados;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
 import tidosdados.Aluno;
 
 /**
@@ -23,11 +26,25 @@ public class RemoverAlunoController implements Initializable {
 
     @FXML
     void acaoBtBuscar(ActionEvent event) {
+        aluno = new Aluno(tfBuscaCPF.getText());       
         
-        aluno = new Aluno(tfBuscaCPF.getText());
-        MainSchool.getLdeAlunoPP().remover(aluno);
-        
-        fechar();
+        if(MainSchool.getLdeAlunoPP().consulta(aluno) != null) {
+            
+            MainSchool.getLdeAlunoPP().remover(aluno);
+            
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("VALIDAÇÃO");
+            alert.setContentText("Aluno Removido");
+            alert.show();
+            
+            fechar();
+        }
+        else {
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("VALIDAÇÃO");
+            alert.setContentText("CPF Inválido!!! \n Tente Novamente");
+            alert.show();
+        }
 
     }
 
@@ -38,7 +55,12 @@ public class RemoverAlunoController implements Initializable {
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        
+        carregarMascara();
+    }
+    
+    public void carregarMascara() {
+        MascaraFX mascara = new MascaraFX();
+        mascara.mascaraCPF(tfBuscaCPF);
     }
     
     public void fechar() {

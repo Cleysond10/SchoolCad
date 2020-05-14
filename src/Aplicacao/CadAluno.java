@@ -35,7 +35,7 @@ public class CadAluno extends Application {
             scene.getStylesheets().add(getClass().getResource("/CSS/CSSMainSchool.css").toExternalForm());          
             
             
-            stage.setTitle("CADALUNO");            
+            stage.setTitle("CADASTRAR - ALUNO");            
             stage.setScene(scene);
             //stage.setMaximized(true);
             //ESSA FUNÇÃO A BAIXO FAZ A TELA FICAR CHEIA

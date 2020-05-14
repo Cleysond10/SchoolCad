@@ -12,7 +12,7 @@ import tidosdados.Aluno;
 
 /**
  *
- * @author Neto
+ * @author Neto e Cleyson
  */
 public class LDE <T extends Comparable<T>> {
     private NodeLDE<T> first;

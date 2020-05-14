@@ -30,7 +30,7 @@ public class ListarAluno extends Application {
             scene.getStylesheets().add(getClass().getResource("/CSS/CSSMainSchool.css").toExternalForm());          
             
             
-            stage.setTitle("CADALUNO");            
+            stage.setTitle("LISTAR - ALUNO");            
             stage.setScene(scene);
             //stage.setMaximized(true);
             //ESSA FUNÇÃO A BAIXO FAZ A TELA FICAR CHEIA

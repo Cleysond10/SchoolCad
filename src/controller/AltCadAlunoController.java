@@ -56,7 +56,7 @@ public class AltCadAlunoController implements Initializable {
         
         
         if(valida.isValidData(tfData.getText())==0 && valida.isValidEmail(tfEmail.getText())==0 && valida.isValidNome(tfNome.getText())==0 && valida.isValidCPF(cpf)==0) {
-            aluno = new Aluno(tfCPF.getText());
+            aluno.setCpf(tfCPF.getText());
             aluno.setEmail(tfEmail.getText());
             aluno.setDataN(tfData.getText());
             
@@ -71,13 +71,19 @@ public class AltCadAlunoController implements Initializable {
             String endereco;
             endereco = tfEnd.getText();
             endereco = endereco.toUpperCase();
-            aluno.setEndereço(tfEnd.getText());            
+            aluno.setEndereço(endereco);            
             
-            aluno.setSexo(tfSexo.getText());
+            String sexo;
+            sexo = tfSexo.getText();
+            sexo = sexo.toUpperCase();
+            aluno.setSexo(sexo);
             
             
-            MainSchool.getLdeAlunoPP().add(aluno);
-            
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("VALIDAÇÃO");
+            alert.setContentText("Alteração Salvo com Sucesso.");
+            alert.show();
+                        
             fechar();
         }
         else {
@@ -109,7 +115,7 @@ public class AltCadAlunoController implements Initializable {
             }
             
         }
-        MainSchool.getLdeAlunoPP().exibir();
+        //MainSchool.getLdeAlunoPP().exibir();
         
 
     }

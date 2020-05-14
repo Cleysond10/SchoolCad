@@ -21,7 +21,7 @@ public class MainSchool extends Application {
     private static Stage stage;    
     private static LDE<Professor> ldeProfPP;
     private static LDE<Aluno> ldeAlunoPP = new LDE<Aluno>();
-    private static Aluno alunoPP = new Aluno("");
+    private static Aluno alunoPP;
     //private double xOffset = 0;
     //private double yOffset = 0;
     

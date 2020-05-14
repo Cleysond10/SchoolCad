@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package interfaceValidacao;
 
 import java.text.ParseException;
@@ -16,7 +11,7 @@ import javax.mail.internet.InternetAddress;
 
 /**
  *
- * @author Neto
+ * @author Neto e Cleyson
  */
 public class ValidacaoDados {
     
@@ -80,14 +75,14 @@ public class ValidacaoDados {
         int result = 0;
         
         // considera-se erro CPF's formados por uma sequencia de numeros iguais
-        if (CPF.equals("00000000000") ||
-            CPF.equals("11111111111") ||
+        if (CPF.equals("00000000000") || CPF.equals("11111111111") ||
             CPF.equals("22222222222") || CPF.equals("33333333333") ||
             CPF.equals("44444444444") || CPF.equals("55555555555") ||
             CPF.equals("66666666666") || CPF.equals("77777777777") ||
             CPF.equals("88888888888") || CPF.equals("99999999999") ||
             (CPF.length() != 11)) {
-            result = 4;            
+            result = 4;
+            return result;
         }
             
           
