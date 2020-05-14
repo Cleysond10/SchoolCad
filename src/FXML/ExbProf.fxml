@@ -4,10 +4,9 @@
 <?import com.jfoenix.controls.JFXTextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="controller.ExbProfController">
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ExbProfController">
    <children>
-      <JFXTextField layoutX="79.0" layoutY="121.0" prefHeight="33.0" prefWidth="463.0" promptText="Digite o CPF do Professor" />
-      <JFXButton buttonType="RAISED" layoutX="256.0" layoutY="257.0" prefHeight="25.0" prefWidth="108.0" ripplerFill="#750505" text="BUSCAR" />
+      <JFXTextField fx:id="tfBuscCpf" layoutX="79.0" layoutY="121.0" prefHeight="33.0" prefWidth="463.0" promptText="Digite o CPF do Professor" />
+      <JFXButton buttonType="RAISED" layoutX="256.0" layoutY="257.0" onAction="#btBusc" prefHeight="25.0" prefWidth="108.0" ripplerFill="#750505" text="BUSCAR" />
    </children>
 </AnchorPane>
