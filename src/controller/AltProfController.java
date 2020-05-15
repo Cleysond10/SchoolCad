@@ -13,7 +13,7 @@ import com.jfoenix.controls.JFXTextField;
 import interfaceValidacao.MascaraFX;
 import javafx.scene.control.Alert;
 import javafx.stage.Stage;
-import tidosdados.Professor;
+import tiposdados.Professor;
 
 /**
  * FXML Controller class

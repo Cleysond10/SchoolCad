@@ -160,6 +160,51 @@ public class ValidacaoDados {
         return result;
     }
     
+    public int isValidPeriodo(String endereco) {
+        
+        int result = 0;
+        //VALIDAR ENDEREÇO
+        if(endereco==null) {
+            result = 6;
+        }
+        else if(endereco.trim().length()<3) {
+            result = 6;
+        }
+
+        Pattern p1= Pattern.compile("[0-9][ A-Za-z]");
+        Matcher m1= p1.matcher(endereco);
+
+        if(m1.matches()) {
+            result = 0;
+        }
+        else {
+            result = 6;
+        }
+        
+        return result;
+    }
+    
+    public int isValidCargaH(String endereco) {
+        
+        int result = 0;
+        //VALIDAR ENDEREÇO
+        if(endereco==null) {
+            result = 7;
+        }
+        else if(endereco.trim().length()<3) {
+            result = 7;
+        }
+        
+        if(endereco.equals("30") || endereco.equals("60")) {
+            result = 0;
+        }
+        else {
+            result = 7;
+        }
+        
+        
+        return result;
+    }
     
     
 }

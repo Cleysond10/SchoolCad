@@ -6,7 +6,9 @@
 package controller;
 
 import Aplicacao.AltCadAluno;
+import Aplicacao.AltCadDisc;
 import Aplicacao.BuscaAluno;
+import Aplicacao.BuscaDiscAlt;
 import Aplicacao.MainSchool;
 import com.jfoenix.controls.JFXTextField;
 import estruturadados.LDE;
@@ -19,32 +21,32 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.stage.Stage;
 import tiposdados.Aluno;
+import tiposdados.Disciplina;
 
 /**
  * FXML Controller class
  *
  * @author Neto e Cleyson
  */
-public class BuscaAlunoController implements Initializable {
+public class BuscaDiscAltController implements Initializable {
     
-    private Aluno aluno;
-    private LDE<Aluno> ldeAlunoBusca;
-    @FXML private JFXTextField tfBuscaCPF;
+    private Disciplina disc;    
+    @FXML private JFXTextField tfCodDisc;
 
     @FXML
     void acaoBtBuscar(ActionEvent event) {
-        aluno = new Aluno(tfBuscaCPF.getText());
+        disc = new Disciplina(tfCodDisc.getText());
         
-        if(MainSchool.getLdeAlunoPP().consulta(aluno) != null) {
+        if(MainSchool.getLdeDisc().consulta(disc) != null) {
             
-            aluno = MainSchool.getLdeAlunoPP().consulta(aluno);
-            //System.out.println(MainSchool.getLdeAlunoPP());
-            MainSchool.setAlunoPP(aluno);
+            disc = MainSchool.getLdeDisc().consulta(disc);
             
-            AltCadAluno aca = new AltCadAluno();
+            MainSchool.setDisc(disc);
+            
+            AltCadDisc acd = new AltCadDisc();
         
             try {
-                    aca.start(new Stage());    		
+                    acd.start(new Stage());    		
             }catch(Exception ex) {
                     ex.printStackTrace();
             }
@@ -54,7 +56,7 @@ public class BuscaAlunoController implements Initializable {
         else {
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("VALIDAÇÃO");
-            alert.setContentText("CPF Inválido!!! \n Tente Novamente");
+            alert.setContentText("Código da Disciplina Inválido!!! \n Tente Novamente");
             alert.show();            
         }
     }
@@ -66,7 +68,7 @@ public class BuscaAlunoController implements Initializable {
     
     public void carregarMascara() {
         MascaraFX mascara = new MascaraFX();
-        mascara.mascaraCPF(tfBuscaCPF);
+        mascara.mascaraCodDisc(tfCodDisc);
     }
     
     @Override
@@ -75,7 +77,7 @@ public class BuscaAlunoController implements Initializable {
     }
     
     public void fechar() {
-        BuscaAluno.getStage().close();
+        BuscaDiscAlt.getStage().close();
     }
     
 }

@@ -1,36 +1,34 @@
 package controller;
 
 import Aplicacao.MainSchool;
-import Aplicacao.RemoverAluno;
+import Aplicacao.RemoverDisc;
 import com.jfoenix.controls.JFXTextField;
 import interfaceValidacao.MascaraFX;
-import interfaceValidacao.ValidacaoDados;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
-import tiposdados.Aluno;
+import tiposdados.Disciplina;
 
 /**
  * FXML Controller class
  *
  * @author Neto e Cleyson
  */
-public class RemoverAlunoController implements Initializable {
+public class RemoverDiscController implements Initializable {
       
-    private Aluno aluno;
-    //private LDE<Aluno> ldeAlunoRem;
-    @FXML private JFXTextField tfBuscaCPF;
+    private Disciplina disc;    
+    @FXML private JFXTextField tfCodDisc;
 
     @FXML
     void acaoBtBuscar(ActionEvent event) {
-        aluno = new Aluno(tfBuscaCPF.getText());       
+        disc = new Disciplina(tfCodDisc.getText());       
         
-        if(MainSchool.getLdeAlunoPP().consulta(aluno) != null) {
+        if(MainSchool.getLdeDisc().consulta(disc) != null) {
             
-            MainSchool.getLdeAlunoPP().remover(aluno);
+            MainSchool.getLdeDisc().remover(disc);
             
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("VALIDAÇÃO");
@@ -42,7 +40,7 @@ public class RemoverAlunoController implements Initializable {
         else {
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("VALIDAÇÃO");
-            alert.setContentText("CPF Inválido!!! \n Tente Novamente");
+            alert.setContentText("Código da Disciplina Inválido!!! \n Tente Novamente");
             alert.show();
         }
 
@@ -60,11 +58,11 @@ public class RemoverAlunoController implements Initializable {
     
     public void carregarMascara() {
         MascaraFX mascara = new MascaraFX();
-        mascara.mascaraCPF(tfBuscaCPF);
+        mascara.mascaraCodDisc(tfCodDisc);
     }
     
     public void fechar() {
-        RemoverAluno.getStage().close();
+        RemoverDisc.getStage().close();
     }
     
 }

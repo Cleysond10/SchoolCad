@@ -1,6 +1,6 @@
 package controller;
 
-import Aplicacao.ListarAluno;
+import Aplicacao.ListarDisc;
 import Aplicacao.MainSchool;
 import com.jfoenix.controls.JFXListView;
 import estruturadados.LDE;
@@ -12,19 +12,18 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.input.MouseEvent;
-import controller.MainSchoolController;
-import tiposdados.Aluno;
+import tiposdados.Disciplina;
 
 /**
  * FXML Controller class
  *
  * @author Neto e Cleyson
  */
-public class ListarAlunoController implements Initializable {
+public class ListarDiscController implements Initializable {
     
-    @FXML private JFXListView<String> listaAluno;
+    @FXML private JFXListView<String> listaDisc;
     ObservableList<String> lista = FXCollections.observableArrayList();
-    private LDE ldeAluno;
+    private LDE ldeDisc;
         
 
     @FXML
@@ -39,7 +38,7 @@ public class ListarAlunoController implements Initializable {
     
     @FXML
     void AcaoDaLista(MouseEvent event) {
-    	String cLista = listaAluno.getSelectionModel().getSelectedItem();
+    	String cLista = listaDisc.getSelectionModel().getSelectedItem();
     	if(cLista == null || cLista.isEmpty()) {
     		//fieldCarregar.setText("Lista Vazia");
     	}
@@ -49,8 +48,8 @@ public class ListarAlunoController implements Initializable {
     }
     
     private void carregarDados() {
-        ldeAluno = MainSchool.getLdeAlunoPP();        
-        Aluno[] x = ldeAluno.listaAluno();
+        ldeDisc = MainSchool.getLdeDisc();        
+        Disciplina[] x = ldeDisc.listaDisc();
         if(x.length == 0) {
             System.out.println("Vazio");
         }
@@ -63,7 +62,7 @@ public class ListarAlunoController implements Initializable {
             //x = listaJogo.listaSalvo();
             lista.removeAll(lista);
             lista.addAll(s);
-            listaAluno.getItems().addAll(lista);
+            listaDisc.getItems().addAll(lista);
         }
         
     }
@@ -75,17 +74,7 @@ public class ListarAlunoController implements Initializable {
     } 
     
     public void fechar() {
-        ListarAluno.getStage().close();
+        ListarDisc.getStage().close();
     }
-
-    public LDE getLdeAluno() {
-        return this.ldeAluno;
-    }
-
-    public void setLdeAluno(LDE ldeAluno) {
-        this.ldeAluno = ldeAluno;
-    }
-    
-    
     
 }

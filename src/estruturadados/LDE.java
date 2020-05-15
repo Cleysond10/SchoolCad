@@ -7,8 +7,9 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
-import tidosdados.Aluno;
-import tidosdados.Professor;
+import tiposdados.Aluno;
+import tiposdados.Disciplina;
+import tiposdados.Professor;
 
 
 /**
@@ -250,6 +251,16 @@ public class LDE <T extends Comparable<T>> {
         NodeLDE aux = this.first;
         for(int i = 0; i<this.qtd;i++) {
             x[i] = (Professor) aux.getInfo();
+            aux = aux.getNext();
+        }
+        return x;		
+    }
+    
+    public Disciplina[] listaDisc() {		
+        Disciplina[] x = new Disciplina[this.qtd];		
+        NodeLDE aux = this.first;
+        for(int i = 0; i<this.qtd;i++) {
+            x[i] = (Disciplina) aux.getInfo();
             aux = aux.getNext();
         }
         return x;		

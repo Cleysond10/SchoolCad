@@ -21,7 +21,7 @@ import javafx.scene.control.Alert;
 import javafx.scene.input.KeyEvent;
 import javax.mail.internet.AddressException;
 import javax.mail.internet.InternetAddress;
-import tidosdados.Aluno;
+import tiposdados.Aluno;
 
 /**
  * FXML Controller class

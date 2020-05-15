@@ -231,4 +231,168 @@ public class MascaraFX {
        
     }
     
+    public void mascaraCodDisc(JFXTextField textField){
+       
+        textField.setOnKeyTyped((KeyEvent event) -> {
+            if("ABCDEFGHIJYLMNOPQRSTUVWXZ0123456789".contains(event.getCharacter())==false){
+                event.consume();
+            }
+           
+            if(event.getCharacter().trim().length()==0){ // apagando
+               
+                if(textField.getText().length()==3 && textField.getText().substring(1,2).equals("I")){
+                    textField.setText(textField.getText().substring(0,2));
+                    textField.positionCaret(textField.getText().length());
+                }
+                
+               
+            }else{ // escrevendo
+               
+                if(textField.getText().length()==7) event.consume();
+               
+                /*if(textField.getText().length()==2){
+                    textField.setText(textField.getText()+"/");
+                    textField.positionCaret(textField.getText().length());
+                }
+                if(textField.getText().length()==5){
+                    textField.setText(textField.getText()+"/");
+                    textField.positionCaret(textField.getText().length());
+                }*/
+               
+            }
+        });
+       
+        textField.setOnKeyReleased((KeyEvent evt) -> {
+           
+            if(!textField.getText().matches("[A-Z0-9]*")){
+                textField.setText(textField.getText().replaceAll("[A-Z0-9]", ""));       
+                textField.positionCaret(textField.getText().length());
+            }
+        });
+       
+    }
+    
+    public void mascaraNomeDisc(JFXTextField textField){
+       
+        textField.setOnKeyTyped((KeyEvent event) -> {
+            if("ABCDEFGHIJYLMNOPQRSTUVWXZ".contains(event.getCharacter())==false){
+                event.consume();
+            }
+           
+            if(event.getCharacter().trim().length()==0){ // apagando
+               
+                if(textField.getText().length()==3 && textField.getText().substring(1,2).equals("I")){
+                    textField.setText(textField.getText().substring(0,2));
+                    textField.positionCaret(textField.getText().length());
+                }
+                
+               
+            }else{ // escrevendo
+               
+                if(textField.getText().length()==50) event.consume();
+               
+                /*if(textField.getText().length()==2){
+                    textField.setText(textField.getText()+"/");
+                    textField.positionCaret(textField.getText().length());
+                }
+                if(textField.getText().length()==5){
+                    textField.setText(textField.getText()+"/");
+                    textField.positionCaret(textField.getText().length());
+                }*/
+               
+            }
+        });
+       
+        textField.setOnKeyReleased((KeyEvent evt) -> {
+           
+            if(!textField.getText().matches("[A-Za-z][ A-Za-z]*")){
+                textField.setText(textField.getText().replaceAll("[A-Za-z][ A-Za-z]*", ""));       
+                textField.positionCaret(textField.getText().length());
+            }
+        });
+       
+    }
+    
+    public void mascaraCargaH(JFXTextField textField){
+       
+        textField.setOnKeyTyped((KeyEvent event) -> {
+            if("036".contains(event.getCharacter())==false){
+                event.consume();
+            }
+           
+            if(event.getCharacter().trim().length()==0){ // apagando
+               
+                if(textField.getText().length()==3 && textField.getText().substring(1,2).equals("I")){
+                    textField.setText(textField.getText().substring(0,2));
+                    textField.positionCaret(textField.getText().length());
+                }
+                
+               
+            }else{ // escrevendo
+               
+                if(textField.getText().length()==2) event.consume();
+               
+                /*if(textField.getText().length()==2){
+                    textField.setText(textField.getText()+"/");
+                    textField.positionCaret(textField.getText().length());
+                }
+                if(textField.getText().length()==5){
+                    textField.setText(textField.getText()+"/");
+                    textField.positionCaret(textField.getText().length());
+                }*/
+               
+            }
+        });
+       
+        textField.setOnKeyReleased((KeyEvent evt) -> {
+           
+            if(!textField.getText().matches("[30]*[60]*")){
+                textField.setText(textField.getText().replaceAll("[30]*[60]*", ""));       
+                textField.positionCaret(textField.getText().length());
+            }
+        });
+       
+    }
+    
+    public void mascaraCred(JFXTextField textField){
+       
+        textField.setOnKeyTyped((KeyEvent event) -> {
+            if("24".contains(event.getCharacter())==false){
+                event.consume();
+            }
+           
+            if(event.getCharacter().trim().length()==0){ // apagando
+               
+                if(textField.getText().length()==3 && textField.getText().substring(1,2).equals("I")){
+                    textField.setText(textField.getText().substring(0,2));
+                    textField.positionCaret(textField.getText().length());
+                }
+                
+               
+            }else{ // escrevendo
+               
+                if(textField.getText().length()==1) event.consume();
+               
+                /*if(textField.getText().length()==2){
+                    textField.setText(textField.getText()+"/");
+                    textField.positionCaret(textField.getText().length());
+                }
+                if(textField.getText().length()==5){
+                    textField.setText(textField.getText()+"/");
+                    textField.positionCaret(textField.getText().length());
+                }*/
+               
+            }
+        });
+       
+        textField.setOnKeyReleased((KeyEvent evt) -> {
+           
+            if(!textField.getText().matches("[2]*[4]*")){
+                textField.setText(textField.getText().replaceAll("[2]*[4]*", ""));       
+                textField.positionCaret(textField.getText().length());
+            }
+        });
+       
+    }
+    
 }

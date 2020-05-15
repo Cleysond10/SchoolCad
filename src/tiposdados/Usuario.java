@@ -1,4 +1,4 @@
-package tidosdados;
+package tiposdados;
 
 import java.io.Serializable;
 import javax.mail.internet.AddressException;

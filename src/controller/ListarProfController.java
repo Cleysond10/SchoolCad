@@ -11,7 +11,7 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import tidosdados.Professor;
+import tiposdados.Professor;
 
 /**
  * FXML Controller class

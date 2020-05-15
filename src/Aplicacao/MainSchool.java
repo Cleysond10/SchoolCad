@@ -1,16 +1,15 @@
 package Aplicacao;
 
 import estruturadados.LDE;
-import java.awt.Dimension;
-import java.awt.Toolkit;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
-import tidosdados.Aluno;
-import tidosdados.Professor;
+import tiposdados.Aluno;
+import tiposdados.Disciplina;
+import tiposdados.Professor;
 
 /**
  *
@@ -23,6 +22,8 @@ public class MainSchool extends Application {
     private static Professor prof; //= new Professor("");
     private static LDE<Aluno> ldeAlunoPP = new LDE<Aluno>();
     private static Aluno alunoPP;
+    private static LDE<Disciplina> ldeDisc = new LDE<Disciplina>();
+    private static Disciplina Disc;
     //private double xOffset = 0;
     //private double yOffset = 0;
     
@@ -111,7 +112,24 @@ public class MainSchool extends Application {
     public static void setAlunoPP(Aluno alunoPP) {
         MainSchool.alunoPP = alunoPP;
     }
+
     
+    // GET \ SET DISCIPLINA E LDE DISCIPLINA
+    public static LDE<Disciplina> getLdeDisc() {
+        return ldeDisc;
+    }
+
+    public static void setLdeDisc(LDE<Disciplina> ldeDisc) {
+        MainSchool.ldeDisc = ldeDisc;
+    }
+
+    public static Disciplina getDisc() {
+        return Disc;
+    }
+
+    public static void setDisc(Disciplina Disc) {
+        MainSchool.Disc = Disc;
+    }
     
 
     

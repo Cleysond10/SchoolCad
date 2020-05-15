@@ -1,4 +1,4 @@
-package tidosdados;
+package tiposdados;
 
 /**
  *
