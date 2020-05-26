@@ -1,5 +1,7 @@
 package controller;
 
+import Aplicacao.CadTurmaAlunos;
+import Aplicacao.CadTurmaMenu;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
@@ -7,6 +9,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
+import javafx.stage.Stage;
 
 /**
  * FXML Controller class
@@ -27,12 +30,24 @@ public class CadTurmaAlunosController implements Initializable {
 
     @FXML
     void ActionBtVoltar(ActionEvent event) {
+        CadTurmaMenu ctm = new CadTurmaMenu();
 
+        try {
+            ctm.start(new Stage());
+        }catch(Exception ex) {
+            ex.printStackTrace();
+        }
+                
+        fechar();
     }
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
     }    
+    
+    public void fechar() {
+        CadTurmaAlunos.getStage().close();
+    }
     
 }

@@ -142,7 +142,8 @@ public class MainSchoolController implements Initializable {
         MainSchool.getLdeAlunoPP().Finalizar("aluno.sc");
         MainSchool.getLdeProf().Finalizar("professor.sc");
         MainSchool.getLdeDisc().Finalizar("disciplina.sc");
-        
+        MainSchool.getLdeTurma().Finalizar("turma.sc");
+                
         fechar();
 
     }
@@ -453,7 +454,9 @@ public class MainSchoolController implements Initializable {
         if(MainSchool.getLdeDisc().getQtd() == 0) {
             MainSchool.getLdeDisc().Inicializar("disciplina.sc");
         }
-        
+        if(MainSchool.getLdeTurma().getQtd() == 0) {
+            MainSchool.getLdeTurma().Inicializar("turma.sc");
+        }
         
         /*ldeAlunoP = new LDE<Aluno>();
         ldeAlunoP.Inicializar("aluno.sc");
