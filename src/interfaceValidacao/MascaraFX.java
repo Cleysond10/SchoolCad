@@ -515,4 +515,68 @@ public class MascaraFX {
        
     }
     
+    public void mascaraPLetivo(JFXTextField textField){
+       
+        textField.setOnKeyTyped((KeyEvent event) -> {
+            if("0123456789".contains(event.getCharacter()) == false){
+                event.consume();
+            }
+           
+            if(event.getCharacter().trim().length()==0){ // apagando
+               
+                /*if(textField.getText().length()==3 && textField.getText().substring(1,2).equals("I")){
+                    textField.setText(textField.getText().substring(0,2));
+                    textField.positionCaret(textField.getText().length());
+                }*/
+                
+               
+            }else{ // escrevendo
+                if(textField.getText().length() == 6) event.consume();
+                
+                if(textField.getText().length() == 4){
+                    textField.setText(textField.getText()+".");
+                    textField.positionCaret(textField.getText().length());
+                }
+                /*if(textField.getText().length()==5){
+                    textField.setText(textField.getText()+"/");
+                    textField.positionCaret(textField.getText().length());
+                }*/
+               
+            }
+        });
+       
+        textField.setOnKeyReleased((KeyEvent evt) -> {
+           
+            if(!textField.getText().matches("[0-9][0-9][0-9][0-9].[1-2]")){
+                textField.setText(textField.getText().replaceAll("[0-9][0-9][0-9][0-9].[1-2]", ""));       
+                textField.positionCaret(textField.getText().length());
+            }
+        });
+       
+    }
+    
+    public void mascaraQtdMaxAl(JFXTextField textField){
+       
+        textField.setOnKeyTyped((KeyEvent event) -> {
+            if("0123456789".contains(event.getCharacter()) == false){
+                event.consume();
+            }
+           
+            if(event.getCharacter().trim().length()==0){ // apagando
+               
+            }else{ // escrevendo
+                if(textField.getText().length() == 3) event.consume();
+            }
+        });
+       
+        textField.setOnKeyReleased((KeyEvent evt) -> {
+           
+            if(!textField.getText().matches("[0-9][0-9][0-9]")){
+                textField.setText(textField.getText().replaceAll("[0-9][0-9][0-9]", ""));       
+                textField.positionCaret(textField.getText().length());
+            }
+        });
+       
+    }
+    
 }

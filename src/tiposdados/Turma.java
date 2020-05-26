@@ -8,7 +8,7 @@ public class Turma extends Escola implements Comparable<Turma> {
     private String codTurma;
     private String horario;
     private Professor profx;
-    private int QtdMaxAl;
+    private Integer QtdMaxAl;
     private int QtdAl;
     private String pLetivo;
     private Aluno[] Alunos;
@@ -42,12 +42,13 @@ public class Turma extends Escola implements Comparable<Turma> {
         this.profx = profx;
     }
 
-    public int getQtdMaxAl() {
+    public Integer getQtdMaxAl() {
         return QtdMaxAl;
     }
 
-    public void setQtdMaxAl(int QtdMaxAl) {
+    public void setQtdMaxAl(Integer QtdMaxAl) {
         this.QtdMaxAl = QtdMaxAl;
+        Alunos = new Aluno[this.QtdMaxAl];
     }
 
     public int getQtdAl() {
@@ -80,7 +81,7 @@ public class Turma extends Escola implements Comparable<Turma> {
 
     @Override
     public String toString() {
-        return "Turma{" + "Codigo da Turma = " + this.getCodTurma() + "Codigo da Disciplina=" + super.getCodDisc() + '}';
+        return "Turma {" + " Codigo da Turma = " + this.getCodTurma() + " Codigo da Disciplina = " + super.getCodDisc() + '}';
     }
     
 }

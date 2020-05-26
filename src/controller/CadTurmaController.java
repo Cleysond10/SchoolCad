@@ -15,6 +15,7 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import tiposdados.Disciplina;
@@ -56,24 +57,66 @@ public class CadTurmaController implements Initializable {
         
     }
     
-    /*@FXML
+    @FXML
     void ActionMouseHorario(MouseEvent event) {
         MascaraFX mascara = new MascaraFX();
-        
-        mascara.mascaraHorario30(tfHorario);
-        mascara.mascaraHorario60(tfHorario);
-    }*/
+        if (cbDisc.getSelectionModel().getSelectedItem().getCargaH() == "30"){
+            mascara.mascaraHorario30(tfHorario);
+        }
+       
+    }
     
     @FXML
     void BtCadTurma(ActionEvent event) {
+        Turma = new Turma(tfCodTurma.getText(), cbDisc.getSelectionModel().getSelectedItem().getCodDisc());
+        
+        Turma.setProfx(cbProfx.getSelectionModel().getSelectedItem());
+        Turma.setHorario(tfHorario.getText());
+        Turma.setpLetivo(tfPLetivo.getText());
+        
+        Integer x = Integer.parseInt(tfQtdMaxAl.getText());
+        Turma.setQtdMaxAl(x);
+        
+        Turma[] vDiscTurmas = cbDisc.getSelectionModel().getSelectedItem().getTurmas();
+        int cont = 0;
+        for (int i = 0; i < vDiscTurmas.length; i++){
+            if (vDiscTurmas[i] != null){
+                cont++;
+            }
+        }
+        vDiscTurmas[cont] = Turma;
+        cbDisc.getSelectionModel().getSelectedItem().setTurmas(vDiscTurmas);
+        
+        Turma[] vProfxTurmas = cbProfx.getSelectionModel().getSelectedItem().getTurmas();
+        int cont1 = 0;
+        for (int i = 0; i < vProfxTurmas.length; i++){
+            if (vProfxTurmas[i] != null){
+                cont1++;
+            }
+        }
+        vProfxTurmas[cont1] = Turma;
+        cbProfx.getSelectionModel().getSelectedItem().setTurmas(vProfxTurmas);        
+        
+        MainSchool.getLdeTurma().add(Turma);
+        
+        MainSchool.getLdeTurma().exibir();
+
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("VALIDAÇÃO");
+        alert.setContentText("Cadastro Salvo com Sucesso.");
+        alert.show();                
+
+        fechar();
         
     }
     
     public void carregar() {
         MascaraFX mascara = new MascaraFX();
         mascara.mascaraCodTurma(tfCodTurma);
-        mascara.mascaraHorario30(tfHorario);
-        //mascara.mascaraHorario60(tfHorario);
+        //mascara.mascaraHorario30(tfHorario);
+        mascara.mascaraHorario60(tfHorario);
+        mascara.mascaraPLetivo(tfPLetivo);
+        mascara.mascaraQtdMaxAl(tfQtdMaxAl);
                
     }
     
@@ -84,6 +127,14 @@ public class CadTurmaController implements Initializable {
         } else{
             obsProfx.addAll(vProf);
             cbProfx.setItems(obsProfx);
+        }
+        
+        Disciplina[] vDisc = MainSchool.getLdeDisc().listaDisc();
+        if (vDisc.length == 0){
+            System.out.println("LISTA VAZIA");
+        } else{
+            obsDisc.addAll(vDisc);
+            cbDisc.setItems(obsDisc);
         }
     }
     
