@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ListarTurmaMenuController">
+   <children>
+      <JFXButton fx:id="btListTurmas" layoutX="207.0" layoutY="62.0" onAction="#ActionListTurmas" prefHeight="71.0" prefWidth="186.0" text="TODAS AS TURMAS" />
+      <JFXButton fx:id="btTurmasAluno" layoutX="208.0" layoutY="161.0" onAction="#ActionTurmasAluno" prefHeight="25.0" prefWidth="186.0" text="TURMAS DE UM ALUNO" />
+      <JFXButton fx:id="btTurmasProf" layoutX="207.0" layoutY="200.0" onAction="#ActionTurmasProf" prefHeight="25.0" prefWidth="186.0" text="TURMAS DE UM PROFESSOR" />
+      <JFXButton fx:id="btTurmasDisc" layoutX="208.0" layoutY="241.0" onAction="#ActionTurmasDisc" prefHeight="25.0" prefWidth="186.0" text="TURMAS DE UMA DISCIPLINA" />
+      <JFXButton fx:id="btVCancelar" layoutX="263.0" layoutY="340.0" onAction="#ActionBtCancelar" text="CANCELAR" />
+   </children>
+</AnchorPane>

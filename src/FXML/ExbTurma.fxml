@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ExbTurmaController">
+   <children>
+      <JFXTextField fx:id="tfBuscCpf" layoutX="79.0" layoutY="121.0" prefHeight="33.0" prefWidth="463.0" promptText="Digite o Código da Turma" />
+      <JFXButton fx:id="btBuscar" buttonType="RAISED" layoutX="260.0" layoutY="255.0" onAction="#ActionBtBuscar" prefHeight="25.0" prefWidth="80.0" ripplerFill="#750505" text="BUSCAR" />
+      <JFXButton fx:id="btCancelar" layoutX="260.0" layoutY="298.0" onAction="#ActionBtCancelar" prefHeight="25.0" prefWidth="80.0" text="CANCELAR" />
+   </children>
+</AnchorPane>

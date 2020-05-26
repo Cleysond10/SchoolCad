@@ -10,6 +10,7 @@ import Aplicacao.BuscaAluno;
 import Aplicacao.RemoverAluno;
 import Aplicacao.CadProf;
 import Aplicacao.AltProf;
+import Aplicacao.AltTurma;
 import Aplicacao.BuscProf;
 import Aplicacao.BuscaDiscAlt;
 import Aplicacao.BuscaExbAluno;
@@ -18,10 +19,14 @@ import Aplicacao.ExbProf;
 import Aplicacao.RemProf;
 import Aplicacao.CadAluno;
 import Aplicacao.CadDisc;
+import Aplicacao.CadTurmaMenu;
+import Aplicacao.ExbTurma;
 import Aplicacao.ListarAluno;
 import Aplicacao.ListarDisc;
 import Aplicacao.ListarProf;
+import Aplicacao.ListarTurmaMenu;
 import Aplicacao.MainSchool;
+import Aplicacao.RemTurmaMenu;
 import Aplicacao.RemoverDisc;
 import com.jfoenix.controls.JFXButton;
 import estruturadados.LDE;
@@ -86,7 +91,14 @@ public class MainSchoolController implements Initializable {
     @FXML private JFXButton btRemDisc;
     @FXML private JFXButton btListDisc;
     
-
+    //VARIAVEIS PANE TURMA
+    
+    @FXML private Pane JanelaPaneT;
+    @FXML private JFXButton btCadTurma;
+    @FXML private JFXButton btAltTurma;
+    @FXML private JFXButton btExbTurma;
+    @FXML private JFXButton btRemTurma;
+    @FXML private JFXButton btListTurma;
     
     //ACÕES DO BOTÕES DA BARRA LATERAL
     @FXML
@@ -109,7 +121,12 @@ public class MainSchoolController implements Initializable {
             paneStatus.setBackground(new Background(new BackgroundFill(Paint.valueOf("#050453"), CornerRadii.EMPTY, Insets.EMPTY)));
             labelStatus.setText("DISCIPLINA");            
         }
-        
+        else if(event.getSource().equals(btTurm)) {
+            Pane pane = (Pane)FXMLLoader.load(getClass().getResource("/FXML/TelaTurma.fxml"));        
+            JanelaPane.getChildren().add(pane);
+            paneStatus.setBackground(new Background(new BackgroundFill(Paint.valueOf("#050453"), CornerRadii.EMPTY, Insets.EMPTY)));
+            labelStatus.setText("TURMA");            
+        }
         
     }
     
@@ -221,17 +238,6 @@ public class MainSchoolController implements Initializable {
     }
 
     @FXML
-    void actionBtBuscProfPane(ActionEvent event) {
-        BuscProf bp = new BuscProf();
-        
-        try {
-            bp.start(new Stage());    		
-    	}catch(Exception ex) {
-            ex.printStackTrace();
-    	}
-    }
-
-    @FXML
     void actionBtExbProfPane(ActionEvent event) {
         ExbProf ep = new ExbProf();
         
@@ -321,7 +327,62 @@ public class MainSchoolController implements Initializable {
     	}
     }
     
+    //ACÕES DO BOTÕES DA PANE TURMA
     
+    @FXML
+    void actionBtCadTurmaPane(ActionEvent event) {
+        CadTurmaMenu ctm = new CadTurmaMenu();
+        
+        try {
+            ctm.start(new Stage());    		
+    	}catch(Exception ex) {
+            ex.printStackTrace();
+    	}
+    }
+    
+    @FXML
+    void actionBtAltTurmaPane(ActionEvent event) {
+        AltTurma at = new AltTurma();
+        
+        try {
+            at.start(new Stage());    		
+    	}catch(Exception ex) {
+            ex.printStackTrace();
+    	}
+    }
+
+    @FXML
+    void actionBtExbTurmaPane(ActionEvent event) {
+        ExbTurma et = new ExbTurma();
+        
+        try {
+            et.start(new Stage());    		
+    	}catch(Exception ex) {
+            ex.printStackTrace();
+    	}
+    }
+
+    @FXML
+    void actionBtListTurmaPane(ActionEvent event) {
+        ListarTurmaMenu ltm = new ListarTurmaMenu();
+        
+        try {
+    		ltm.start(new Stage());    		
+    	}catch(Exception ex) {
+    		ex.printStackTrace();
+    	}
+    }
+
+    @FXML
+    void actionBtRemTurmaPane(ActionEvent event) {
+        RemTurmaMenu rtm = new RemTurmaMenu();
+        
+        try {
+            rtm.start(new Stage());    		
+    	}catch(Exception ex) {
+            ex.printStackTrace();
+    	}
+    }
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
