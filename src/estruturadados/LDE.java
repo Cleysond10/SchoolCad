@@ -11,6 +11,7 @@ import javafx.scene.control.Alert;
 import tiposdados.Aluno;
 import tiposdados.Disciplina;
 import tiposdados.Professor;
+import tiposdados.Turma;
 
 
 /**
@@ -290,6 +291,16 @@ public class LDE <T extends Comparable<T>> {
         NodeLDE aux = this.first;
         for(int i = 0; i<this.qtd;i++) {
             x[i] = (Disciplina) aux.getInfo();
+            aux = aux.getNext();
+        }
+        return x;		
+    }
+    
+    public Turma[] listaTurma() {		
+        Turma[] x = new Turma[this.qtd];		
+        NodeLDE aux = this.first;
+        for(int i = 0; i<this.qtd;i++) {
+            x[i] = (Turma) aux.getInfo();
             aux = aux.getNext();
         }
         return x;		

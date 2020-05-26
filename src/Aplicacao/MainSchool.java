@@ -11,6 +11,7 @@ import javafx.stage.StageStyle;
 import tiposdados.Aluno;
 import tiposdados.Disciplina;
 import tiposdados.Professor;
+import tiposdados.Turma;
 
 /**
  *
@@ -25,6 +26,9 @@ public class MainSchool extends Application {
     private static Aluno alunoPP;
     private static LDE<Disciplina> ldeDisc = new LDE<Disciplina>();
     private static Disciplina Disc;
+    private static LDE<Turma> ldeTurma = new LDE<Turma>();
+    private static Turma Turma;
+    
     //private double xOffset = 0;
     //private double yOffset = 0;
     
@@ -152,7 +156,27 @@ public class MainSchool extends Application {
         MainSchool.prof = prof;
     }
     
+    //Get & Set - LDE Turma
+    
+    public static LDE<Turma> getLdeTurma() {
+        return ldeTurma;
+    }
+
+    public static void setLdeTurma(LDE<Turma> ldeTurma) {
+        MainSchool.ldeTurma = ldeTurma;
+    }
+
+    public static Turma getTurma() {
+        return Turma;
+    }
+
+    public static void setTurma(Turma Turma) {
+        MainSchool.Turma = Turma;
+    }
+
+    
 //>>>>>>> origin/master (ce9095f) - Criação da lde
 
+  
 }
 

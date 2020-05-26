@@ -51,4 +51,9 @@ public class Professor extends Usuario implements Comparable<Professor>{
         return null;        
     }
     
+    @Override
+    public String toString (){
+        return getNome() + " - " + getCpf();
+    }   
+    
 }

@@ -17,7 +17,9 @@ public abstract class Usuario implements Serializable {
     private String Telefone;
     private String email;
     private String endereço;
-
+    
+    private Turma[] turmas = new Turma[50];
+    
     public Usuario(String cpf) {
         this.cpf = cpf;
     }
@@ -86,6 +88,14 @@ public abstract class Usuario implements Serializable {
         this.endereço = endereço;
     }
 
+    public Turma[] getTurmas() {
+        return turmas;
+    }
+
+    public void setTurmas(Turma[] turmas) {
+        this.turmas = turmas;
+    }
+    
     @Override
     public String toString() {
         return "Usuario{" + "cpf=" + cpf + ", nome=" + nome + ", email=" + email + ", rg=" + rg + '}';

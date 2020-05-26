@@ -1,5 +1,7 @@
 package controller;
 
+import Aplicacao.CadTurma;
+import Aplicacao.CadTurmaAlunos;
 import Aplicacao.CadTurmaMenu;
 import com.jfoenix.controls.JFXButton;
 import java.net.URL;
@@ -8,6 +10,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.stage.Stage;
 
 /**
  * FXML Controller class
@@ -27,12 +30,29 @@ public class CadTurmaMenuController implements Initializable {
 
     @FXML
     void ActionInserirAluno(ActionEvent event) {
-        
+        CadTurmaAlunos cta = new CadTurmaAlunos();
+
+            try {
+                    cta.start(new Stage());
+            }catch(Exception ex) {
+                    ex.printStackTrace();
+            }
+            
+        fechar();
     }
 
     @FXML
     void ActionNovaTurma(ActionEvent event) {
-        
+        CadTurma ct = new CadTurma();
+
+            try {
+                    ct.start(new Stage());
+            }catch(Exception ex) {
+                    ex.printStackTrace();
+            }
+            
+        fechar();
+            
     }
 
     @Override

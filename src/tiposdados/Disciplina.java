@@ -9,6 +9,8 @@ public class Disciplina extends Escola implements Comparable<Disciplina> {
     private String cargaH;
     private String credito;
     private String periodo;
+    
+    private Turma[] turmas = new Turma[100];
 
     public Disciplina(String codDisc) {
         super(codDisc);        
@@ -46,6 +48,14 @@ public class Disciplina extends Escola implements Comparable<Disciplina> {
         this.periodo = periodo;
     }
 
+    public Turma[] getTurmas() {
+        return turmas;
+    }
+
+    public void setTurmas(Turma[] turmas) {
+        this.turmas = turmas;
+    }
+
     @Override
     public int compareTo(Disciplina d) {
         return super.getCodDisc().compareTo(d.getCodDisc());        
@@ -53,7 +63,7 @@ public class Disciplina extends Escola implements Comparable<Disciplina> {
 
     @Override
     public String toString() {
-        return "Disciplina{" + "Codigo da Disciplina=" + super.getCodDisc() + "nome=" + nome + '}';
+        return super.getCodDisc() + " - " + getNome();
     }
     
     

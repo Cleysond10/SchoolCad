@@ -7,11 +7,11 @@ package tiposdados;
 public class Turma extends Escola implements Comparable<Turma> {
     private String codTurma;
     private String horario;
-    private String profx;
-    private String QtdMaxAl;
-    private String QtdAl;
+    private Professor profx;
+    private Integer QtdMaxAl;
+    private int QtdAl;
     private String pLetivo;
-    private String Alunos;
+    private Aluno[] Alunos;
 
     public Turma(String codTurma, String codDisc) {
         super(codDisc);
@@ -34,27 +34,28 @@ public class Turma extends Escola implements Comparable<Turma> {
         this.horario = horario;
     }
 
-    public String getProfx() {
+    public Professor getProfx() {
         return profx;
     }
 
-    public void setProfx(String profx) {
+    public void setProfx(Professor profx) {
         this.profx = profx;
     }
 
-    public String getQtdMaxAl() {
+    public Integer getQtdMaxAl() {
         return QtdMaxAl;
     }
 
-    public void setQtdMaxAl(String QtdMaxAl) {
+    public void setQtdMaxAl(Integer QtdMaxAl) {
         this.QtdMaxAl = QtdMaxAl;
+        Alunos = new Aluno[this.QtdMaxAl];
     }
 
-    public String getQtdAl() {
+    public int getQtdAl() {
         return QtdAl;
     }
 
-    public void setQtdAl(String QtdAl) {
+    public void setQtdAl(int QtdAl) {
         this.QtdAl = QtdAl;
     }
 
@@ -66,11 +67,11 @@ public class Turma extends Escola implements Comparable<Turma> {
         this.pLetivo = pLetivo;
     }
 
-    public String getAlunos() {
+    public Aluno[] getAlunos() {
         return Alunos;
     }
 
-    public void setAlunos(String Alunos) {
+    public void setAlunos(Aluno[] Alunos) {
         this.Alunos = Alunos;
     }
             
@@ -80,7 +81,7 @@ public class Turma extends Escola implements Comparable<Turma> {
 
     @Override
     public String toString() {
-        return "Turma{" + "Codigo da Turma = " + this.getCodTurma() + "Codigo da Disciplina=" + super.getCodDisc() + '}';
+        return "Turma {" + " Codigo da Turma = " + this.getCodTurma() + " Codigo da Disciplina = " + super.getCodDisc() + '}';
     }
     
 }
