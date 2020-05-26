@@ -1,5 +1,7 @@
 package controller;
 
+import Aplicacao.AltCadAluno;
+import Aplicacao.AltCadDisc;
 import Aplicacao.ExbCadDisc;
 import Aplicacao.MainSchool;
 import java.net.URL;
@@ -7,7 +9,9 @@ import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
+import javafx.stage.Stage;
 
 /**
  * FXML Controller class
@@ -27,8 +31,31 @@ public class ExbCadDiscController implements Initializable {
         fechar();
     }
 
+     @FXML
+    void acaoBtAlterar(ActionEvent event) {
+        
+        AltCadDisc aca = new AltCadDisc();
+        
+        try {
+            aca.start(new Stage());    		
+        }catch(Exception ex) {
+            ex.printStackTrace();
+        }
+        fechar();
+
+    }
+
     @FXML
-    void acaoBtSalvar(ActionEvent event) {
+    void acaoBtRemover(ActionEvent event) {
+        
+        MainSchool.getLdeDisc().remover(MainSchool.getDisc());
+            
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("VALIDAÇÃO");
+        alert.setContentText("Disciplina Removido");
+        alert.show();
+
+        fechar();
 
     }
     

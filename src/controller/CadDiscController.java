@@ -79,22 +79,24 @@ public class CadDiscController implements Initializable {
             fechar();
         }
         else {
-            System.out.println("Não Valido");
-            
-            if(valida.isValidNome(tfNome.getText())==3) {
-                Alert alert = new Alert(Alert.AlertType.WARNING);
-                alert.setTitle("VALIDAÇÃO");
-                alert.setContentText("Verifique o Nome");
-                alert.show();                
-            }            
-            else if(valida.isValidCargaH(tfCargaH.getText())==7) {
-                Alert alert = new Alert(Alert.AlertType.WARNING);
-                alert.setTitle("VALIDAÇÃO");
-                alert.setContentText("Verifique a Carga Horária");
-                alert.show();                
+            String vEmail = "", vData = "", vNome = "", vCPF = "";
+            if(valida.isValidCargaH(tfCargaH.getText())==1) {
+                vEmail = "Verifique a Carga Horária";
             }
             
+            if(valida.isValidNome(tfNome.getText())==3) {
+                vNome = "Verifique o Nome";
+            }
+            
+            
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setTitle("VALIDAÇÃO");
+            alert.setContentText(vEmail + "\n" + vData + "\n" + vNome + "\n" + vCPF);
+            alert.show();
+            
         }
+            
+        
         
         //ldeAlunoCad = MainSchool.getLdeAlunoPP();
         //ldeAlunoCad.add(aluno);

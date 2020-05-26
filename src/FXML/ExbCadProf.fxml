@@ -10,7 +10,7 @@
 
 <AnchorPane id="AnchorPane" prefHeight="500.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ExbCadProfController">
    <children>
-      <JFXButton buttonType="RAISED" layoutX="246.0" layoutY="429.0" onAction="#acaoBtVoltar" prefHeight="25.0" prefWidth="108.0" ripplerFill="#ccc6c6e5" style="-fx-background-color: #050453; -fx-background-radius: 5cm; -fx-border-radius: 5cm;" text="VOLTAR" textFill="WHITE">
+      <JFXButton buttonType="RAISED" layoutX="376.0" layoutY="434.0" onAction="#acaoBtVoltar" prefHeight="25.0" prefWidth="108.0" ripplerFill="#ccc6c6e5" style="-fx-background-color: #050453; -fx-background-radius: 5cm; -fx-border-radius: 5cm;" text="VOLTAR" textFill="WHITE">
          <font>
             <Font name="Arial Bold" size="12.0" />
          </font>
@@ -269,5 +269,15 @@
             </Lighting>
          </effect>
       </Label>
+      <JFXButton buttonType="RAISED" layoutX="260.0" layoutY="434.0" onAction="#acaoBtRemover" prefHeight="25.0" prefWidth="108.0" ripplerFill="#ccc5c5e3" style="-fx-background-color: #050453; -fx-background-radius: 5cm; -fx-border-radius: 5cm;" text="REMOVER" textFill="WHITE">
+         <font>
+            <Font name="Arial Bold" size="12.0" />
+         </font>
+      </JFXButton>
+      <JFXButton buttonType="RAISED" layoutX="144.0" layoutY="434.0" onAction="#acaoBtAlterar" prefHeight="25.0" prefWidth="108.0" ripplerFill="#ccc5c5e3" style="-fx-background-color: #050453; -fx-background-radius: 5cm; -fx-border-radius: 5cm;" text="ALTERAR" textFill="WHITE">
+         <font>
+            <Font name="Arial Bold" size="12.0" />
+         </font>
+      </JFXButton>
    </children>
 </AnchorPane>

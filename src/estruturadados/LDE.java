@@ -7,6 +7,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import javafx.scene.control.Alert;
 import tiposdados.Aluno;
 import tiposdados.Disciplina;
 import tiposdados.Professor;
@@ -81,43 +82,52 @@ public class LDE <T extends Comparable<T>> {
         }
         else {
             if(novo.getInfo().compareTo(this.first.getInfo()) == 0) {
-                    System.out.println("É REPETIDO");
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setTitle("VALIDAÇÃO");
+                alert.setContentText("Dados Já Existe! \n Por Favor Tente Com Dados Diferentes.");
+                alert.show();
             }
             else if(novo.getInfo().compareTo(this.first.getInfo()) < 0) {
-                    novo.setNext(this.first);
-                    this.first.setPrev(novo);
-                    this.first = novo;
-                    this.qtd++;
-                    this.first.setPrev(this.last);
-                    this.last.setNext(this.first);
+                novo.setNext(this.first);
+                this.first.setPrev(novo);
+                this.first = novo;
+                this.qtd++;
+                this.first.setPrev(this.last);
+                this.last.setNext(this.first);
             }
             else if(novo.getInfo().compareTo(this.last.getInfo()) == 0) {
-                    System.out.println("É REPETIDO");
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setTitle("VALIDAÇÃO");
+                alert.setContentText("Dados Já Existe! \n Por Favor Tente Com Dados Diferentes.");
+                alert.show();
             }
             else if(novo.getInfo().compareTo(this.last.getInfo()) > 0) {
-                    novo.setPrev(this.last);
-                    this.last.setNext(novo);
-                    this.last = novo;
-                    this.qtd++;
-                    this.first.setPrev(this.last);
-                    this.last.setNext(this.first);
+                novo.setPrev(this.last);
+                this.last.setNext(novo);
+                this.last = novo;
+                this.qtd++;
+                this.first.setPrev(this.last);
+                this.last.setNext(this.first);
             }
             else {
                 NodeLDE<T> aux = this.first.getNext();
 
                 do {
                     if(aux.getInfo().compareTo(novo.getInfo()) == 0) {
-                            System.out.println("É REPETIDO");						
+                        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                        alert.setTitle("VALIDAÇÃO");
+                        alert.setContentText("Dados Já Existe! \n Por Favor Tente Com Dados Diferentes.");
+                        alert.show();
                     }
                     else if(aux.getInfo().compareTo(novo.getInfo()) > 0) {
-                            novo.setNext(aux);
-                            novo.setPrev(aux.getPrev());
-                            novo.getPrev().setNext(novo);
-                            aux.setPrev(novo);
-                            this.qtd++;
+                        novo.setNext(aux);
+                        novo.setPrev(aux.getPrev());
+                        novo.getPrev().setNext(novo);
+                        aux.setPrev(novo);
+                        this.qtd++;
                     }
                     else {
-                            aux = aux.getNext();
+                        aux = aux.getNext();
                     }
                 }while(aux != this.first);
             }
@@ -130,7 +140,10 @@ public class LDE <T extends Comparable<T>> {
         NodeLDE<T> aux = this.first.getNext();
 		
         if(vazio()) {
-            System.out.println("LISTA VAZIA");
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("VALIDAÇÃO");
+            alert.setContentText("Lista Vazia.");
+            alert.show();
         }		
         else if(qtd == 1) {
             if(busca(info) != null) {
@@ -139,12 +152,18 @@ public class LDE <T extends Comparable<T>> {
                 this.qtd--;
             }
             else {
-                System.out.println("NÃO EXISTE O CONTATO");
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setTitle("VALIDAÇÃO");
+                alert.setContentText("Dados Não Existe! \n Por Favor Tente Com Dados Diferentes.");
+                alert.show();
             }
         }
         else {
             if(this.first.getInfo().compareTo(info)>0) {
-                System.out.println("NÃO EXISTE O CONTATO");
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setTitle("VALIDAÇÃO");
+                alert.setContentText("Dados Não Existe! \n Por Favor Tente Com Dados Diferentes.");
+                alert.show();
             }
             else if(this.first.getInfo().compareTo(info) == 0) {
                 this.first = this.first.getNext();
@@ -153,7 +172,10 @@ public class LDE <T extends Comparable<T>> {
                 this.last.setNext(this.first);
             }
             else if(this.last.getInfo().compareTo(info) < 0) {
-                System.out.println("NÃO EXISTE O CONTATO");
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setTitle("VALIDAÇÃO");
+                alert.setContentText("Dados Não Existe! \n Por Favor Tente Com Dados Diferentes.");
+                alert.show();
             }
             else if(this.last.getInfo().compareTo(info) == 0) {
                 this.last = this.last.getPrev();
@@ -168,7 +190,10 @@ public class LDE <T extends Comparable<T>> {
                 this.qtd--;
             }
             else {
-                System.out.println("NÃO EXISTE O CONTATO");
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setTitle("VALIDAÇÃO");
+                alert.setContentText("Dados Não Existe! \n Por Favor Tente Com Dados Diferentes.");
+                alert.show();
             }
         }
     }
@@ -212,11 +237,15 @@ public class LDE <T extends Comparable<T>> {
         try {
             FileOutputStream fos = new FileOutputStream(nome);
             ObjectOutputStream oos = new ObjectOutputStream(fos);
-            do {
-                oos.writeObject(aux.getInfo());
-                oos.flush();					
-                aux=aux.getNext();								
-            }while(aux!=this.first);
+            if(aux != null) {
+                do {
+                    oos.writeObject(aux.getInfo());
+                    oos.flush();                
+                    aux=aux.getNext();                    
+                				
+                }while(aux!=this.first);                
+            }
+            
             oos.close();
 
         } catch (FileNotFoundException e) {
@@ -228,11 +257,11 @@ public class LDE <T extends Comparable<T>> {
 						
     }
     
-    /*public int getQtd() {
+    public int getQtd() {
         return this.qtd;
     }
 
-    public NodeLDE<T> getFirst() {
+    /*public NodeLDE<T> getFirst() {
         return first;
     }*/
     
@@ -269,7 +298,10 @@ public class LDE <T extends Comparable<T>> {
     public void exibir() {
         NodeLDE<T> aux = this.first;
         if(vazio()) {
-            System.out.println("VAZIO");
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("VALIDAÇÃO");
+            alert.setContentText("Lista Vazia.");
+            alert.show();
         }
         else {
             System.out.println(aux.getInfo());
@@ -278,10 +310,7 @@ public class LDE <T extends Comparable<T>> {
                 System.out.println(aux.getInfo());
                 aux = aux.getNext();
             }
-        }
-        System.out.println(this.qtd);
+        }        
     }
-    
-    
     
 }

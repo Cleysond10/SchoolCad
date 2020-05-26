@@ -28,11 +28,14 @@ import estruturadados.LDE;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.geometry.BoundingBox;
 import javafx.geometry.Insets;
+import javafx.geometry.Rectangle2D;
 import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
@@ -41,6 +44,7 @@ import javafx.scene.layout.BackgroundFill;
 import javafx.scene.layout.CornerRadii;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Paint;
+import javafx.stage.Screen;
 import javafx.stage.Stage;
 import tiposdados.Aluno;
 
@@ -52,6 +56,8 @@ import tiposdados.Aluno;
 public class MainSchoolController implements Initializable {
     
     //private LDE<Aluno> ldeAlunoP;
+    private boolean isMaximized = false;
+    private BoundingBox savedBounds;
     
     @FXML private JFXButton btAluno;
     @FXML private JFXButton btProf;
@@ -111,6 +117,57 @@ public class MainSchoolController implements Initializable {
         }
         
         
+    }
+    
+    @FXML
+    void acaoMouseSair(MouseEvent event) {
+        
+        MainSchool.getLdeAlunoPP().Finalizar("aluno.sc");
+        MainSchool.getLdeProf().Finalizar("professor.sc");
+        MainSchool.getLdeDisc().Finalizar("disciplina.sc");
+        
+        fechar();
+
+    }
+    
+     @FXML
+    void acaoMouseMaximize(MouseEvent event) {
+        if (isMaximized) {
+            restoreSavedBounds(MainSchool.getStage());
+            savedBounds = null;
+            isMaximized = false;
+        } else {
+            ObservableList<Screen> screensForRectangle = Screen.getScreensForRectangle(MainSchool.getStage().getX(), MainSchool.getStage().getY(), MainSchool.getStage().getWidth(), MainSchool.getStage().getHeight());
+            Screen screen = screensForRectangle.get(0);
+            Rectangle2D visualBounds = screen.getVisualBounds();
+
+            savedBounds = new BoundingBox(MainSchool.getStage().getX(), MainSchool.getStage().getY(), MainSchool.getStage().getWidth(), MainSchool.getStage().getHeight());
+
+            MainSchool.getStage().setX(visualBounds.getMinX());
+            MainSchool.getStage().setY(visualBounds.getMinY());
+            MainSchool.getStage().setWidth(visualBounds.getWidth());
+            MainSchool.getStage().setHeight(visualBounds.getHeight());
+            isMaximized = true;
+        }
+
+    }
+    
+    public void restoreSavedBounds(Stage stage) {
+        stage.setX(savedBounds.getMinX());
+        stage.setY(savedBounds.getMinY());
+        stage.setWidth(savedBounds.getWidth());
+        stage.setHeight(savedBounds.getHeight());
+        savedBounds = null;
+    }
+    
+    public void saveBounds() {
+        savedBounds = new BoundingBox(MainSchool.getStage().getX(), MainSchool.getStage().getY(), MainSchool.getStage().getWidth(), MainSchool.getStage().getHeight());
+    }
+
+    @FXML
+    void acaoMouseMinimize(MouseEvent event) {
+        MainSchool.getStage().setIconified(true);
+
     }
     
     @FXML
@@ -326,9 +383,16 @@ public class MainSchoolController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         
-        MainSchool.getLdeAlunoPP().Inicializar("aluno.sc");
-        MainSchool.getLdeProf().Inicializar("professor.sc");
-        MainSchool.getLdeDisc().Inicializar("disciplina.sc");
+        if(MainSchool.getLdeAlunoPP().getQtd() == 0) {
+            MainSchool.getLdeAlunoPP().Inicializar("aluno.sc");            
+        }
+        if(MainSchool.getLdeProf().getQtd() == 0) {
+            MainSchool.getLdeProf().Inicializar("professor.sc");            
+        }
+        if(MainSchool.getLdeDisc().getQtd() == 0) {
+            MainSchool.getLdeDisc().Inicializar("disciplina.sc");
+        }
+        
         
         /*ldeAlunoP = new LDE<Aluno>();
         ldeAlunoP.Inicializar("aluno.sc");
@@ -345,6 +409,10 @@ public class MainSchoolController implements Initializable {
     }
 */
     
+    
+    public void fechar() {
+        MainSchool.getStage().close();
+    }
 
     
     

@@ -70,32 +70,26 @@ public class CadProfController implements Initializable {
             fechar();
         }
         else {
-            System.out.println("Não Valido");
             
+            String vEmail = "", vData = "", vNome = "", vCPF = "";
             if(valida.isValidEmail(tfEmail.getText())==1) {
-                Alert alert = new Alert(Alert.AlertType.WARNING);
-                alert.setTitle("VALIDAÇÃO");
-                alert.setContentText("Verifique seu Email");
-                alert.show();                
+                vEmail = "Verifique seu Email";
             }
-            else if(valida.isValidData(tfDnasc.getText())==2) {
-                Alert alert = new Alert(Alert.AlertType.WARNING);
-                alert.setTitle("VALIDAÇÃO");
-                alert.setContentText("Verifique a Data de Nascimento");
-                alert.show();                
+            if(valida.isValidData(tfDnasc.getText())==2) {
+                vData = "Verifique a Data de Nascimento";
             }
-            else if(valida.isValidNome(tfNome.getText())==3) {
-                Alert alert = new Alert(Alert.AlertType.WARNING);
-                alert.setTitle("VALIDAÇÃO");
-                alert.setContentText("Verifique o Nome");
-                alert.show();                
+            if(valida.isValidNome(tfNome.getText())==3) {
+                vNome = "Verifique o Nome";
             }
-            else if(valida.isValidCPF(cpf)==4) {
-                Alert alert = new Alert(Alert.AlertType.WARNING);
-                alert.setTitle("VALIDAÇÃO");
-                alert.setContentText("Verifique o CPF");
-                alert.show();                
+            if(valida.isValidCPF(cpf)==4) {
+                vCPF = "Verifique o CPF";
             }
+            
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+                alert.setTitle("VALIDAÇÃO");
+                alert.setContentText(vEmail + "\n" + vData + "\n" + vNome + "\n" + vCPF);
+                alert.show();
+            
             
         }
     }

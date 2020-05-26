@@ -7,13 +7,14 @@ import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 import tiposdados.Aluno;
 import tiposdados.Disciplina;
 import tiposdados.Professor;
 
 /**
  *
- * @author Neto
+ * @author Neto e Cleyson
  */
 public class MainSchool extends Application {
     
@@ -52,12 +53,13 @@ public class MainSchool extends Application {
             scene.getStylesheets().add(getClass().getResource("/CSS/CSSMainSchool.css").toExternalForm());
             
             
-            
+            stage.initStyle(StageStyle.UNDECORATED);
             stage.setTitle("SCHOOLCAD");            
             stage.setScene(scene);
             stage.setMaximized(true);
             //ESSA FUNÇÃO A BAIXO FAZ A TELA FICAR CHEIA
-            //stage.setFullScreen(true); 
+            //stage.setFullScreen(true);
+            
             //stage.initModality(Modality.WINDOW_MODAL);
             stage.show();
             setStage(stage);

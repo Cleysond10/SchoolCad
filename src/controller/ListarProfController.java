@@ -1,5 +1,7 @@
 package controller;
 
+import Aplicacao.ExbCadAluno;
+import Aplicacao.ExbCadProf;
 import Aplicacao.ListarProf;
 import Aplicacao.MainSchool;
 import com.jfoenix.controls.JFXListView;
@@ -11,6 +13,9 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.input.MouseEvent;
+import javafx.stage.Stage;
+import tiposdados.Aluno;
 import tiposdados.Professor;
 
 /**
@@ -32,6 +37,41 @@ public class ListarProfController implements Initializable {
     @FXML
     void acaoBtSelecionar(ActionEvent event) {
 
+    }
+    
+    @FXML
+    void AcaoDaLista(MouseEvent event) {
+    	String cLista = listaProf.getSelectionModel().getSelectedItem();
+    	if(cLista == null || cLista.isEmpty()) {
+            //fieldCarregar.setText("Lista Vazia");
+    	}
+    	else {
+            Professor a;
+            a = Buscar(cLista);
+            MainSchool.setProf(a);
+            
+            ExbCadProf aca = new ExbCadProf();
+
+            try {
+                    aca.start(new Stage());    		
+            }catch(Exception ex) {
+                    ex.printStackTrace();
+            }
+            fechar();
+    	}
+    }
+    
+    public Professor Buscar(String nome) {
+        Professor[] x = ldeProf.listaProf();
+        Professor a = null;        
+        
+        for(int i = 0; i < x.length; i++) {
+            if(x[i].getNome().equals(nome)) {
+                a = x[i];
+            }            
+        }
+        
+        return a;
     }
     
     private void carregarDados() {

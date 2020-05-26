@@ -1,5 +1,6 @@
 package controller;
 
+import Aplicacao.ExbCadAluno;
 import Aplicacao.ListarAluno;
 import Aplicacao.MainSchool;
 import com.jfoenix.controls.JFXListView;
@@ -13,6 +14,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.input.MouseEvent;
 import controller.MainSchoolController;
+import javafx.stage.Stage;
 import tiposdados.Aluno;
 
 /**
@@ -31,20 +33,26 @@ public class ListarAlunoController implements Initializable {
     void acaoBtCancelar(ActionEvent event) {
         fechar();
     }
-
-    @FXML
-    void acaoBtSalvar(ActionEvent event) {
-
-    }
     
     @FXML
     void AcaoDaLista(MouseEvent event) {
     	String cLista = listaAluno.getSelectionModel().getSelectedItem();
     	if(cLista == null || cLista.isEmpty()) {
-    		//fieldCarregar.setText("Lista Vazia");
+            //fieldCarregar.setText("Lista Vazia");
     	}
     	else {
-    		//fieldCarregar.setText(cLista);
+            Aluno a;
+            a = Buscar(cLista);
+            MainSchool.setAlunoPP(a);
+            
+            ExbCadAluno aca = new ExbCadAluno();
+
+            try {
+                aca.start(new Stage());    		
+            }catch(Exception ex) {
+                ex.printStackTrace();
+            }
+            fechar();
     	}
     }
     
@@ -66,6 +74,19 @@ public class ListarAlunoController implements Initializable {
             listaAluno.getItems().addAll(lista);
         }
         
+    }
+    
+    public Aluno Buscar(String nome) {
+        Aluno[] x = ldeAluno.listaAluno();
+        Aluno a = null;        
+        
+        for(int i = 0; i < x.length; i++) {
+            if(x[i].getNome().equals(nome)) {
+                a = x[i];
+            }            
+        }
+        
+        return a;
     }
 
     
