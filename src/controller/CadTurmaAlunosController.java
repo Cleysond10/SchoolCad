@@ -54,6 +54,10 @@ public class CadTurmaAlunosController implements Initializable {
             vAlunoTurmas[cont] = aluno;
             cbCodTurma.getSelectionModel().getSelectedItem().setAlunos(vAlunoTurmas);
             
+            int qtd = cbCodTurma.getSelectionModel().getSelectedItem().getQtdAl();
+            qtd = qtd++;
+            cbCodTurma.getSelectionModel().getSelectedItem().setQtdAl(qtd);
+            
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("VALIDAÇÃO");
             alert.setContentText("Cadastro Realizado com Sucesso!");
