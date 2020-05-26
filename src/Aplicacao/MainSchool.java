@@ -20,7 +20,7 @@ public class MainSchool extends Application {
     
     private static Stage stage;    
     private static LDE<Professor> ldeProf = new LDE<Professor>();
-    private static Professor prof; //= new Professor("");
+    private static Professor prof;
     private static LDE<Aluno> ldeAlunoPP = new LDE<Aluno>();
     private static Aluno alunoPP;
     private static LDE<Disciplina> ldeDisc = new LDE<Disciplina>();
@@ -153,6 +153,6 @@ public class MainSchool extends Application {
     }
     
 //>>>>>>> origin/master (ce9095f) - Criação da lde
-       
+
 }
 
