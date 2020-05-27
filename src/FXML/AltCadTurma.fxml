@@ -10,9 +10,10 @@
       <JFXTextField fx:id="tfCodTurma" layoutX="70.0" layoutY="67.0" prefHeight="33.0" prefWidth="463.0" promptText="Código da Turma" />
       <JFXTextField fx:id="tfHorario" layoutX="69.0" layoutY="106.0" prefHeight="33.0" prefWidth="463.0" promptText="Horário" />
       <JFXTextField fx:id="tfPLetivo" layoutX="70.0" layoutY="150.0" prefHeight="33.0" prefWidth="463.0" promptText="Período Letivo" />
-      <JFXButton buttonType="RAISED" layoutX="218.0" layoutY="313.0" onAction="#BtAltCadTurma" prefHeight="25.0" prefWidth="140.0" ripplerFill="#750505" text="ALTERAR" />
-      <JFXTextField fx:id="tfQtdMaxAl" layoutX="66.0" layoutY="191.0" prefHeight="33.0" prefWidth="463.0" promptText="Quantidade Máxima de Alunos" />
+      <JFXButton buttonType="RAISED" layoutX="124.0" layoutY="318.0" onAction="#BtAltCadTurma" prefHeight="25.0" prefWidth="140.0" ripplerFill="#750505" text="ALTERAR" />
+      <JFXTextField fx:id="tfQtdMaxAl" layoutX="71.0" layoutY="192.0" prefHeight="33.0" prefWidth="463.0" promptText="Quantidade Máxima de Alunos" />
       <ComboBox fx:id="cbDisc" layoutX="67.0" layoutY="245.0" prefHeight="25.0" prefWidth="223.0" promptText="Disciplina" />
       <ComboBox fx:id="cbProfx" layoutX="300.0" layoutY="245.0" prefHeight="25.0" prefWidth="234.0" promptText="Professor" />
+      <JFXButton layoutX="302.0" layoutY="318.0" onAction="#ActionBtCancelar" prefHeight="25.0" prefWidth="140.0" text="CANCELAR" />
    </children>
 </AnchorPane>

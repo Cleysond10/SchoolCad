@@ -27,7 +27,7 @@ public class ListarTurmaController implements Initializable {
 
     @FXML
     void acaoBtCancelar(ActionEvent event) {
-
+        fechar();
     }
     
     @FXML

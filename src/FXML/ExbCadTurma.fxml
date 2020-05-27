@@ -6,12 +6,12 @@
 
 <AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ExbCadTurmaController">
    <children>
-      <JFXTextField fx:id="tfCodTurma" layoutX="70.0" layoutY="44.0" prefHeight="33.0" prefWidth="463.0" promptText="Código da Turma" />
-      <JFXTextField fx:id="tfHorario" layoutX="69.0" layoutY="83.0" prefHeight="33.0" prefWidth="463.0" promptText="Horário" />
-      <JFXTextField fx:id="tfPLetivo" layoutX="70.0" layoutY="127.0" prefHeight="33.0" prefWidth="463.0" promptText="Período Letivo" />
-      <JFXTextField fx:id="tfQtdMaxAl" layoutX="66.0" layoutY="168.0" prefHeight="33.0" prefWidth="463.0" promptText="Quantidade Máxima de Alunos" />
-      <JFXTextField fx:id="tfDisc" layoutX="65.0" layoutY="213.0" prefHeight="25.0" prefWidth="223.0" promptText="Disciplina" />
-      <JFXTextField fx:id="tfProf" layoutX="297.0" layoutY="213.0" prefHeight="25.0" prefWidth="234.0" promptText="Professor" />
+      <JFXTextField fx:id="tfCodTurma" layoutX="70.0" layoutY="44.0" prefHeight="33.0" prefWidth="463.0" promptText="Código da Turma" unFocusColor="RED" />
+      <JFXTextField fx:id="tfHorario" layoutX="69.0" layoutY="83.0" prefHeight="33.0" prefWidth="463.0" promptText="Horário" unFocusColor="RED" />
+      <JFXTextField fx:id="tfPLetivo" layoutX="70.0" layoutY="127.0" prefHeight="33.0" prefWidth="463.0" promptText="Período Letivo" unFocusColor="RED" />
+      <JFXTextField fx:id="tfQtdMaxAl" layoutX="66.0" layoutY="168.0" prefHeight="33.0" prefWidth="463.0" promptText="Quantidade Máxima de Alunos" unFocusColor="RED" />
+      <JFXTextField fx:id="tfDisc" layoutX="65.0" layoutY="213.0" prefHeight="25.0" prefWidth="223.0" promptText="Disciplina" unFocusColor="RED" />
+      <JFXTextField fx:id="tfProf" layoutX="297.0" layoutY="213.0" prefHeight="25.0" prefWidth="234.0" promptText="Professor" unFocusColor="RED" />
       <JFXListView fx:id="lvAlunos" layoutX="70.0" layoutY="253.0" prefHeight="124.0" prefWidth="463.0" />
    </children>
 </AnchorPane>
