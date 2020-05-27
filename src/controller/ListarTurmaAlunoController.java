@@ -1,7 +1,7 @@
 package controller;
 
 import Aplicacao.ExbCadTurma;
-import Aplicacao.ListarTurma;
+import Aplicacao.ListarTurmaAluno;
 import Aplicacao.MainSchool;
 import com.jfoenix.controls.JFXListView;
 import java.net.URL;
@@ -20,25 +20,25 @@ import tiposdados.Turma;
  *
  * @author Lenovo
  */
-public class ListarTurmaController implements Initializable {
+public class ListarTurmaAlunoController implements Initializable {
     
-    @FXML private JFXListView<Turma> listaTurmas;
-    ObservableList<Turma> obsTurma = FXCollections.observableArrayList();
+    @FXML private JFXListView<Turma> listaTurmasAluno;
+    ObservableList<Turma> obsTurmaAluno = FXCollections.observableArrayList();
 
     @FXML
     void acaoBtCancelar(ActionEvent event) {
-
+        fechar();
     }
     
     @FXML
     void AcaoDaLista(MouseEvent event) {
-    	Turma cLista = listaTurmas.getSelectionModel().getSelectedItem();
+    	Turma cLista = listaTurmasAluno.getSelectionModel().getSelectedItem();
     	if(cLista == null /*|| cLista.isEmpty()*/) {
             //fieldCarregar.setText("Lista Vazia");
     	}
     	else {
             Turma a;
-            a = listaTurmas.getSelectionModel().getSelectedItem();            
+            a = listaTurmasAluno.getSelectionModel().getSelectedItem();            
             MainSchool.setTurma(a);
             
             ExbCadTurma ect = new ExbCadTurma();
@@ -53,12 +53,22 @@ public class ListarTurmaController implements Initializable {
     }
     
     public void carregarList(){
-        Turma[] vTurma = MainSchool.getLdeTurma().listaTurma();
+        Turma[] vTurma = MainSchool.getAlunoPP().getTurmas();
+        Turma t = new Turma("", "");        
         if (vTurma.length == 0){
             System.out.println("LISTA VAZIA");
         } else{
-            obsTurma.addAll(vTurma);
-            listaTurmas.setItems(obsTurma);
+            Turma[] vTurmaTest = new Turma[vTurma.length];
+            for(int i = 0; i < vTurma.length; i++) {
+                if(vTurma[i] == null) {
+                    vTurmaTest[i] = t;
+                }
+                else {
+                    vTurmaTest[i] = vTurma[i];
+                }
+            }
+            obsTurmaAluno.addAll(vTurmaTest);
+            listaTurmasAluno.setItems(obsTurmaAluno);
         }        
     }
     
@@ -68,7 +78,7 @@ public class ListarTurmaController implements Initializable {
     }
     
     public void fechar() {
-        ListarTurma.getStage().close();
+        ListarTurmaAluno.getStage().close();
     }
     
 }

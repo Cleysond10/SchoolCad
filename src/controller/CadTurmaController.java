@@ -38,9 +38,7 @@ public class CadTurmaController implements Initializable {
     @FXML private JFXButton btVoltar;
     ObservableList<Disciplina> obsDisc = FXCollections.observableArrayList();
     ObservableList<Professor> obsProfx = FXCollections.observableArrayList();
-    
-    private LDE<Disciplina> LdeDisc;
-    private LDE<Professor> LdeProf;
+        
     private Turma Turma;
     
     @FXML
@@ -78,24 +76,16 @@ public class CadTurmaController implements Initializable {
         Turma.setQtdMaxAl(x);
         
         Turma[] vDiscTurmas = cbDisc.getSelectionModel().getSelectedItem().getTurmas();
-        int cont = 0;
-        for (int i = 0; i < vDiscTurmas.length; i++){
-            if (vDiscTurmas[i] != null){
-                cont++;
-            }
-        }
-        vDiscTurmas[cont] = Turma;
+        
+        vDiscTurmas[cbDisc.getSelectionModel().getSelectedItem().getQtdVTurma()] = Turma;
         cbDisc.getSelectionModel().getSelectedItem().setTurmas(vDiscTurmas);
+        cbDisc.getSelectionModel().getSelectedItem().setQtdVTurma(cbDisc.getSelectionModel().getSelectedItem().getQtdVTurma() + 1);
         
         Turma[] vProfxTurmas = cbProfx.getSelectionModel().getSelectedItem().getTurmas();
-        int cont1 = 0;
-        for (int i = 0; i < vProfxTurmas.length; i++){
-            if (vProfxTurmas[i] != null){
-                cont1++;
-            }
-        }
-        vProfxTurmas[cont1] = Turma;
+        
+        vProfxTurmas[cbProfx.getSelectionModel().getSelectedItem().getQtdVTurmas()] = Turma;
         cbProfx.getSelectionModel().getSelectedItem().setTurmas(vProfxTurmas);        
+        cbProfx.getSelectionModel().getSelectedItem().setQtdVTurmas(cbProfx.getSelectionModel().getSelectedItem().getQtdVTurmas() + 1);
         
         MainSchool.getLdeTurma().add(Turma);
         

@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.application.Application;
+import static javafx.application.Application.launch;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
@@ -13,7 +14,8 @@ import javafx.stage.Stage;
  *
  * @author Lenovo
  */
-public class AltTurma extends Application {
+public class ListarTurmaAluno extends Application {
+    
     private static Stage stage;
     
     @Override
@@ -21,12 +23,14 @@ public class AltTurma extends Application {
         try {
             stage = primaryStage;
 
-            AnchorPane fxmlMenu = (AnchorPane)FXMLLoader.load(getClass().getResource("/FXML/AltTurma.fxml"));
+            AnchorPane fxmlMenu = (AnchorPane)FXMLLoader.load(getClass().getResource("/FXML/ListarTurmaAluno.fxml"));
+                        
             
             Scene scene = new Scene(fxmlMenu,600,500);           
             scene.getStylesheets().add(getClass().getResource("/CSS/CSSMainSchool.css").toExternalForm());          
             
-            stage.setTitle("Alterar Dados - TURMA");            
+            
+            stage.setTitle("LISTAR - TURMAS");            
             stage.setScene(scene);
             //stage.setMaximized(true);
             //ESSA FUNÇÃO A BAIXO FAZ A TELA FICAR CHEIA
@@ -35,7 +39,7 @@ public class AltTurma extends Application {
             stage.show();
             setStage(stage);
         }   catch (IOException ex) {
-            Logger.getLogger(CadAluno.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(ListarAluno.class.getName()).log(Level.SEVERE, null, ex);
         }
 
     }
@@ -45,13 +49,11 @@ public class AltTurma extends Application {
     }
 
     public static void setStage(Stage stage) {
-        AltTurma.stage = stage;
+        ListarTurmaAluno.stage = stage;
     }
-        
-    /**
-     * @param args the command line arguments
-     */
+    
     public static void main(String[] args) {
         launch(args);
-    }        
+    }
+    
 }

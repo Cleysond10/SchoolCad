@@ -19,6 +19,7 @@ public abstract class Usuario implements Serializable {
     private String endereço;
     
     private Turma[] turmas = new Turma[50];
+    private int qtdVTurmas;
     
     public Usuario(String cpf) {
         this.cpf = cpf;
@@ -94,6 +95,14 @@ public abstract class Usuario implements Serializable {
 
     public void setTurmas(Turma[] turmas) {
         this.turmas = turmas;
+    }
+
+    public int getQtdVTurmas() {
+        return qtdVTurmas;
+    }
+
+    public void setQtdVTurmas(int qtdVTurmas) {
+        this.qtdVTurmas = qtdVTurmas;
     }
     
     @Override

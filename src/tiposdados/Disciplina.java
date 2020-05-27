@@ -11,6 +11,7 @@ public class Disciplina extends Escola implements Comparable<Disciplina> {
     private String periodo;
     
     private Turma[] turmas = new Turma[100];
+    private int QtdVTurma;
 
     public Disciplina(String codDisc) {
         super(codDisc);        
@@ -56,6 +57,14 @@ public class Disciplina extends Escola implements Comparable<Disciplina> {
         this.turmas = turmas;
     }
 
+    public int getQtdVTurma() {
+        return QtdVTurma;
+    }
+
+    public void setQtdVTurma(int QtdVTurma) {
+        this.QtdVTurma = QtdVTurma;
+    }
+    
     @Override
     public int compareTo(Disciplina d) {
         return super.getCodDisc().compareTo(d.getCodDisc());        

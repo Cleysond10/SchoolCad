@@ -45,18 +45,15 @@ public class CadTurmaAlunosController implements Initializable {
             aluno = MainSchool.getLdeAlunoPP().consulta(aluno);
             
             Aluno[] vAlunoTurmas = cbCodTurma.getSelectionModel().getSelectedItem().getAlunos();
-            int cont = 0;
-            for (int i = 0; i < vAlunoTurmas.length; i++){
-                if (vAlunoTurmas[i] != null){
-                    cont++;
-                }
-            }
-            vAlunoTurmas[cont] = aluno;
+            vAlunoTurmas[cbCodTurma.getSelectionModel().getSelectedItem().getQtdAl()] = aluno;
+            cbCodTurma.getSelectionModel().getSelectedItem().setQtdAl(cbCodTurma.getSelectionModel().getSelectedItem().getQtdAl() + 1);            
             cbCodTurma.getSelectionModel().getSelectedItem().setAlunos(vAlunoTurmas);
             
-            int qtd = cbCodTurma.getSelectionModel().getSelectedItem().getQtdAl();
-            qtd = qtd++;
-            cbCodTurma.getSelectionModel().getSelectedItem().setQtdAl(qtd);
+            Turma[] vTurmaAlunos = aluno.getTurmas();
+            vTurmaAlunos[aluno.getQtdVTurmas()] = cbCodTurma.getSelectionModel().getSelectedItem();
+            aluno.setTurmas(vTurmaAlunos);
+            aluno.setQtdVTurmas(aluno.getQtdVTurmas() + 1);
+            
             
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("VALIDAÇÃO");

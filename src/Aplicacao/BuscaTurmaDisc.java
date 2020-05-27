@@ -1,5 +1,6 @@
 package Aplicacao;
 
+
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -11,9 +12,10 @@ import javafx.stage.Stage;
 
 /**
  *
- * @author Lenovo
+ * @author Neto Cleyson
  */
-public class AltTurma extends Application {
+public class BuscaTurmaDisc extends Application {
+    
     private static Stage stage;
     
     @Override
@@ -21,23 +23,24 @@ public class AltTurma extends Application {
         try {
             stage = primaryStage;
 
-            AnchorPane fxmlMenu = (AnchorPane)FXMLLoader.load(getClass().getResource("/FXML/AltTurma.fxml"));
+            AnchorPane fxmlMenu = (AnchorPane)FXMLLoader.load(getClass().getResource("/FXML/BuscaTurmaDisc.fxml"));
+                        
             
             Scene scene = new Scene(fxmlMenu,600,500);           
             scene.getStylesheets().add(getClass().getResource("/CSS/CSSMainSchool.css").toExternalForm());          
             
-            stage.setTitle("Alterar Dados - TURMA");            
+            
+            stage.setTitle("BUSCAR - TURMA");            
             stage.setScene(scene);
             //stage.setMaximized(true);
             //ESSA FUNÇÃO A BAIXO FAZ A TELA FICAR CHEIA
-            //stage.setFullScreen(true);
+            //stage.setFullScreen(true); 
             //stage.initModality(Modality.WINDOW_MODAL);
             stage.show();
             setStage(stage);
         }   catch (IOException ex) {
             Logger.getLogger(CadAluno.class.getName()).log(Level.SEVERE, null, ex);
         }
-
     }
 
     public static Stage getStage() {
@@ -45,13 +48,11 @@ public class AltTurma extends Application {
     }
 
     public static void setStage(Stage stage) {
-        AltTurma.stage = stage;
+        BuscaTurmaDisc.stage = stage;
     }
-        
-    /**
-     * @param args the command line arguments
-     */
+    
     public static void main(String[] args) {
         launch(args);
-    }        
+    }
+    
 }

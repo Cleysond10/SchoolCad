@@ -81,7 +81,7 @@ public class Turma extends Escola implements Comparable<Turma> {
 
     @Override
     public String toString() {
-        return "Turma {" + " Codigo da Turma = " + this.getCodTurma() + " Codigo da Disciplina = " + super.getCodDisc() + '}';
+        return  this.getCodTurma();
     }
     
 }

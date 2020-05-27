@@ -78,8 +78,7 @@ public class LDE <T extends Comparable<T>> {
             this.first = novo;
             this.last = novo;
             this.qtd++;
-            this.first.setPrev(this.last);
-            this.last.setNext(this.first);
+            
         }
         else {
             if(novo.getInfo().compareTo(this.first.getInfo()) == 0) {
@@ -93,8 +92,7 @@ public class LDE <T extends Comparable<T>> {
                 this.first.setPrev(novo);
                 this.first = novo;
                 this.qtd++;
-                this.first.setPrev(this.last);
-                this.last.setNext(this.first);
+                
             }
             else if(novo.getInfo().compareTo(this.last.getInfo()) == 0) {
                 Alert alert = new Alert(Alert.AlertType.INFORMATION);
@@ -107,30 +105,30 @@ public class LDE <T extends Comparable<T>> {
                 this.last.setNext(novo);
                 this.last = novo;
                 this.qtd++;
-                this.first.setPrev(this.last);
-                this.last.setNext(this.first);
+                
             }
             else {
-                NodeLDE<T> aux = this.first.getNext();
+                NodeLDE<T> aux = this.first;
+                aux = aux.getNext();
 
                 do {
-                    if(aux.getInfo().compareTo(novo.getInfo()) == 0) {
+                    if(novo.getInfo().compareTo(aux.getInfo()) == 0) {
                         Alert alert = new Alert(Alert.AlertType.INFORMATION);
                         alert.setTitle("VALIDAÇÃO");
                         alert.setContentText("Dados Já Existe! \n Por Favor Tente Com Dados Diferentes.");
                         alert.show();
                     }
-                    else if(aux.getInfo().compareTo(novo.getInfo()) > 0) {
+                    else if(novo.getInfo().compareTo(aux.getInfo()) < 0) {
                         novo.setNext(aux);
                         novo.setPrev(aux.getPrev());
-                        novo.getPrev().setNext(novo);
+                        aux.getPrev().setNext(novo);
                         aux.setPrev(novo);
                         this.qtd++;
                     }
                     else {
                         aux = aux.getNext();
                     }
-                }while(aux != this.first);
+                }while(aux != null);
             }
 
         }
@@ -244,7 +242,7 @@ public class LDE <T extends Comparable<T>> {
                     oos.flush();                
                     aux=aux.getNext();                    
                 				
-                }while(aux!=this.first);                
+                }while(aux!= null);                
             }
             
             oos.close();
