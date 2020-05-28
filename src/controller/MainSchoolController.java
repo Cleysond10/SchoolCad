@@ -5,13 +5,11 @@
  */
 package controller;
 
-import Aplicacao.AltCadAluno;
 import Aplicacao.BuscaAluno;
 import Aplicacao.RemoverAluno;
 import Aplicacao.CadProf;
 import Aplicacao.AltProf;
 import Aplicacao.AltTurma;
-import Aplicacao.BuscProf;
 import Aplicacao.BuscaDiscAlt;
 import Aplicacao.BuscaExbAluno;
 import Aplicacao.BuscaExbDisc;
@@ -21,7 +19,6 @@ import Aplicacao.RemProf;
 import Aplicacao.CadAluno;
 import Aplicacao.CadDisc;
 import Aplicacao.CadTurmaMenu;
-import Aplicacao.ExbTurma;
 import Aplicacao.ListarAluno;
 import Aplicacao.ListarDisc;
 import Aplicacao.ListarProf;
@@ -30,7 +27,6 @@ import Aplicacao.MainSchool;
 import Aplicacao.RemTurmaMenu;
 import Aplicacao.RemoverDisc;
 import com.jfoenix.controls.JFXButton;
-import estruturadados.LDE;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -52,7 +48,7 @@ import javafx.scene.layout.Pane;
 import javafx.scene.paint.Paint;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
-import tiposdados.Aluno;
+
 
 
 /**

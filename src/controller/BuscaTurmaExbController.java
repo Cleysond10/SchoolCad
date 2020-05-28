@@ -1,7 +1,6 @@
 package controller;
 
 import Aplicacao.BuscaTurmaExb;
-import Aplicacao.ExbTurma;
 import Aplicacao.ExbTurmaCad;
 import Aplicacao.MainSchool;
 import com.jfoenix.controls.JFXTextField;
