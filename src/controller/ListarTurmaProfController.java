@@ -1,7 +1,6 @@
 package controller;
 
-import Aplicacao.ExbCadTurma;
-import Aplicacao.ListarTurmaAluno;
+import Aplicacao.ExbTurmaCad;
 import Aplicacao.ListarTurmaProf;
 import Aplicacao.MainSchool;
 import com.jfoenix.controls.JFXListView;
@@ -42,7 +41,7 @@ public class ListarTurmaProfController implements Initializable {
             a = listaTurmasProf.getSelectionModel().getSelectedItem();            
             MainSchool.setTurma(a);
             
-            ExbCadTurma ect = new ExbCadTurma();
+            ExbTurmaCad ect = new ExbTurmaCad();
 
             try {
                 ect.start(new Stage());    		

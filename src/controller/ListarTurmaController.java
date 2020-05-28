@@ -1,6 +1,5 @@
 package controller;
 
-import Aplicacao.ExbCadTurma;
 import Aplicacao.ExbTurmaCad;
 import Aplicacao.ListarTurma;
 import Aplicacao.MainSchool;
