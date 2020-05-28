@@ -109,7 +109,7 @@ public class LDE <T extends Comparable<T>> {
             }
             else {
                 NodeLDE<T> aux = this.first;
-                aux = aux.getNext();
+                //aux = aux.getNext();
 
                 do {
                     if(novo.getInfo().compareTo(aux.getInfo()) == 0) {
@@ -136,7 +136,7 @@ public class LDE <T extends Comparable<T>> {
     }
     
     public void remover(T info) {
-        NodeLDE<T> aux = this.first.getNext();
+        NodeLDE<T> aux = null;
 		
         if(vazio()) {
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
@@ -167,8 +167,8 @@ public class LDE <T extends Comparable<T>> {
             else if(this.first.getInfo().compareTo(info) == 0) {
                 this.first = this.first.getNext();
                 this.qtd--;
-                this.first.setPrev(this.last);
-                this.last.setNext(this.first);
+                //this.first.setPrev(this.last);
+                //this.last.setNext(this.first);
             }
             else if(this.last.getInfo().compareTo(info) < 0) {
                 Alert alert = new Alert(Alert.AlertType.INFORMATION);
@@ -179,8 +179,8 @@ public class LDE <T extends Comparable<T>> {
             else if(this.last.getInfo().compareTo(info) == 0) {
                 this.last = this.last.getPrev();
                 this.qtd--;
-                this.first.setPrev(this.last);
-                this.last.setNext(this.first);
+                //this.first.setPrev(this.last);
+                //this.last.setNext(this.first);
             }
             else if(busca(info) != null){
                 aux = busca(info);
@@ -313,9 +313,9 @@ public class LDE <T extends Comparable<T>> {
             alert.show();
         }
         else {
-            System.out.println(aux.getInfo());
-            aux = aux.getNext();
-            while(aux != this.first) {
+            //System.out.println(aux.getInfo());
+            //aux = aux.getNext();
+            while(aux != null) {
                 System.out.println(aux.getInfo());
                 aux = aux.getNext();
             }

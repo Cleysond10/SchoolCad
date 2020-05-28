@@ -1,6 +1,7 @@
 package controller;
 
 import Aplicacao.ExbCadTurma;
+import Aplicacao.ExbTurmaCad;
 import Aplicacao.ListarTurma;
 import Aplicacao.MainSchool;
 import com.jfoenix.controls.JFXListView;
@@ -41,10 +42,10 @@ public class ListarTurmaController implements Initializable {
             a = listaTurmas.getSelectionModel().getSelectedItem();            
             MainSchool.setTurma(a);
             
-            ExbCadTurma ect = new ExbCadTurma();
+            ExbTurmaCad etc = new ExbTurmaCad();
 
             try {
-                ect.start(new Stage());    		
+                etc.start(new Stage());    		
             }catch(Exception ex) {
                 ex.printStackTrace();
             }

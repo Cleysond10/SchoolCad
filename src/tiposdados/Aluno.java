@@ -41,4 +41,9 @@ public class Aluno extends Usuario implements Comparable<Aluno> {
         return null;        
     }
     
+    @Override
+    public String toString() {
+        return super.getNome();
+    }
+    
 }

@@ -15,6 +15,7 @@ import Aplicacao.BuscProf;
 import Aplicacao.BuscaDiscAlt;
 import Aplicacao.BuscaExbAluno;
 import Aplicacao.BuscaExbDisc;
+import Aplicacao.BuscaTurmaExb;
 import Aplicacao.ExbProf;
 import Aplicacao.RemProf;
 import Aplicacao.CadAluno;
@@ -411,10 +412,10 @@ public class MainSchoolController implements Initializable {
 
     @FXML
     void actionBtExbTurmaPane(ActionEvent event) {
-        ExbTurma et = new ExbTurma();
+        BuscaTurmaExb bte = new BuscaTurmaExb();
         
         try {
-            et.start(new Stage());    		
+            bte.start(new Stage());    		
     	}catch(Exception ex) {
             ex.printStackTrace();
     	}

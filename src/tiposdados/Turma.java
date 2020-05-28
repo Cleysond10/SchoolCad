@@ -48,7 +48,7 @@ public class Turma extends Escola implements Comparable<Turma> {
 
     public void setQtdMaxAl(Integer QtdMaxAl) {
         this.QtdMaxAl = QtdMaxAl;
-        Alunos = new Aluno[this.QtdMaxAl];
+        Alunos = new Aluno[QtdMaxAl];
     }
 
     public int getQtdAl() {
