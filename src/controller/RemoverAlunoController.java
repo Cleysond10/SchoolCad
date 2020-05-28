@@ -45,9 +45,9 @@ public class RemoverAlunoController implements Initializable {
             alert.setContentText("CPF Inválido!!! \n Tente Novamente");
             alert.show();
         }
-
+        
     }
-
+    
     @FXML
     void acaoBtCancelar(ActionEvent event) {
         fechar();

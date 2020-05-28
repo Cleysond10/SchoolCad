@@ -3,11 +3,14 @@
 <?import com.jfoenix.controls.JFXButton?>
 <?import com.jfoenix.controls.JFXTextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="controller.BuscProfController">
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.BuscProfController">
    <children>
-      <JFXTextField layoutX="79.0" layoutY="121.0" prefHeight="33.0" prefWidth="463.0" promptText="Digite o CPF do Professor" />
-      <JFXButton buttonType="RAISED" layoutX="256.0" layoutY="257.0" prefHeight="25.0" prefWidth="108.0" ripplerFill="#750505" text="BUSCAR" />
+      <JFXTextField layoutX="79.0" layoutY="121.0" prefHeight="33.0" prefWidth="463.0" promptText="Digite o CPF do Professor" unFocusColor="RED" />
+      <JFXButton buttonType="RAISED" layoutX="256.0" layoutY="257.0" prefHeight="25.0" prefWidth="108.0" ripplerFill="WHITE" style="-fx-background-color: #050453; -fx-background-radius: 5cm; -fx-border-radius: 5cm;" text="BUSCAR" textFill="WHITE">
+         <font>
+            <Font name="Arial Bold" size="12.0" />
+         </font></JFXButton>
    </children>
 </AnchorPane>

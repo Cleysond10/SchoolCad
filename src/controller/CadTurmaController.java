@@ -90,12 +90,12 @@ public class CadTurmaController implements Initializable {
         MainSchool.getLdeTurma().add(Turma);
         
         MainSchool.getLdeTurma().exibir();
-
+        
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("VALIDAÇÃO");
         alert.setContentText("Cadastro Salvo com Sucesso.");
         alert.show();                
-
+        
         fechar();
         
     }

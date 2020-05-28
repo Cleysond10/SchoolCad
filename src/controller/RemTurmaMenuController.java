@@ -1,5 +1,7 @@
 package controller;
 
+import Aplicacao.RemTurma;
+import Aplicacao.RemTurmaAlunos;
 import Aplicacao.RemTurmaMenu;
 import com.jfoenix.controls.JFXButton;
 import java.net.URL;
@@ -7,6 +9,7 @@ import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.stage.Stage;
 
 /**
  * FXML Controller class
@@ -21,12 +24,26 @@ public class RemTurmaMenuController implements Initializable {
 
     @FXML
     void ActionRemTurma(ActionEvent event) {
-
+        RemTurma rt = new RemTurma();
+            
+            try {
+                    rt.start(new Stage());    		
+            }catch(Exception ex) {
+                    ex.printStackTrace();
+            }
+            fechar();
     }
 
     @FXML
     void ActionRemTurmaAlunos(ActionEvent event) {
-
+        RemTurmaAlunos rta = new RemTurmaAlunos();
+            
+            try {
+                    rta.start(new Stage());    		
+            }catch(Exception ex) {
+                    ex.printStackTrace();
+            }
+            fechar();
     }
 
     @FXML

@@ -3,18 +3,22 @@
 <?import com.jfoenix.controls.JFXButton?>
 <?import com.jfoenix.controls.JFXTextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
 <AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.CadProfController">
    <children>
-      <JFXTextField fx:id="tfNome" layoutX="69.0" layoutY="30.0" prefHeight="33.0" prefWidth="463.0" promptText="Nome Completo" />
-      <JFXTextField fx:id="tfCpf" layoutX="68.0" layoutY="69.0" prefHeight="33.0" prefWidth="223.0" promptText="C.P.F." />
-      <JFXTextField fx:id="tfRg" layoutX="300.0" layoutY="69.0" prefHeight="33.0" prefWidth="234.0" promptText="R.G." />
-      <JFXTextField fx:id="tfTel" layoutX="69.0" layoutY="156.0" prefHeight="33.0" prefWidth="463.0" promptText="Telefone" />
-      <JFXButton buttonType="RAISED" layoutX="235.0" layoutY="342.0" onAction="#BtCadProf" prefHeight="25.0" prefWidth="108.0" ripplerFill="#750505" text="CADASTRAR" />
-      <JFXTextField fx:id="tfEnd" layoutX="68.0" layoutY="200.0" prefHeight="33.0" prefWidth="463.0" promptText="Endereço" />
-      <JFXTextField fx:id="tfDnasc" layoutX="66.0" layoutY="111.0" prefHeight="33.0" prefWidth="223.0" promptText="Data de Nascimento" />
-      <JFXTextField fx:id="tfSexo" layoutX="299.0" layoutY="111.0" prefHeight="33.0" prefWidth="234.0" promptText="Sexo" />
-      <JFXTextField fx:id="tfEmail" layoutX="69.0" layoutY="241.0" prefHeight="33.0" prefWidth="463.0" promptText="E-mail" />
-      <JFXTextField fx:id="tfFormAcad" layoutX="67.0" layoutY="282.0" prefHeight="33.0" prefWidth="463.0" promptText="Formação Acadêmica" />
+      <JFXTextField fx:id="tfNome" layoutX="69.0" layoutY="30.0" prefHeight="33.0" prefWidth="463.0" promptText="Nome Completo" unFocusColor="RED" />
+      <JFXTextField fx:id="tfCpf" layoutX="68.0" layoutY="69.0" prefHeight="33.0" prefWidth="223.0" promptText="C.P.F." unFocusColor="RED" />
+      <JFXTextField fx:id="tfRg" layoutX="300.0" layoutY="69.0" prefHeight="33.0" prefWidth="234.0" promptText="R.G." unFocusColor="RED" />
+      <JFXTextField fx:id="tfTel" layoutX="69.0" layoutY="156.0" prefHeight="33.0" prefWidth="463.0" promptText="Telefone" unFocusColor="RED" />
+      <JFXButton buttonType="RAISED" layoutX="235.0" layoutY="342.0" onAction="#BtCadProf" prefHeight="25.0" prefWidth="108.0" ripplerFill="WHITE" style="-fx-background-color: #050453; -fx-background-radius: 5cm; -fx-border-radius: 5cm;" text="CADASTRAR" textFill="WHITE">
+         <font>
+            <Font name="Arial Bold" size="12.0" />
+         </font></JFXButton>
+      <JFXTextField fx:id="tfEnd" layoutX="68.0" layoutY="200.0" prefHeight="33.0" prefWidth="463.0" promptText="Endereço" unFocusColor="RED" />
+      <JFXTextField fx:id="tfDnasc" layoutX="66.0" layoutY="111.0" prefHeight="33.0" prefWidth="223.0" promptText="Data de Nascimento" unFocusColor="RED" />
+      <JFXTextField fx:id="tfSexo" layoutX="299.0" layoutY="111.0" prefHeight="33.0" prefWidth="234.0" promptText="Sexo" unFocusColor="RED" />
+      <JFXTextField fx:id="tfEmail" layoutX="69.0" layoutY="241.0" prefHeight="33.0" prefWidth="463.0" promptText="E-mail" unFocusColor="RED" />
+      <JFXTextField fx:id="tfFormAcad" layoutX="67.0" layoutY="282.0" prefHeight="33.0" prefWidth="463.0" promptText="Formação Acadêmica" unFocusColor="RED" />
    </children>
 </AnchorPane>
