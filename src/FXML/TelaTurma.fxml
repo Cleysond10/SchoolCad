@@ -9,7 +9,7 @@
 
 <Pane fx:id="JanelaPaneT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="383.0" prefWidth="532.0" style="-fx-background-color: #130e7f;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MainSchoolController">
    <children>
-      <JFXButton fx:id="btCadTurma" buttonType="RAISED" graphicTextGap="10.0" layoutX="189.0" layoutY="77.0" onAction="#actionBtCadTurmaPane" prefHeight="37.0" prefWidth="155.0" ripplerFill="#ff4c71" style="-fx-background-color: white; -fx-background-radius: 5cm; -fx-border-radius: 5cm;" text="Cadastrar">
+      <JFXButton fx:id="btCadTurma" buttonType="RAISED" graphicTextGap="10.0" layoutX="189.0" layoutY="77.0" onAction="#actionBtCadTurmaPane" prefHeight="37.0" prefWidth="155.0" ripplerFill="RED" style="-fx-background-color: white; -fx-background-radius: 5cm; -fx-border-radius: 5cm;" text="Cadastrar">
          <font>
             <Font name="Arial Bold" size="12.0" />
          </font>
@@ -21,7 +21,7 @@
             </ImageView>
          </graphic>
       </JFXButton>
-      <JFXButton fx:id="btAltTurma" buttonType="RAISED" graphicTextGap="25.0" layoutX="189.0" layoutY="125.0" onAction="#actionBtAltTurmaPane" prefHeight="37.0" prefWidth="155.0" ripplerFill="#ff4c71" style="-fx-background-color: white; -fx-background-radius: 5cm; -fx-border-radius: 5cm;" text="Alterar">
+      <JFXButton fx:id="btAltTurma" buttonType="RAISED" graphicTextGap="25.0" layoutX="189.0" layoutY="125.0" onAction="#actionBtAltTurmaPane" prefHeight="37.0" prefWidth="155.0" ripplerFill="RED" style="-fx-background-color: white; -fx-background-radius: 5cm; -fx-border-radius: 5cm;" text="Alterar">
          <font>
             <Font name="Arial Bold" size="12.0" />
          </font>
@@ -33,7 +33,7 @@
             </ImageView>
          </graphic>
       </JFXButton>
-      <JFXButton fx:id="btExbTurma" buttonType="RAISED" graphicTextGap="30.0" layoutX="189.0" layoutY="173.0" onAction="#actionBtExbTurmaPane" prefHeight="37.0" prefWidth="155.0" ripplerFill="#ff4d73" style="-fx-background-color: white; -fx-background-radius: 5cm; -fx-border-radius: 5cm;" text="Exibir">
+      <JFXButton fx:id="btExbTurma" buttonType="RAISED" graphicTextGap="30.0" layoutX="189.0" layoutY="173.0" onAction="#actionBtExbTurmaPane" prefHeight="37.0" prefWidth="155.0" ripplerFill="RED" style="-fx-background-color: white; -fx-background-radius: 5cm; -fx-border-radius: 5cm;" text="Exibir">
          <font>
             <Font name="Arial Bold" size="12.0" />
          </font>
@@ -45,7 +45,7 @@
             </ImageView>
          </graphic>
       </JFXButton>
-      <JFXButton fx:id="btRemTurma" buttonType="RAISED" graphicTextGap="15.0" layoutX="189.0" layoutY="221.0" onAction="#actionBtRemTurmaPane" prefHeight="37.0" prefWidth="155.0" ripplerFill="#ff4c71" style="-fx-background-color: white; -fx-background-radius: 5cm; -fx-border-radius: 5cm;" text="Remover">
+      <JFXButton fx:id="btRemTurma" buttonType="RAISED" graphicTextGap="15.0" layoutX="189.0" layoutY="221.0" onAction="#actionBtRemTurmaPane" prefHeight="37.0" prefWidth="155.0" ripplerFill="RED" style="-fx-background-color: white; -fx-background-radius: 5cm; -fx-border-radius: 5cm;" text="Remover">
          <font>
             <Font name="Arial Bold" size="12.0" />
          </font>
@@ -57,7 +57,7 @@
             </ImageView>
          </graphic>
       </JFXButton>
-      <JFXButton fx:id="btListTurma" buttonType="RAISED" graphicTextGap="30.0" layoutX="189.0" layoutY="269.0" onAction="#actionBtListTurmaPane" prefHeight="37.0" prefWidth="155.0" ripplerFill="#ff4d73" style="-fx-background-color: white; -fx-background-radius: 5cm; -fx-border-radius: 5cm;" text="Listar">
+      <JFXButton fx:id="btListTurma" buttonType="RAISED" graphicTextGap="30.0" layoutX="189.0" layoutY="269.0" onAction="#actionBtListTurmaPane" prefHeight="37.0" prefWidth="155.0" ripplerFill="RED" style="-fx-background-color: white; -fx-background-radius: 5cm; -fx-border-radius: 5cm;" text="Listar">
          <font>
             <Font name="Arial Bold" size="12.0" />
          </font>

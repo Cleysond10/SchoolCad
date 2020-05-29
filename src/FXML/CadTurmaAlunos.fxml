@@ -12,7 +12,7 @@
       <Label layoutX="120.0" layoutY="31.0" prefHeight="25.0" prefWidth="363.0" text="Selecione uma turma e depois insira os alunos que deseja cadastrar." textAlignment="JUSTIFY" />
       <JFXTextField fx:id="tfAlunos" layoutX="119.0" layoutY="175.0" prefHeight="25.0" prefWidth="363.0" promptText="Alunos Matriculados" unFocusColor="RED" />
       <JFXComboBox fx:id="cbCodTurma" layoutX="119.0" layoutY="132.0" prefHeight="25.0" prefWidth="363.0" promptText="Código da Turma" unFocusColor="RED" />
-      <JFXButton fx:id="btInserir" layoutX="179.0" layoutY="294.0" onAction="#ActionBtInserir" prefHeight="25.0" prefWidth="69.0" ripplerFill="WHITE" style="-fx-background-color: #050453; -fx-background-radius: 5cm; -fx-border-radius: 5cm;" text="INSERIR" textAlignment="JUSTIFY" textFill="WHITE">
+      <JFXButton fx:id="btInserir" layoutX="179.0" layoutY="294.0" onAction="#ActionBtInserir" prefHeight="25.0" prefWidth="69.0" ripplerFill="WHITE" style="-fx-background-color: #050453; -fx-background-radius: 5cm; -fx-border-radius: 5cm;" text="SALVAR" textAlignment="JUSTIFY" textFill="WHITE">
          <font>
             <Font name="Arial Bold" size="12.0" />
          </font></JFXButton>
