@@ -32,19 +32,26 @@ public class RemProfController implements Initializable {
         
         prof = new Professor(tfBuscaCPF.getText());
         
-        System.out.println(MainSchool.getLdeProf().consulta(prof));
-        
         if(MainSchool.getLdeProf().consulta(prof) != null) {
 
             prof = MainSchool.getLdeProf().consulta(prof);
-            MainSchool.getLdeProf().remover(prof);
+            if(prof.getQtdVTurmas() == 0) {
+                MainSchool.getLdeProf().remover(prof);
             
-            Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setTitle("CONFIRMAÇÃO");
-            alert.setContentText("Removido com Sucesso.");
-            alert.show();
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setTitle("CONFIRMAÇÃO");
+                alert.setContentText("Removido com Sucesso.");
+                alert.show();
 
-            fechar();
+                fechar();
+            }
+            else {
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setTitle("VALIDAÇÃO");
+                alert.setContentText("Professor Cadastrado em uma Turma");
+                alert.show();
+            }
+            
         }
         else {
             Alert alert = new Alert(Alert.AlertType.INFORMATION);

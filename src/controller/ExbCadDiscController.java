@@ -12,6 +12,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
+import tiposdados.Disciplina;
 
 /**
  * FXML Controller class
@@ -25,6 +26,8 @@ public class ExbCadDiscController implements Initializable {
     @FXML private Label lbPeriodo;
     @FXML private Label lbCargaH;
     @FXML private Label lbCred;
+    
+    private Disciplina disc;
     
     @FXML
     void acaoBtCancelar(ActionEvent event) {
@@ -48,14 +51,35 @@ public class ExbCadDiscController implements Initializable {
     @FXML
     void acaoBtRemover(ActionEvent event) {
         
-        MainSchool.getLdeDisc().remover(MainSchool.getDisc());
+        disc = new Disciplina(lbCodDisc.getText());       
+        
+        if(MainSchool.getLdeDisc().consulta(disc) != null) {            
+            disc = MainSchool.getLdeDisc().consulta(disc);
             
-        Alert alert = new Alert(Alert.AlertType.INFORMATION);
-        alert.setTitle("VALIDAÇÃO");
-        alert.setContentText("Disciplina Removido");
-        alert.show();
+            if(disc.getQtdVTurma() == 0) {
+                MainSchool.getLdeDisc().remover(MainSchool.getDisc());
 
-        fechar();
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setTitle("VALIDAÇÃO");
+                alert.setContentText("Disciplina Removido");
+                alert.show();
+
+                fechar();
+            }
+            else {
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setTitle("VALIDAÇÃO");
+                alert.setContentText("Disciplina Cadastrada em uma Turma");
+                alert.show();
+            }
+        }
+        else {
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("VALIDAÇÃO");
+            alert.setContentText("Código da Disciplina Inválido!!! \n Tente Novamente");
+            alert.show();
+        }
+        
 
     }
     

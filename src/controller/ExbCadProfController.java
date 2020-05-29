@@ -12,6 +12,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
+import tiposdados.Professor;
 
 /**
  * FXML Controller class
@@ -29,6 +30,8 @@ public class ExbCadProfController implements Initializable {
     @FXML private Label lbTel;
     @FXML private Label lbEmail;
     @FXML private Label lbFormAcad;
+    
+    private Professor prof;
 
     @FXML
     void acaoBtVoltar(ActionEvent event) {
@@ -50,14 +53,35 @@ public class ExbCadProfController implements Initializable {
     @FXML
     void acaoBtRemover(ActionEvent event) {
         
-        MainSchool.getLdeProf().remover(MainSchool.getProf());
-            
-        Alert alert = new Alert(Alert.AlertType.INFORMATION);
-        alert.setTitle("VALIDAÇÃO");
-        alert.setContentText("Professor Removido");
-        alert.show();
+        prof = new Professor(lbCpf.getText());
+        
+        if(MainSchool.getLdeProf().consulta(prof) != null) {
 
-        fechar();
+            prof = MainSchool.getLdeProf().consulta(prof);
+            if(prof.getQtdVTurmas() == 0) {
+                MainSchool.getLdeProf().remover(prof);
+            
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setTitle("CONFIRMAÇÃO");
+                alert.setContentText("Removido com Sucesso.");
+                alert.show();
+
+                fechar();
+            }
+            else {
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setTitle("VALIDAÇÃO");
+                alert.setContentText("Professor Cadastrado em uma Turma");
+                alert.show();
+            }
+            
+        }
+        else {
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("VALIDAÇÃO");
+            alert.setContentText("CPF Inválido!!! \n Tente Novamente");
+            alert.show();
+        }
 
     }
     

@@ -27,15 +27,24 @@ public class RemoverDiscController implements Initializable {
         disc = new Disciplina(tfCodDisc.getText());       
         
         if(MainSchool.getLdeDisc().consulta(disc) != null) {
+            disc = MainSchool.getLdeDisc().consulta(disc);
+            if(disc.getQtdVTurma() == 0) {
+                MainSchool.getLdeDisc().remover(disc);
             
-            MainSchool.getLdeDisc().remover(disc);
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setTitle("VALIDAÇÃO");
+                alert.setContentText("Aluno Removido");
+                alert.show();
+
+                fechar();
+            }
+            else {
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setTitle("VALIDAÇÃO");
+                alert.setContentText("Disciplina Cadastrada em uma Turma");
+                alert.show();
+            }
             
-            Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setTitle("VALIDAÇÃO");
-            alert.setContentText("Aluno Removido");
-            alert.show();
-            
-            fechar();
         }
         else {
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
