@@ -9,7 +9,7 @@
 
 <Pane fx:id="JanelaPaneD" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="383.0" prefWidth="532.0" style="-fx-background-color: #130e7f;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MainSchoolController">
    <children>
-      <JFXButton fx:id="btCadDisc" buttonType="RAISED" graphicTextGap="10.0" layoutX="189.0" layoutY="77.0" onAction="#actionBtCadPaneDisciplina" prefHeight="37.0" prefWidth="155.0" ripplerFill="#ff4c71" style="-fx-background-color: white; -fx-background-radius: 5cm; -fx-border-radius: 5cm;" text="Cadastrar">
+      <JFXButton fx:id="btCadDisc" buttonType="RAISED" graphicTextGap="10.0" layoutX="189.0" layoutY="77.0" onAction="#actionBtCadPaneDisciplina" prefHeight="37.0" prefWidth="155.0" ripplerFill="RED" style="-fx-background-color: white; -fx-background-radius: 5cm; -fx-border-radius: 5cm;" text="Cadastrar">
          <font>
             <Font name="Arial Bold" size="12.0" />
          </font>
@@ -21,7 +21,7 @@
             </ImageView>
          </graphic>
       </JFXButton>
-      <JFXButton fx:id="btAltDisc" buttonType="RAISED" graphicTextGap="25.0" layoutX="189.0" layoutY="125.0" onAction="#actionBtAltPaneDiscipllina" prefHeight="37.0" prefWidth="155.0" ripplerFill="#ff4c71" style="-fx-background-color: white; -fx-background-radius: 5cm; -fx-border-radius: 5cm;" text="Alterar">
+      <JFXButton fx:id="btAltDisc" buttonType="RAISED" graphicTextGap="25.0" layoutX="189.0" layoutY="125.0" onAction="#actionBtAltPaneDiscipllina" prefHeight="37.0" prefWidth="155.0" ripplerFill="RED" style="-fx-background-color: white; -fx-background-radius: 5cm; -fx-border-radius: 5cm;" text="Alterar">
          <font>
             <Font name="Arial Bold" size="12.0" />
          </font>
@@ -33,7 +33,7 @@
             </ImageView>
          </graphic>
       </JFXButton>
-      <JFXButton fx:id="btExbDisc" buttonType="RAISED" graphicTextGap="30.0" layoutX="189.0" layoutY="173.0" onAction="#actionBtExbPaneDisciplina" prefHeight="37.0" prefWidth="155.0" ripplerFill="#ff4d73" style="-fx-background-color: white; -fx-background-radius: 5cm; -fx-border-radius: 5cm;" text="Exibir">
+      <JFXButton fx:id="btExbDisc" buttonType="RAISED" graphicTextGap="30.0" layoutX="189.0" layoutY="173.0" onAction="#actionBtExbPaneDisciplina" prefHeight="37.0" prefWidth="155.0" ripplerFill="RED" style="-fx-background-color: white; -fx-background-radius: 5cm; -fx-border-radius: 5cm;" text="Exibir">
          <font>
             <Font name="Arial Bold" size="12.0" />
          </font>
@@ -45,7 +45,7 @@
             </ImageView>
          </graphic>
       </JFXButton>
-      <JFXButton fx:id="btRemDisc" buttonType="RAISED" graphicTextGap="15.0" layoutX="189.0" layoutY="221.0" onAction="#actionBtRemPaneDisciplina" prefHeight="37.0" prefWidth="155.0" ripplerFill="#ff4c71" style="-fx-background-color: white; -fx-background-radius: 5cm; -fx-border-radius: 5cm;" text="Remover">
+      <JFXButton fx:id="btRemDisc" buttonType="RAISED" graphicTextGap="15.0" layoutX="189.0" layoutY="221.0" onAction="#actionBtRemPaneDisciplina" prefHeight="37.0" prefWidth="155.0" ripplerFill="RED" style="-fx-background-color: white; -fx-background-radius: 5cm; -fx-border-radius: 5cm;" text="Remover">
          <font>
             <Font name="Arial Bold" size="12.0" />
          </font>
@@ -57,7 +57,7 @@
             </ImageView>
          </graphic>
       </JFXButton>
-      <JFXButton fx:id="btListDisc" buttonType="RAISED" graphicTextGap="30.0" layoutX="189.0" layoutY="269.0" onAction="#actionBtListPaneDisciplina" prefHeight="37.0" prefWidth="155.0" ripplerFill="#ff4d73" style="-fx-background-color: white; -fx-background-radius: 5cm; -fx-border-radius: 5cm;" text="Listar">
+      <JFXButton fx:id="btListDisc" buttonType="RAISED" graphicTextGap="30.0" layoutX="189.0" layoutY="269.0" onAction="#actionBtListPaneDisciplina" prefHeight="37.0" prefWidth="155.0" ripplerFill="RED" style="-fx-background-color: white; -fx-background-radius: 5cm; -fx-border-radius: 5cm;" text="Listar">
          <font>
             <Font name="Arial Bold" size="12.0" />
          </font>
