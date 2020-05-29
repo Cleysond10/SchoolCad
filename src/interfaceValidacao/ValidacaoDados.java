@@ -206,27 +206,158 @@ public class ValidacaoDados {
         return result;
     }
     
+    public int isValidHTurno(String nome, String HAula) {
+        
+        int result = 0;
+        //VALIDAR NOME
+        if(nome==null) {
+            System.out.println("null");
+            result = 9;
+        }
+        else if(nome.trim().length()<3) {
+            System.out.println("trim");
+            result = 9;
+        }
+        else if(nome.length()<2) {
+            result = 9;
+        }
+        else if(nome.length() == 3 && !(HAula.equals("30"))) {
+            System.out.println("Tamanho imcompativel com a carga horaria");
+            result = 9;
+        }
+        else if(nome.length() == 3) {
+            if(!(nome.charAt(0) == '0' || nome.charAt(0) == '1' || nome.charAt(0) == '2' || nome.charAt(0) == '3' || nome.charAt(0) == '4' || nome.charAt(0) == '5' || nome.charAt(0) == '6' || nome.charAt(0) == '7' || nome.charAt(0) == '8' || nome.charAt(0) == '9')) {
+                System.out.println("primeiro indece da string T3");
+                result = 9;
+            }
+            if(nome.charAt(1) == '0' || nome.charAt(1) == '1' || nome.charAt(1) == '2' || nome.charAt(1) == '3' || nome.charAt(1) == '4' || nome.charAt(1) == '5' || nome.charAt(1) == '6' || nome.charAt(1) == '7' || nome.charAt(1) == '8' || nome.charAt(1) == '9') {
+                System.out.println("segundo indece da string T3");
+                result = 9;
+            }
+            if(nome.charAt(2) == '0' || nome.charAt(2) == '1' || nome.charAt(2) == '2' || nome.charAt(2) == '3' || nome.charAt(2) == '4' || nome.charAt(2) == '5' || nome.charAt(2) == '6' || nome.charAt(2) == '7' || nome.charAt(2) == '8' || nome.charAt(2) == '9') {
+                System.out.println("terceiro indece da string T3");
+                result = 9;
+            }
+        }
+        else if(nome.length()>3 && nome.length()<7){
+            result = 9;
+        }
+        else if(nome.length() == 7 && !(HAula.equals("60"))) {
+            System.out.println("Tamanho imcompativel com a carga horaria T7");
+            result = 9;
+        }
+        else if(nome.length() == 7){
+            if(nome.charAt(0) != '0' || nome.charAt(0) != '1' || nome.charAt(0) != '2' || nome.charAt(0) != '3' || nome.charAt(0) != '4' || nome.charAt(0) != '5' || nome.charAt(0) != '6' || nome.charAt(0) != '7' || nome.charAt(0) != '8' || nome.charAt(0) != '9') {
+                System.out.println("primeiro indece da string T7");
+                result = 9;
+            }
+            if(nome.charAt(1) == '0' || nome.charAt(1) == '1' || nome.charAt(1) == '2' || nome.charAt(1) == '3' || nome.charAt(1) == '4' || nome.charAt(1) == '5' || nome.charAt(1) == '6' || nome.charAt(1) == '7' || nome.charAt(1) == '8' || nome.charAt(1) == '9') {
+                System.out.println("segundo indece da string T7");
+                result = 9;
+            }
+            if(nome.charAt(2) == '0' || nome.charAt(2) == '1' || nome.charAt(2) == '2' || nome.charAt(2) == '3' || nome.charAt(2) == '4' || nome.charAt(2) == '5' || nome.charAt(2) == '6' || nome.charAt(2) == '7' || nome.charAt(2) == '8' || nome.charAt(2) == '9') {
+                System.out.println("terceiro indece da string T7");
+                result = 9;
+            }
+            
+            if(nome.charAt(4) != '0' || nome.charAt(4) != '1' || nome.charAt(4) != '2' || nome.charAt(4) != '3' || nome.charAt(4) != '4' || nome.charAt(4) != '5' || nome.charAt(4) != '6' || nome.charAt(4) != '7' || nome.charAt(4) != '8' || nome.charAt(4) != '9') {
+                System.out.println("QUINTO indece da string T7");
+                result = 9;
+            }
+            if(nome.charAt(5) == '0' || nome.charAt(5) == '1' || nome.charAt(5) == '2' || nome.charAt(5) == '3' || nome.charAt(5) == '4' || nome.charAt(5) == '5' || nome.charAt(5) == '6' || nome.charAt(5) == '7' || nome.charAt(5) == '8' || nome.charAt(5) == '9') {
+                System.out.println("SEXTO indece da string T7");
+                result = 9;
+            }
+            if(nome.charAt(6) == '0' || nome.charAt(6) == '1' || nome.charAt(6) == '2' || nome.charAt(6) == '3' || nome.charAt(6) == '4' || nome.charAt(6) == '5' || nome.charAt(6) == '6' || nome.charAt(6) == '7' || nome.charAt(6) == '8' || nome.charAt(6) == '9') {
+                System.out.println("SEXTO indece da string T7");
+                result = 9;
+            }
+        }
+        return result;
+    }
+    
     public int isValidCodTurma(String nome) {
         
         int result = 0;
         //VALIDAR NOME
         if(nome==null) {
+            System.out.println("null");
             result = 8;
         }
         else if(nome.trim().length()<3) {
+            System.out.println("trim");
             result = 8;
+        }
+        else if(nome.length()<5) {
+            System.out.println("lenght");
+            result = 8;
+        }
+        else {
+            if(nome.charAt(0) == '0' || nome.charAt(0) == '1' || nome.charAt(0) == '2' || nome.charAt(0) == '3' || nome.charAt(0) == '4' || nome.charAt(0) == '5' || nome.charAt(0) == '6' || nome.charAt(0) == '7' || nome.charAt(0) == '8' || nome.charAt(0) == '9') {
+                System.out.println("primeiro indece da string");
+                result = 8;
+            }
+            if(nome.charAt(2) == 'M' || nome.charAt(2) == 'T' || nome.charAt(2) == 'N') {
+                System.out.println("terceiro indece da string");
+                result = 8;
+            }
+            if(nome.charAt(4) == 'M' || nome.charAt(4) == 'T' || nome.charAt(4) == 'N') {
+                System.out.println("quinto indece da string");
+                result = 8;
+            }
+            
         }
         
-        if(nome.substring(0, 1).equals( "[0-9]")) {
-            result = 8;
-        }
-        if(nome.substring(2, 2).equals( "[M-T]")) {
-            result = 8;
-        }
-        if(nome.substring(4, 4).equals( "[M-T]")) {
-            result = 8;
-        }
         
+        
+        return result;
+    }
+    
+    public int isValidCodDisc(String nome) {
+        
+        int result = 0;
+        //VALIDAR NOME
+        if(nome==null) {
+            System.out.println("null");
+            result = 10;
+        }
+        else if(nome.trim().length()<3) {
+            System.out.println("trim");
+            result = 10;
+        }
+        else if(nome.length()<7) {
+            result = 10;
+        }
+        else {
+            if(nome.charAt(0) == '0' || nome.charAt(0) == '1' || nome.charAt(0) == '2' || nome.charAt(0) == '3' || nome.charAt(0) == '4' || nome.charAt(0) == '5' || nome.charAt(0) == '6' || nome.charAt(0) == '7' || nome.charAt(0) == '8' || nome.charAt(0) == '9') {
+                System.out.println("primeiro indece da string T3");
+                result = 10;
+            }
+            if(nome.charAt(1) == '0' || nome.charAt(1) == '1' || nome.charAt(1) == '2' || nome.charAt(1) == '3' || nome.charAt(1) == '4' || nome.charAt(1) == '5' || nome.charAt(1) == '6' || nome.charAt(1) == '7' || nome.charAt(1) == '8' || nome.charAt(1) == '9') {
+                System.out.println("segundo indece da string T3");
+                result = 10;
+            }
+            if(nome.charAt(2) == '0' || nome.charAt(2) == '1' || nome.charAt(2) == '2' || nome.charAt(2) == '3' || nome.charAt(2) == '4' || nome.charAt(2) == '5' || nome.charAt(2) == '6' || nome.charAt(2) == '7' || nome.charAt(2) == '8' || nome.charAt(2) == '9') {
+                System.out.println("terceiro indece da string T3");
+                result = 10;
+            }
+            if(!(nome.charAt(3) == '0' || nome.charAt(3) == '1' || nome.charAt(3) == '2' || nome.charAt(3) == '3' || nome.charAt(3) == '4' || nome.charAt(3) == '5' || nome.charAt(3) == '6' || nome.charAt(3) == '7' || nome.charAt(3) == '8' || nome.charAt(3) == '9')) {
+                System.out.println("quarto indece da string T3");
+                result = 10;
+            }
+            if(!(nome.charAt(4) == '0' || nome.charAt(4) == '1' || nome.charAt(4) == '2' || nome.charAt(4) == '3' || nome.charAt(4) == '4' || nome.charAt(4) == '5' || nome.charAt(4) == '6' || nome.charAt(4) == '7' || nome.charAt(4) == '8' || nome.charAt(4) == '9')) {
+                System.out.println("quinta indece da string T3");
+                result = 10;
+            }
+            if(!(nome.charAt(5) == '0' || nome.charAt(5) == '1' || nome.charAt(5) == '2' || nome.charAt(5) == '3' || nome.charAt(5) == '4' || nome.charAt(5) == '5' || nome.charAt(5) == '6' || nome.charAt(5) == '7' || nome.charAt(5) == '8' || nome.charAt(5) == '9')) {
+                System.out.println("sexta indece da string T3");
+                result = 10;
+            }
+            if(!(nome.charAt(6) == '0' || nome.charAt(6) == '1' || nome.charAt(6) == '2' || nome.charAt(6) == '3' || nome.charAt(6) == '4' || nome.charAt(6) == '5' || nome.charAt(6) == '6' || nome.charAt(6) == '7' || nome.charAt(6) == '8' || nome.charAt(6) == '9')) {
+                System.out.println("setima indece da string T3");
+                result = 10;
+            }
+        }
         return result;
     }
     

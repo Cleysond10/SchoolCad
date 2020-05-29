@@ -3,6 +3,7 @@ package controller;
 import Aplicacao.AltCadTurma;
 import Aplicacao.MainSchool;
 import com.jfoenix.controls.JFXTextField;
+import interfaceValidacao.ValidacaoDados;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
@@ -10,6 +11,7 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
 import javafx.scene.control.ComboBox;
 import tiposdados.Disciplina;
 import tiposdados.Professor;
@@ -39,6 +41,7 @@ public class AltCadTurmaController implements Initializable {
     void BtAltCadTurma(ActionEvent event) {
         Turma[] vDiscTurmas = discc.getTurmas();
         Turma[] vProfxTurmas = proff.getTurmas();
+        ValidacaoDados valida = new ValidacaoDados();
         
         
         for(int i = 0; i < vDiscTurmas.length; i++) {
@@ -70,34 +73,56 @@ public class AltCadTurmaController implements Initializable {
         
         //vProfxTurmas[cbProfx.getSelectionModel().getSelectedItem().getQtdVTurmas()] = turma;
         
-        turma.setCodTurma(tfCodTurma.getText());
+        if(valida.isValidCodTurma(tfCodTurma.getText()) == 0 && valida.isValidHTurno(tfHorario.getText(), cbDisc.getSelectionModel().getSelectedItem().getCargaH()) == 0) {
+            
+            turma.setCodTurma(tfCodTurma.getText());
         
-        turma.setCodDisc(cbDisc.getSelectionModel().getSelectedItem().getCodDisc());
-        
-        turma.setProfx(cbProfx.getSelectionModel().getSelectedItem());
-        turma.setHorario(tfHorario.getText());
-        turma.setpLetivo(tfPLetivo.getText());
-        
-        vDiscTurmas = cbDisc.getSelectionModel().getSelectedItem().getTurmas();
-        
-        vDiscTurmas[cbDisc.getSelectionModel().getSelectedItem().getQtdVTurma()] = turma;
-        cbDisc.getSelectionModel().getSelectedItem().setTurmas(vDiscTurmas);
-        cbDisc.getSelectionModel().getSelectedItem().setQtdVTurma(cbDisc.getSelectionModel().getSelectedItem().getQtdVTurma() + 1);
-        
-        vProfxTurmas = cbProfx.getSelectionModel().getSelectedItem().getTurmas();
-        
-        vProfxTurmas[cbProfx.getSelectionModel().getSelectedItem().getQtdVTurmas()] = turma;
-        cbProfx.getSelectionModel().getSelectedItem().setTurmas(vProfxTurmas);        
-        cbProfx.getSelectionModel().getSelectedItem().setQtdVTurmas(cbProfx.getSelectionModel().getSelectedItem().getQtdVTurmas() + 1);
-        
+            turma.setCodDisc(cbDisc.getSelectionModel().getSelectedItem().getCodDisc());
 
+            turma.setProfx(cbProfx.getSelectionModel().getSelectedItem());
+            turma.setHorario(tfHorario.getText());
+            turma.setpLetivo(tfPLetivo.getText());
+
+            vDiscTurmas = cbDisc.getSelectionModel().getSelectedItem().getTurmas();
+
+            vDiscTurmas[cbDisc.getSelectionModel().getSelectedItem().getQtdVTurma()] = turma;
+            cbDisc.getSelectionModel().getSelectedItem().setTurmas(vDiscTurmas);
+            cbDisc.getSelectionModel().getSelectedItem().setQtdVTurma(cbDisc.getSelectionModel().getSelectedItem().getQtdVTurma() + 1);
+
+            vProfxTurmas = cbProfx.getSelectionModel().getSelectedItem().getTurmas();
+
+            vProfxTurmas[cbProfx.getSelectionModel().getSelectedItem().getQtdVTurmas()] = turma;
+            cbProfx.getSelectionModel().getSelectedItem().setTurmas(vProfxTurmas);        
+            cbProfx.getSelectionModel().getSelectedItem().setQtdVTurmas(cbProfx.getSelectionModel().getSelectedItem().getQtdVTurmas() + 1);
+            
+            if(MainSchool.getLdeTurma().consulta(turma) == null) {
+                
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setTitle("VALIDAÇÃO");
+                alert.setContentText("Alteração Salvo com Sucesso.");
+                alert.show();
+                
+            }
+
+            fechar();
+        
+        }
+        else {
+            String vCodTurma = "", vHorario = "", vNome = "", vCPF = "";
+            if(valida.isValidCodTurma(tfCodTurma.getText())==8) {
+                vCodTurma = "Verifique o Código da Turma";
+            }
+            if(valida.isValidHTurno(tfHorario.getText(), cbDisc.getSelectionModel().getSelectedItem().getCargaH())==9) {
+                vHorario = "Verifique o Horário";
+            }
+            
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setTitle("VALIDAÇÃO");
+            alert.setContentText(vCodTurma + "\n" + vHorario);
+            alert.show();                
+        }
         
         
-        //Integer x = Integer.parseInt(tfQtdMaxAl.getText());
-        //turma.setQtdMaxAl(x);
-        
-        
-        fechar();
         
     }
     

@@ -1,26 +1,16 @@
 package controller;
 
-import Aplicacao.CadAluno;
 import Aplicacao.CadDisc;
 import Aplicacao.MainSchool;
 import com.jfoenix.controls.JFXTextField;
 import interfaceValidacao.MascaraFX;
 import interfaceValidacao.ValidacaoDados;
 import java.net.URL;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.ResourceBundle;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
-import javafx.scene.input.KeyEvent;
-import javax.mail.internet.AddressException;
-import javax.mail.internet.InternetAddress;
-import tiposdados.Aluno;
 import tiposdados.Disciplina;
 
 /**
@@ -51,57 +41,53 @@ public class CadDiscController implements Initializable {
         
         
         
-        if(valida.isValidNome(tfNome.getText())==0 && valida.isValidCargaH(tfCargaH.getText())==0) {
+        if(valida.isValidNome(tfNome.getText())==0 && valida.isValidCargaH(tfCargaH.getText())==0 && valida.isValidCodDisc(tfCodDisc.getText()) == 0) {
             String x;
-        x = tfCodDisc.getText();
-        x = x.toUpperCase();
-        Disc = new Disciplina(x);
-        
-        x = tfNome.getText();
-        x = x.toUpperCase();
-        Disc.setNome(x);
-                
-        Disc.setCargaH(tfCargaH.getText());
-        
-        Disc.setCredito(tfCred.getText());
+            x = tfCodDisc.getText();
+            x = x.toUpperCase();
+            Disc = new Disciplina(x);
 
-        x = tfPeriodo.getText();
-        x = x.toUpperCase();
-        Disc.setPeriodo(x);
-        
-        MainSchool.getLdeDisc().add(Disc);
-            
-            Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setTitle("VALIDAÇÃO");
-            alert.setContentText("Cadastro Salvo com Sucesso.");
-            alert.show();                
-            
-            fechar();
+            x = tfNome.getText();
+            x = x.toUpperCase();
+            Disc.setNome(x);
+
+            Disc.setCargaH(tfCargaH.getText());
+
+            Disc.setCredito(tfCred.getText());
+
+            x = tfPeriodo.getText();
+            x = x.toUpperCase();
+            Disc.setPeriodo(x);
+
+            MainSchool.getLdeDisc().add(Disc);
+
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setTitle("VALIDAÇÃO");
+                alert.setContentText("Cadastro Salvo com Sucesso.");
+                alert.show();                
+
+                fechar();
         }
         else {
-            String vEmail = "", vData = "", vNome = "", vCPF = "";
-            if(valida.isValidCargaH(tfCargaH.getText())==1) {
-                vEmail = "Verifique a Carga Horária";
+            String vCagaH = "", vCodDisc = "", vNome = "";
+            if(valida.isValidCargaH(tfCargaH.getText())==7) {
+                vCagaH = "Verifique a Carga Horária";
             }
-            
+
             if(valida.isValidNome(tfNome.getText())==3) {
                 vNome = "Verifique o Nome";
             }
-            
-            
+            if(valida.isValidCodDisc(tfCodDisc.getText())==10) {
+                vCodDisc = "Verifique o Código da Disciplina";
+            }
+
+
             Alert alert = new Alert(Alert.AlertType.WARNING);
             alert.setTitle("VALIDAÇÃO");
-            alert.setContentText(vEmail + "\n" + vData + "\n" + vNome + "\n" + vCPF);
+            alert.setContentText(vCagaH + "\n" + vCodDisc + "\n" + vNome);
             alert.show();
-            
+
         }
-            
-        
-        
-        //ldeAlunoCad = MainSchool.getLdeAlunoPP();
-        //ldeAlunoCad.add(aluno);
-        //MainSchool.setLdeAlunoPP(ldeAlunoCad);
-        
     }
     
     public void carregar() {

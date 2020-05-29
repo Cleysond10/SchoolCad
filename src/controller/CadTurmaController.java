@@ -7,6 +7,7 @@ import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXTextField;
 import interfaceValidacao.MascaraFX;
+import interfaceValidacao.ValidacaoDados;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
@@ -65,44 +66,66 @@ public class CadTurmaController implements Initializable {
     
     @FXML
     void BtCadTurma(ActionEvent event) {
-        turma = new Turma(tfCodTurma.getText(), cbDisc.getSelectionModel().getSelectedItem().getCodDisc());
-        
-        turma.setProfx(cbProfx.getSelectionModel().getSelectedItem());        
-        turma.setHorario(tfHorario.getText());
-        turma.setpLetivo(tfPLetivo.getText());
-        
-        Integer x = Integer.parseInt(tfQtdMaxAl.getText());
-        turma.setQtdMaxAl(x);
-        
-        Turma[] vDiscTurmas = cbDisc.getSelectionModel().getSelectedItem().getTurmas();
-        
-        vDiscTurmas[cbDisc.getSelectionModel().getSelectedItem().getQtdVTurma()] = turma;
-        Disciplina disc = MainSchool.getLdeDisc().consulta(cbDisc.getSelectionModel().getSelectedItem());
-        System.out.println(disc);
-        disc.setTurmas(vDiscTurmas);
-        disc.setQtdVTurma(disc.getQtdVTurma() + 1);
-        
-        Turma[] vProfxTurmas = cbProfx.getSelectionModel().getSelectedItem().getTurmas();
-        
-        vProfxTurmas[cbProfx.getSelectionModel().getSelectedItem().getQtdVTurmas()] = turma;
-        Professor prof = MainSchool.getLdeProf().consulta(cbProfx.getSelectionModel().getSelectedItem());
-        prof.setTurmas(vProfxTurmas);
-        prof.setQtdVTurmas(prof.getQtdVTurmas() + 1);
-                
-        
-        MainSchool.getLdeTurma().add(turma);        
+        ValidacaoDados valida = new ValidacaoDados();
         
         
-        if(MainSchool.getLdeTurma().consulta(turma) == null) {
-                
-                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        if(valida.isValidCodTurma(tfCodTurma.getText()) == 0 && valida.isValidHTurno(tfHorario.getText(), cbDisc.getSelectionModel().getSelectedItem().getCargaH()) == 0) {
+            turma = new Turma(tfCodTurma.getText(), cbDisc.getSelectionModel().getSelectedItem().getCodDisc());
+        
+            turma.setProfx(cbProfx.getSelectionModel().getSelectedItem());        
+            turma.setHorario(tfHorario.getText());
+            turma.setpLetivo(tfPLetivo.getText());
+
+            Integer x = Integer.parseInt(tfQtdMaxAl.getText());
+            turma.setQtdMaxAl(x);
+
+            Turma[] vDiscTurmas = cbDisc.getSelectionModel().getSelectedItem().getTurmas();
+
+            vDiscTurmas[cbDisc.getSelectionModel().getSelectedItem().getQtdVTurma()] = turma;
+            Disciplina disc = MainSchool.getLdeDisc().consulta(cbDisc.getSelectionModel().getSelectedItem());
+            System.out.println(disc);
+            disc.setTurmas(vDiscTurmas);
+            disc.setQtdVTurma(disc.getQtdVTurma() + 1);
+
+            Turma[] vProfxTurmas = cbProfx.getSelectionModel().getSelectedItem().getTurmas();
+
+            vProfxTurmas[cbProfx.getSelectionModel().getSelectedItem().getQtdVTurmas()] = turma;
+            Professor prof = MainSchool.getLdeProf().consulta(cbProfx.getSelectionModel().getSelectedItem());
+            prof.setTurmas(vProfxTurmas);
+            prof.setQtdVTurmas(prof.getQtdVTurmas() + 1);
+
+
+            MainSchool.getLdeTurma().add(turma);        
+
+
+            if(MainSchool.getLdeTurma().consulta(turma) == null) {
+
+                    Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                    alert.setTitle("VALIDAÇÃO");
+                    alert.setContentText("Cadastro Salvo com Sucesso.");
+                    alert.show();
+
+                }               
+
+            fechar();
+        }
+        else {
+            String vCodTurma = "", vHorario = "", vNome = "", vCPF = "";
+            if(valida.isValidCodTurma(tfCodTurma.getText())==8) {
+                vCodTurma = "Verifique o Código da Turma";
+            }
+            if(valida.isValidHTurno(tfHorario.getText(), cbDisc.getSelectionModel().getSelectedItem().getCargaH())==9) {
+                vHorario = "Verifique o Horário";
+            }
+            
+            Alert alert = new Alert(Alert.AlertType.WARNING);
                 alert.setTitle("VALIDAÇÃO");
-                alert.setContentText("Cadastro Salvo com Sucesso.");
-                alert.show();
-                
-            }               
+                alert.setContentText(vCodTurma + "\n" + vHorario);
+                alert.show();                
+        }
         
-        fechar();
+        
+        
         
     }
     

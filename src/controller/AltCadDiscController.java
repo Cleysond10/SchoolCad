@@ -44,7 +44,7 @@ public class AltCadDiscController implements Initializable {
         ValidacaoDados valida = new ValidacaoDados();
         
         
-        if(valida.isValidNome(tfNome.getText())==0 && valida.isValidCargaH(tfCargaH.getText())==0) {
+        if(valida.isValidNome(tfNome.getText())==0 && valida.isValidCargaH(tfCargaH.getText())==0 && valida.isValidCodDisc(tfCodDisc.getText()) == 0) {
             String x;
             x = tfCodDisc.getText();
             x = x.toUpperCase();
@@ -72,20 +72,24 @@ public class AltCadDiscController implements Initializable {
             fechar();
         }
         else {
-            String vEmail = "", vData = "", vNome = "", vCPF = "";
-            if(valida.isValidCargaH(tfCargaH.getText())==1) {
-                vEmail = "Verifique a Carga Horária";
+            String vCagaH = "", vCodDisc = "", vNome = "";
+            if(valida.isValidCargaH(tfCargaH.getText())==7) {
+                vCagaH = "Verifique a Carga Horária";
             }
-            
+
             if(valida.isValidNome(tfNome.getText())==3) {
                 vNome = "Verifique o Nome";
             }
-            
-            
+            if(valida.isValidCodDisc(tfCodDisc.getText())==10) {
+                vCodDisc = "Verifique o Código da Disciplina";
+            }
+
+
             Alert alert = new Alert(Alert.AlertType.WARNING);
-                alert.setTitle("VALIDAÇÃO");
-                alert.setContentText(vEmail + "\n" + vData + "\n" + vNome + "\n" + vCPF);
-                alert.show();
+            alert.setTitle("VALIDAÇÃO");
+            alert.setContentText(vCagaH + "\n" + vCodDisc + "\n" + vNome);
+            alert.show();
+            alert.show();
         }
     }
     
