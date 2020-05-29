@@ -24,11 +24,11 @@ public class CadProf extends Application {
             AnchorPane fxmlMenu = (AnchorPane)FXMLLoader.load(getClass().getResource("/FXML/CadProf.fxml"));
                         
             
-            Scene scene = new Scene(fxmlMenu,600,400);           
+            Scene scene = new Scene(fxmlMenu,600,500);           
             scene.getStylesheets().add(getClass().getResource("/CSS/CSSMainSchool.css").toExternalForm());          
             
             
-            stage.setTitle("Cadastro - PROFESSOR");            
+            stage.setTitle("CADASTRAR - PROFESSOR");            
             stage.setScene(scene);
             //stage.setMaximized(true);
             //ESSA FUNÇÃO A BAIXO FAZ A TELA FICAR CHEIA

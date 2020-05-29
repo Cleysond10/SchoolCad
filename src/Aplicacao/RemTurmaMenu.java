@@ -29,7 +29,7 @@ public class RemTurmaMenu extends Application {
             scene.getStylesheets().add(getClass().getResource("/CSS/CSSMainSchool.css").toExternalForm());          
             
             
-            stage.setTitle("Remover - TURMA");            
+            stage.setTitle("REMOVER - TURMA");            
             stage.setScene(scene);
             //stage.setMaximized(true);
             //ESSA FUNÇÃO A BAIXO FAZ A TELA FICAR CHEIA

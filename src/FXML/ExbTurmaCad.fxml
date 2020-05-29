@@ -21,9 +21,9 @@
             <Font name="Arial Bold" size="12.0" />
          </font>
       </JFXButton>
-      <Label alignment="CENTER" layoutX="72.0" layoutY="31.0" prefHeight="14.0" prefWidth="89.0" style="-fx-background-color: #130e7f; -fx-background-radius: 5cm; -fx-border-radius: 5cm;" text="CÓDIGO DA TURMA:" textFill="WHITE">
+      <Label alignment="CENTER" layoutX="72.0" layoutY="31.0" prefHeight="15.0" prefWidth="135.0" text="CÓDIGO DA TURMA:" textFill="RED">
          <font>
-            <Font name="Arial Bold" size="7.0" />
+            <Font name="Arial Bold Italic" size="12.0" />
          </font>
          <effect>
             <Lighting>
@@ -51,9 +51,9 @@
             </Lighting>
          </effect>
       </Label>
-      <Label alignment="CENTER" layoutX="72.0" layoutY="71.0" prefHeight="14.0" prefWidth="89.0" style="-fx-background-color: #130e7f; -fx-background-radius: 5cm; -fx-border-radius: 5cm;" text="HORÁRIO:" textFill="WHITE">
+      <Label alignment="CENTER" layoutX="78.0" layoutY="71.0" prefHeight="15.0" prefWidth="74.0" text="HORÁRIO:" textFill="RED">
          <font>
-            <Font name="Arial Bold" size="7.0" />
+            <Font name="Arial Bold Italic" size="12.0" />
          </font>
          <effect>
             <Lighting>
@@ -81,9 +81,9 @@
             </Lighting>
          </effect>
       </Label>
-      <Label alignment="CENTER" layoutX="72.0" layoutY="111.0" prefHeight="14.0" prefWidth="89.0" style="-fx-background-color: #130e7f; -fx-background-radius: 5cm; -fx-border-radius: 5cm;" text="PERIODO LETIVO:" textFill="WHITE">
+      <Label alignment="CENTER" layoutX="81.0" layoutY="111.0" prefHeight="15.0" prefWidth="108.0" text="PERIODO LETIVO:" textFill="RED">
          <font>
-            <Font name="Arial Bold" size="7.0" />
+            <Font name="Arial Bold" size="12.0" />
          </font>
          <effect>
             <Lighting>
@@ -111,9 +111,9 @@
             </Lighting>
          </effect>
       </Label>
-      <Label alignment="CENTER" layoutX="72.0" layoutY="151.0" prefHeight="14.0" prefWidth="135.0" style="-fx-background-color: #130e7f; -fx-background-radius: 5cm; -fx-border-radius: 5cm;" text="QUANTIDADE MÁXIMA DE ALUNOS:" textFill="WHITE">
+      <Label alignment="CENTER" layoutX="80.0" layoutY="151.0" prefHeight="15.0" prefWidth="210.0" text="QUANTIDADE MÁXIMA DE ALUNOS:" textFill="RED">
          <font>
-            <Font name="Arial Bold" size="7.0" />
+            <Font name="Arial Bold Italic" size="12.0" />
          </font>
          <effect>
             <Lighting>
@@ -141,9 +141,9 @@
             </Lighting>
          </effect>
       </Label>
-      <Label alignment="CENTER" layoutX="72.0" layoutY="191.0" prefHeight="14.0" prefWidth="89.0" style="-fx-background-color: #130e7f; -fx-background-radius: 5cm; -fx-border-radius: 5cm;" text="DISCIPLINA:" textFill="WHITE">
+      <Label alignment="CENTER" layoutX="72.0" layoutY="191.0" prefHeight="14.0" prefWidth="89.0" text="DISCIPLINA:" textFill="RED">
          <font>
-            <Font name="Arial Bold" size="7.0" />
+            <Font name="Arial Bold Italic" size="12.0" />
          </font>
          <effect>
             <Lighting>
@@ -171,9 +171,9 @@
             </Lighting>
          </effect>
       </Label>
-      <Label alignment="CENTER" layoutX="72.0" layoutY="231.0" prefHeight="14.0" prefWidth="89.0" style="-fx-background-color: #130e7f; -fx-background-radius: 5cm; -fx-border-radius: 5cm;" text="PROFESSOR:" textFill="WHITE">
+      <Label alignment="CENTER" layoutX="80.0" layoutY="231.0" prefHeight="15.0" prefWidth="81.0" text="PROFESSOR:" textFill="RED">
          <font>
-            <Font name="Arial Bold" size="7.0" />
+            <Font name="Arial Bold Italic" size="12.0" />
          </font>
          <effect>
             <Lighting>

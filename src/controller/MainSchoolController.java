@@ -109,25 +109,25 @@ public class MainSchoolController implements Initializable {
         if(event.getSource().equals(btAluno)) {
             Pane pane = (Pane)FXMLLoader.load(getClass().getResource("/FXML/TelaAluno.fxml"));        
             JanelaPane.getChildren().add(pane);
-            paneStatus.setBackground(new Background(new BackgroundFill(Paint.valueOf("#050453"), CornerRadii.EMPTY, Insets.EMPTY)));
+            paneStatus.setBackground(new Background(new BackgroundFill(Paint.valueOf("130e7f"), CornerRadii.EMPTY, Insets.EMPTY)));
             labelStatus.setText("ALUNO");
         }
         else if(event.getSource().equals(btProf)) {
             Pane pane = (Pane)FXMLLoader.load(getClass().getResource("/FXML/TelaProfessor.fxml"));        
             JanelaPane.getChildren().add(pane);
-            paneStatus.setBackground(new Background(new BackgroundFill(Paint.valueOf("#050453"), CornerRadii.EMPTY, Insets.EMPTY)));
+            paneStatus.setBackground(new Background(new BackgroundFill(Paint.valueOf("#130e7f"), CornerRadii.EMPTY, Insets.EMPTY)));
             labelStatus.setText("PROFESSOR");            
         }
         else if(event.getSource().equals(btDisc)) {
             Pane pane = (Pane)FXMLLoader.load(getClass().getResource("/FXML/TelaDisciplina.fxml"));        
             JanelaPane.getChildren().add(pane);
-            paneStatus.setBackground(new Background(new BackgroundFill(Paint.valueOf("#050453"), CornerRadii.EMPTY, Insets.EMPTY)));
+            paneStatus.setBackground(new Background(new BackgroundFill(Paint.valueOf("130e7f"), CornerRadii.EMPTY, Insets.EMPTY)));
             labelStatus.setText("DISCIPLINA");            
         }
         else if(event.getSource().equals(btTurm)) {
             Pane pane = (Pane)FXMLLoader.load(getClass().getResource("/FXML/TelaTurma.fxml"));        
             JanelaPane.getChildren().add(pane);
-            paneStatus.setBackground(new Background(new BackgroundFill(Paint.valueOf("#050453"), CornerRadii.EMPTY, Insets.EMPTY)));
+            paneStatus.setBackground(new Background(new BackgroundFill(Paint.valueOf("#130e7f"), CornerRadii.EMPTY, Insets.EMPTY)));
             labelStatus.setText("TURMA");            
         }
         
@@ -138,7 +138,7 @@ public class MainSchoolController implements Initializable {
         
         Pane pane = (Pane)FXMLLoader.load(getClass().getResource("/FXML/TelaInicial.fxml"));        
         JanelaPane.getChildren().add(pane);
-        paneStatus.setBackground(new Background(new BackgroundFill(Paint.valueOf("#050453"), CornerRadii.EMPTY, Insets.EMPTY)));
+        paneStatus.setBackground(new Background(new BackgroundFill(Paint.valueOf("#130e7f"), CornerRadii.EMPTY, Insets.EMPTY)));
         labelStatus.setText("SCHOOLCAD");            
 
     }

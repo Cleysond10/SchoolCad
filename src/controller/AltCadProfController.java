@@ -30,6 +30,12 @@ public class AltCadProfController implements Initializable {
     @FXML private JFXTextField tfSexo;
     @FXML private JFXTextField tfEmail;
     @FXML private JFXTextField tfFormAcad;
+    
+    
+    @FXML
+    void acaoBtCancelar(ActionEvent event) {
+        fechar();
+    }
 
     @FXML
     void acaoBtEditar(ActionEvent event) {

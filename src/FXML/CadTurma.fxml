@@ -11,7 +11,7 @@
       <JFXTextField fx:id="tfCodTurma" layoutX="70.0" layoutY="67.0" prefHeight="33.0" prefWidth="463.0" promptText="Código da Turma" unFocusColor="RED" />
       <JFXTextField fx:id="tfHorario" layoutX="70.0" layoutY="154.0" onAction="#ActionMouseHorario" onMouseClicked="#ActionMouseHorario" onMousePressed="#ActionMouseHorario" prefHeight="33.0" prefWidth="463.0" promptText="Horário das Aulas" unFocusColor="RED" />
       <JFXTextField fx:id="tfPLetivo" layoutX="71.0" layoutY="198.0" prefHeight="33.0" prefWidth="463.0" promptText="Ano e Período Letivo" unFocusColor="RED" />
-      <JFXButton buttonType="RAISED" layoutX="132.0" layoutY="334.0" onAction="#BtCadTurma" prefHeight="25.0" prefWidth="99.0" ripplerFill="WHITE" style="-fx-background-color: #050453; -fx-background-radius: 5cm; -fx-border-radius: 5cm;" text="CRIAR TURMA" textFill="WHITE">
+      <JFXButton buttonType="RAISED" layoutX="132.0" layoutY="334.0" onAction="#BtCadTurma" prefHeight="25.0" prefWidth="99.0" ripplerFill="WHITE" style="-fx-background-color: #050453; -fx-background-radius: 5cm; -fx-border-radius: 5cm;" text="SALVAR" textFill="WHITE">
          <font>
             <Font name="Arial Bold" size="12.0" />
          </font></JFXButton>

@@ -15,7 +15,7 @@
             <Font name="Arial Bold" size="12.0" />
          </font>
       </JFXButton>
-      <Label alignment="CENTER" layoutX="47.0" layoutY="60.0" prefHeight="25.0" prefWidth="43.0" style="-fx-background-color: #130e7f; -fx-background-radius: 5cm; -fx-border-radius: 5cm;" text="NOME" textFill="WHITE">
+      <Label fx:id="lbNome" alignment="CENTER" layoutX="57.0" layoutY="60.0" prefHeight="25.0" prefWidth="502.0" style="-fx-background-color: #130e7f; -fx-background-radius: 5cm; -fx-border-radius: 5cm;" text="NOME" textFill="WHITE">
          <font>
             <Font name="Arial Bold" size="12.0" />
          </font>
@@ -29,7 +29,7 @@
             </Lighting>
          </effect>
       </Label>
-      <Label fx:id="lbNome" alignment="CENTER" layoutX="96.0" layoutY="60.0" prefHeight="25.0" prefWidth="463.0" style="-fx-background-color: #130e7f; -fx-background-radius: 5cm; -fx-border-radius: 5cm;" text="NOME" textFill="WHITE">
+      <Label fx:id="lbCpf" alignment="CENTER" layoutX="57.0" layoutY="102.0" prefHeight="25.0" prefWidth="502.0" style="-fx-background-color: #130e7f; -fx-background-radius: 5cm; -fx-border-radius: 5cm;" text="NOME" textFill="WHITE">
          <font>
             <Font name="Arial Bold" size="12.0" />
          </font>
@@ -43,7 +43,7 @@
             </Lighting>
          </effect>
       </Label>
-      <Label alignment="CENTER" layoutX="47.0" layoutY="102.0" prefHeight="25.0" prefWidth="43.0" style="-fx-background-color: #130e7f; -fx-background-radius: 5cm; -fx-border-radius: 5cm;" text="CPF" textFill="WHITE">
+      <Label fx:id="lbRg" alignment="CENTER" layoutX="57.0" layoutY="143.0" prefHeight="25.0" prefWidth="502.0" style="-fx-background-color: #130e7f; -fx-background-radius: 5cm; -fx-border-radius: 5cm;" text="NOME" textFill="WHITE">
          <font>
             <Font name="Arial Bold" size="12.0" />
          </font>
@@ -57,7 +57,7 @@
             </Lighting>
          </effect>
       </Label>
-      <Label fx:id="lbCpf" alignment="CENTER" layoutX="96.0" layoutY="102.0" prefHeight="25.0" prefWidth="463.0" style="-fx-background-color: #130e7f; -fx-background-radius: 5cm; -fx-border-radius: 5cm;" text="NOME" textFill="WHITE">
+      <Label fx:id="lbDnasc" alignment="CENTER" layoutX="57.0" layoutY="182.0" prefHeight="25.0" prefWidth="502.0" style="-fx-background-color: #130e7f; -fx-background-radius: 5cm; -fx-border-radius: 5cm;" text="NOME" textFill="WHITE">
          <font>
             <Font name="Arial Bold" size="12.0" />
          </font>
@@ -71,7 +71,7 @@
             </Lighting>
          </effect>
       </Label>
-      <Label alignment="CENTER" layoutX="47.0" layoutY="143.0" prefHeight="25.0" prefWidth="43.0" style="-fx-background-color: #130e7f; -fx-background-radius: 5cm; -fx-border-radius: 5cm;" text="RG" textFill="WHITE">
+      <Label fx:id="lbSexo" alignment="CENTER" layoutX="57.0" layoutY="220.0" prefHeight="25.0" prefWidth="502.0" style="-fx-background-color: #130e7f; -fx-background-radius: 5cm; -fx-border-radius: 5cm;" text="NOME" textFill="WHITE">
          <font>
             <Font name="Arial Bold" size="12.0" />
          </font>
@@ -85,7 +85,7 @@
             </Lighting>
          </effect>
       </Label>
-      <Label fx:id="lbRg" alignment="CENTER" layoutX="96.0" layoutY="143.0" prefHeight="25.0" prefWidth="463.0" style="-fx-background-color: #130e7f; -fx-background-radius: 5cm; -fx-border-radius: 5cm;" text="NOME" textFill="WHITE">
+      <Label fx:id="lbEnd" alignment="CENTER" layoutX="57.0" layoutY="258.0" prefHeight="25.0" prefWidth="502.0" style="-fx-background-color: #130e7f; -fx-background-radius: 5cm; -fx-border-radius: 5cm;" text="NOME" textFill="WHITE">
          <font>
             <Font name="Arial Bold" size="12.0" />
          </font>
@@ -99,7 +99,7 @@
             </Lighting>
          </effect>
       </Label>
-      <Label alignment="CENTER" layoutX="47.0" layoutY="181.0" prefHeight="25.0" prefWidth="152.0" style="-fx-background-color: #130e7f; -fx-background-radius: 5cm; -fx-border-radius: 5cm;" text="DATA DE NASCIMENTO" textFill="WHITE">
+      <Label fx:id="lbTel" alignment="CENTER" layoutX="57.0" layoutY="299.0" prefHeight="25.0" prefWidth="502.0" style="-fx-background-color: #130e7f; -fx-background-radius: 5cm; -fx-border-radius: 5cm;" text="NOME" textFill="WHITE">
          <font>
             <Font name="Arial Bold" size="12.0" />
          </font>
@@ -113,7 +113,7 @@
             </Lighting>
          </effect>
       </Label>
-      <Label fx:id="lbDnasc" alignment="CENTER" layoutX="206.0" layoutY="181.0" prefHeight="25.0" prefWidth="353.0" style="-fx-background-color: #130e7f; -fx-background-radius: 5cm; -fx-border-radius: 5cm;" text="NOME" textFill="WHITE">
+      <Label fx:id="lbEmail" alignment="CENTER" layoutX="57.0" layoutY="342.0" prefHeight="25.0" prefWidth="502.0" style="-fx-background-color: #130e7f; -fx-background-radius: 5cm; -fx-border-radius: 5cm;" text="NOME" textFill="WHITE">
          <font>
             <Font name="Arial Bold" size="12.0" />
          </font>
@@ -127,134 +127,7 @@
             </Lighting>
          </effect>
       </Label>
-      <Label alignment="CENTER" layoutX="47.0" layoutY="218.0" prefHeight="25.0" prefWidth="43.0" style="-fx-background-color: #130e7f; -fx-background-radius: 5cm; -fx-border-radius: 5cm;" text="SEXO" textFill="WHITE">
-         <font>
-            <Font name="Arial Bold" size="12.0" />
-         </font>
-         <effect>
-            <Lighting>
-               <bumpInput>
-                  <Shadow />
-               </bumpInput>
-               <light>
-               </light>
-            </Lighting>
-         </effect>
-      </Label>
-      <Label fx:id="lbSexo" alignment="CENTER" layoutX="96.0" layoutY="218.0" prefHeight="25.0" prefWidth="463.0" style="-fx-background-color: #130e7f; -fx-background-radius: 5cm; -fx-border-radius: 5cm;" text="NOME" textFill="WHITE">
-         <font>
-            <Font name="Arial Bold" size="12.0" />
-         </font>
-         <effect>
-            <Lighting>
-               <bumpInput>
-                  <Shadow />
-               </bumpInput>
-               <light>
-               </light>
-            </Lighting>
-         </effect>
-      </Label>
-      <Label alignment="CENTER" layoutX="47.0" layoutY="257.0" prefHeight="25.0" prefWidth="78.0" style="-fx-background-color: #130e7f; -fx-background-radius: 5cm; -fx-border-radius: 5cm;" text="ENDEREÇO" textFill="WHITE">
-         <font>
-            <Font name="Arial Bold" size="12.0" />
-         </font>
-         <effect>
-            <Lighting>
-               <bumpInput>
-                  <Shadow />
-               </bumpInput>
-               <light>
-               </light>
-            </Lighting>
-         </effect>
-      </Label>
-      <Label fx:id="lbEnd" alignment="CENTER" layoutX="131.0" layoutY="257.0" prefHeight="25.0" prefWidth="428.0" style="-fx-background-color: #130e7f; -fx-background-radius: 5cm; -fx-border-radius: 5cm;" text="NOME" textFill="WHITE">
-         <font>
-            <Font name="Arial Bold" size="12.0" />
-         </font>
-         <effect>
-            <Lighting>
-               <bumpInput>
-                  <Shadow />
-               </bumpInput>
-               <light>
-               </light>
-            </Lighting>
-         </effect>
-      </Label>
-      <Label alignment="CENTER" layoutX="47.0" layoutY="295.0" prefHeight="25.0" prefWidth="78.0" style="-fx-background-color: #130e7f; -fx-background-radius: 5cm; -fx-border-radius: 5cm;" text="TELEFONE" textFill="WHITE">
-         <font>
-            <Font name="Arial Bold" size="12.0" />
-         </font>
-         <effect>
-            <Lighting>
-               <bumpInput>
-                  <Shadow />
-               </bumpInput>
-               <light>
-               </light>
-            </Lighting>
-         </effect>
-      </Label>
-      <Label fx:id="lbTel" alignment="CENTER" layoutX="131.0" layoutY="295.0" prefHeight="25.0" prefWidth="428.0" style="-fx-background-color: #130e7f; -fx-background-radius: 5cm; -fx-border-radius: 5cm;" text="NOME" textFill="WHITE">
-         <font>
-            <Font name="Arial Bold" size="12.0" />
-         </font>
-         <effect>
-            <Lighting>
-               <bumpInput>
-                  <Shadow />
-               </bumpInput>
-               <light>
-               </light>
-            </Lighting>
-         </effect>
-      </Label>
-      <Label alignment="CENTER" layoutX="47.0" layoutY="332.0" prefHeight="25.0" prefWidth="50.0" style="-fx-background-color: #130e7f; -fx-background-radius: 5cm; -fx-border-radius: 5cm;" text="EMAIL" textFill="WHITE">
-         <font>
-            <Font name="Arial Bold" size="12.0" />
-         </font>
-         <effect>
-            <Lighting>
-               <bumpInput>
-                  <Shadow />
-               </bumpInput>
-               <light>
-               </light>
-            </Lighting>
-         </effect>
-      </Label>
-      <Label fx:id="lbEmail" alignment="CENTER" layoutX="104.0" layoutY="332.0" prefHeight="25.0" prefWidth="455.0" style="-fx-background-color: #130e7f; -fx-background-radius: 5cm; -fx-border-radius: 5cm;" text="NOME" textFill="WHITE">
-         <font>
-            <Font name="Arial Bold" size="12.0" />
-         </font>
-         <effect>
-            <Lighting>
-               <bumpInput>
-                  <Shadow />
-               </bumpInput>
-               <light>
-               </light>
-            </Lighting>
-         </effect>
-      </Label>
-      <Label alignment="CENTER" layoutX="47.0" layoutY="370.0" prefHeight="25.0" prefWidth="87.0" style="-fx-background-color: #130e7f; -fx-background-radius: 5cm; -fx-border-radius: 5cm;" text="FORMAÇÃO" textFill="WHITE">
-         <font>
-            <Font name="Arial Bold" size="12.0" />
-         </font>
-         <effect>
-            <Lighting>
-               <bumpInput>
-                  <Shadow />
-               </bumpInput>
-               <light>
-                  <Light.Distant />
-               </light>
-            </Lighting>
-         </effect>
-      </Label>
-      <Label fx:id="lbFormAcad" alignment="CENTER" layoutX="140.0" layoutY="370.0" prefHeight="25.0" prefWidth="419.0" style="-fx-background-color: #130e7f; -fx-background-radius: 5cm; -fx-border-radius: 5cm;" text="NOME" textFill="WHITE">
+      <Label fx:id="lbFormAcad" alignment="CENTER" layoutX="55.0" layoutY="383.0" prefHeight="25.0" prefWidth="502.0" style="-fx-background-color: #130e7f; -fx-background-radius: 5cm; -fx-border-radius: 5cm;" text="NOME" textFill="WHITE">
          <font>
             <Font name="Arial Bold" size="12.0" />
          </font>
@@ -279,5 +152,140 @@
             <Font name="Arial Bold" size="12.0" />
          </font>
       </JFXButton>
+      <Label alignment="CENTER" layoutX="70.0" layoutY="44.0" prefHeight="16.0" prefWidth="43.0" text="NOME:" textFill="RED">
+         <font>
+            <Font name="Arial Bold Italic" size="12.0" />
+         </font>
+         <effect>
+            <Lighting>
+               <bumpInput>
+                  <Shadow />
+               </bumpInput>
+               <light>
+                  <Light.Distant />
+               </light>
+            </Lighting>
+         </effect>
+      </Label>
+      <Label alignment="CENTER" layoutX="70.0" layoutY="85.0" prefHeight="15.0" prefWidth="43.0" text="C.P.F.:" textFill="RED">
+         <font>
+            <Font name="Arial Bold Italic" size="12.0" />
+         </font>
+         <effect>
+            <Lighting>
+               <bumpInput>
+                  <Shadow />
+               </bumpInput>
+               <light>
+                  <Light.Distant />
+               </light>
+            </Lighting>
+         </effect>
+      </Label>
+      <Label alignment="CENTER" layoutX="74.0" layoutY="127.0" prefHeight="15.0" prefWidth="34.0" text="R.G.:" textFill="RED">
+         <font>
+            <Font name="Arial Bold Italic" size="12.0" />
+         </font>
+         <effect>
+            <Lighting>
+               <bumpInput>
+                  <Shadow />
+               </bumpInput>
+               <light>
+                  <Light.Distant />
+               </light>
+            </Lighting>
+         </effect>
+      </Label>
+      <Label alignment="CENTER" layoutX="69.0" layoutY="168.0" prefHeight="16.0" prefWidth="149.0" text="DATA DE NASCIMENTO:" textFill="RED">
+         <font>
+            <Font name="Arial Bold Italic" size="12.0" />
+         </font>
+         <effect>
+            <Lighting>
+               <bumpInput>
+                  <Shadow />
+               </bumpInput>
+               <light>
+                  <Light.Distant />
+               </light>
+            </Lighting>
+         </effect>
+      </Label>
+      <Label alignment="CENTER" layoutX="70.0" layoutY="207.0" prefHeight="15.0" prefWidth="43.0" text="SEXO:" textFill="RED">
+         <font>
+            <Font name="Arial Bold Italic" size="12.0" />
+         </font>
+         <effect>
+            <Lighting>
+               <bumpInput>
+                  <Shadow />
+               </bumpInput>
+               <light>
+                  <Light.Distant />
+               </light>
+            </Lighting>
+         </effect>
+      </Label>
+      <Label alignment="CENTER" layoutX="66.0" layoutY="243.0" prefHeight="15.0" prefWidth="78.0" text="ENDEREÇO:" textFill="RED">
+         <font>
+            <Font name="Arial Bold Italic" size="12.0" />
+         </font>
+         <effect>
+            <Lighting>
+               <bumpInput>
+                  <Shadow />
+               </bumpInput>
+               <light>
+                  <Light.Distant />
+               </light>
+            </Lighting>
+         </effect>
+      </Label>
+      <Label alignment="CENTER" layoutX="64.0" layoutY="283.0" prefHeight="15.0" prefWidth="78.0" text="TELEFONE:" textFill="RED">
+         <font>
+            <Font name="Arial Bold Italic" size="12.0" />
+         </font>
+         <effect>
+            <Lighting>
+               <bumpInput>
+                  <Shadow />
+               </bumpInput>
+               <light>
+                  <Light.Distant />
+               </light>
+            </Lighting>
+         </effect>
+      </Label>
+      <Label alignment="CENTER" layoutX="62.0" layoutY="324.0" prefHeight="16.0" prefWidth="59.0" text="E-MAIL:" textFill="RED">
+         <font>
+            <Font name="Arial Bold Italic" size="12.0" />
+         </font>
+         <effect>
+            <Lighting>
+               <bumpInput>
+                  <Shadow />
+               </bumpInput>
+               <light>
+                  <Light.Distant />
+               </light>
+            </Lighting>
+         </effect>
+      </Label>
+      <Label alignment="CENTER" layoutX="62.0" layoutY="367.0" prefHeight="16.0" prefWidth="169.0" text="FORMAÇÃO ACADÊMICA:" textFill="RED">
+         <font>
+            <Font name="Arial Bold Italic" size="12.0" />
+         </font>
+         <effect>
+            <Lighting>
+               <bumpInput>
+                  <Shadow />
+               </bumpInput>
+               <light>
+                  <Light.Distant />
+               </light>
+            </Lighting>
+         </effect>
+      </Label>
    </children>
 </AnchorPane>

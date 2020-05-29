@@ -23,6 +23,11 @@ public class ExbProfController implements Initializable {
     
     private Professor prof;
     @FXML private JFXTextField tfBuscCpf;
+    
+    @FXML
+    void acaoBtCancelar(ActionEvent event) {
+        fechar();
+    }
 
     @FXML
     void btBusc(ActionEvent event) {
