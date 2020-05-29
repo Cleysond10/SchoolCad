@@ -17,6 +17,7 @@ import javafx.stage.Stage;
 import tiposdados.Aluno;
 
 
+
 /**
  * FXML Controller class
  *
@@ -31,7 +32,8 @@ public class ExbTurmaCadController implements Initializable {
     @FXML private Label lbDisc;
     @FXML private Label lbProf;
     @FXML private JFXListView<Aluno> lvAlunos;
-    ObservableList<Aluno> obsAluno = FXCollections.observableArrayList();    
+    ObservableList<Aluno> obsAluno = FXCollections.observableArrayList();
+    
 
     @FXML
     void acaoBtCancelar(ActionEvent event) {
@@ -54,15 +56,27 @@ public class ExbTurmaCadController implements Initializable {
     
     @FXML
     void acaoBtRemover(ActionEvent event) {
-        
-        MainSchool.getLdeTurma().remover(MainSchool.getTurma());
+                
+        if(MainSchool.getTurma().getQtdAl() == 0) {
+            MainSchool.getLdeTurma().remover(MainSchool.getTurma());
             
-        Alert alert = new Alert(Alert.AlertType.INFORMATION);
-        alert.setTitle("VALIDAÇÃO");
-        alert.setContentText("Turma Removido");
-        alert.show();
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("VALIDAÇÃO");
+            alert.setContentText("Turma Removido");
+            alert.show();
 
-        fechar();
+            fechar();
+        }
+        else {
+            
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("VALIDAÇÃO");
+            alert.setContentText("Não é Posível Remover Turma \n Existe alunos na turma");
+            alert.show();
+            
+        }
+        
+        
 
     }
     

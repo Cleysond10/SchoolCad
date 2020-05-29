@@ -6,7 +6,6 @@ import Aplicacao.MainSchool;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXTextField;
-import estruturadados.LDE;
 import interfaceValidacao.MascaraFX;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -39,7 +38,7 @@ public class CadTurmaController implements Initializable {
     ObservableList<Disciplina> obsDisc = FXCollections.observableArrayList();
     ObservableList<Professor> obsProfx = FXCollections.observableArrayList();
         
-    private Turma Turma;
+    private Turma turma;
     
     @FXML
     void ActionBtVoltar(ActionEvent event) {
@@ -66,35 +65,42 @@ public class CadTurmaController implements Initializable {
     
     @FXML
     void BtCadTurma(ActionEvent event) {
-        Turma = new Turma(tfCodTurma.getText(), cbDisc.getSelectionModel().getSelectedItem().getCodDisc());
+        turma = new Turma(tfCodTurma.getText(), cbDisc.getSelectionModel().getSelectedItem().getCodDisc());
         
-        Turma.setProfx(cbProfx.getSelectionModel().getSelectedItem());
-        Turma.setHorario(tfHorario.getText());
-        Turma.setpLetivo(tfPLetivo.getText());
+        turma.setProfx(cbProfx.getSelectionModel().getSelectedItem());        
+        turma.setHorario(tfHorario.getText());
+        turma.setpLetivo(tfPLetivo.getText());
         
         Integer x = Integer.parseInt(tfQtdMaxAl.getText());
-        Turma.setQtdMaxAl(x);
+        turma.setQtdMaxAl(x);
         
         Turma[] vDiscTurmas = cbDisc.getSelectionModel().getSelectedItem().getTurmas();
         
-        vDiscTurmas[cbDisc.getSelectionModel().getSelectedItem().getQtdVTurma()] = Turma;
-        cbDisc.getSelectionModel().getSelectedItem().setTurmas(vDiscTurmas);
-        cbDisc.getSelectionModel().getSelectedItem().setQtdVTurma(cbDisc.getSelectionModel().getSelectedItem().getQtdVTurma() + 1);
+        vDiscTurmas[cbDisc.getSelectionModel().getSelectedItem().getQtdVTurma()] = turma;
+        Disciplina disc = MainSchool.getLdeDisc().consulta(cbDisc.getSelectionModel().getSelectedItem());
+        System.out.println(disc);
+        disc.setTurmas(vDiscTurmas);
+        disc.setQtdVTurma(disc.getQtdVTurma() + 1);
         
         Turma[] vProfxTurmas = cbProfx.getSelectionModel().getSelectedItem().getTurmas();
         
-        vProfxTurmas[cbProfx.getSelectionModel().getSelectedItem().getQtdVTurmas()] = Turma;
-        cbProfx.getSelectionModel().getSelectedItem().setTurmas(vProfxTurmas);        
-        cbProfx.getSelectionModel().getSelectedItem().setQtdVTurmas(cbProfx.getSelectionModel().getSelectedItem().getQtdVTurmas() + 1);
+        vProfxTurmas[cbProfx.getSelectionModel().getSelectedItem().getQtdVTurmas()] = turma;
+        Professor prof = MainSchool.getLdeProf().consulta(cbProfx.getSelectionModel().getSelectedItem());
+        prof.setTurmas(vProfxTurmas);
+        prof.setQtdVTurmas(prof.getQtdVTurmas() + 1);
+                
         
-        MainSchool.getLdeTurma().add(Turma);
+        MainSchool.getLdeTurma().add(turma);        
         
-        MainSchool.getLdeTurma().exibir();
         
-        Alert alert = new Alert(Alert.AlertType.INFORMATION);
-        alert.setTitle("VALIDAÇÃO");
-        alert.setContentText("Cadastro Salvo com Sucesso.");
-        alert.show();                
+        if(MainSchool.getLdeTurma().consulta(turma) == null) {
+                
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setTitle("VALIDAÇÃO");
+                alert.setContentText("Cadastro Salvo com Sucesso.");
+                alert.show();
+                
+            }               
         
         fechar();
         

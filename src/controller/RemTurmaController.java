@@ -34,14 +34,23 @@ public class RemTurmaController implements Initializable {
         
         if(MainSchool.getLdeTurma().consulta(turma) != null) {
             
-            MainSchool.getLdeTurma().remover(turma);
+            if(MainSchool.getLdeTurma().consulta(turma).getQtdAl() == 0) {
+                MainSchool.getLdeTurma().remover(turma);
             
-            Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setTitle("VALIDAÇÃO");
-            alert.setContentText("Turma Removida");
-            alert.show();
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setTitle("VALIDAÇÃO");
+                alert.setContentText("Turma Removida");
+                alert.show();
+
+                fechar();
+            }
+            else {
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setTitle("VALIDAÇÃO");
+                alert.setContentText("Não é Posível Remover Turma \n Existe alunos na turma");
+                alert.show();
+            }
             
-            fechar();
         }
         else {
             Alert alert = new Alert(Alert.AlertType.INFORMATION);

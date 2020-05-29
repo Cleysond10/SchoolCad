@@ -32,6 +32,8 @@ public class RemProfController implements Initializable {
         
         prof = new Professor(tfBuscaCPF.getText());
         
+        System.out.println(MainSchool.getLdeProf().consulta(prof));
+        
         if(MainSchool.getLdeProf().consulta(prof) != null) {
 
             prof = MainSchool.getLdeProf().consulta(prof);

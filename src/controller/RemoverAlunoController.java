@@ -4,7 +4,6 @@ import Aplicacao.MainSchool;
 import Aplicacao.RemoverAluno;
 import com.jfoenix.controls.JFXTextField;
 import interfaceValidacao.MascaraFX;
-import interfaceValidacao.ValidacaoDados;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
@@ -42,7 +41,7 @@ public class RemoverAlunoController implements Initializable {
         else {
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("VALIDAÇÃO");
-            alert.setContentText("CPF Inválido!!! \n Tente Novamente");
+            alert.setContentText("CPF Não Enontrado!!! \n Tente Novamente");
             alert.show();
         }
         

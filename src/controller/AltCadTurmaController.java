@@ -30,11 +30,74 @@ public class AltCadTurmaController implements Initializable {
     @FXML private ComboBox<Professor> cbProfx;
     
     private Turma turma;
+    private Disciplina discc;
+    private Professor proff;
     ObservableList<Disciplina> obsDisc = FXCollections.observableArrayList();
     ObservableList<Professor> obsProfx = FXCollections.observableArrayList();
 
     @FXML
     void BtAltCadTurma(ActionEvent event) {
+        Turma[] vDiscTurmas = discc.getTurmas();
+        Turma[] vProfxTurmas = proff.getTurmas();
+        
+        
+        for(int i = 0; i < vDiscTurmas.length; i++) {
+            if(vDiscTurmas[i] != null && vDiscTurmas[i].getCodTurma().equals(turma.getCodTurma())) {
+                proff.setQtdVTurmas(proff.getQtdVTurmas()- 1);
+                vDiscTurmas[i] = null;
+                for(i = i; i < vDiscTurmas.length - 1; i++) {
+                    vDiscTurmas[i] = vDiscTurmas[i + 1];
+                }
+                break;
+            }
+        }
+        //vDiscTurmas[cbDisc.getSelectionModel().getSelectedItem().getQtdVTurma()] = turma;
+        
+        
+        
+        
+        for(int i = 0; i < vProfxTurmas.length; i++) {
+            if(vProfxTurmas[i] != null && vProfxTurmas[i].getCodTurma().equals(turma.getCodTurma())) {
+                proff.setQtdVTurmas(proff.getQtdVTurmas()- 1);
+                vProfxTurmas[i] = null;
+                for(i = i; i < vProfxTurmas.length - 1; i++) {
+                    vProfxTurmas[i] = vProfxTurmas[i + 1];
+                }
+                break;
+            }
+        }
+        
+        
+        //vProfxTurmas[cbProfx.getSelectionModel().getSelectedItem().getQtdVTurmas()] = turma;
+        
+        turma.setCodTurma(tfCodTurma.getText());
+        
+        turma.setCodDisc(cbDisc.getSelectionModel().getSelectedItem().getCodDisc());
+        
+        turma.setProfx(cbProfx.getSelectionModel().getSelectedItem());
+        turma.setHorario(tfHorario.getText());
+        turma.setpLetivo(tfPLetivo.getText());
+        
+        vDiscTurmas = cbDisc.getSelectionModel().getSelectedItem().getTurmas();
+        
+        vDiscTurmas[cbDisc.getSelectionModel().getSelectedItem().getQtdVTurma()] = turma;
+        cbDisc.getSelectionModel().getSelectedItem().setTurmas(vDiscTurmas);
+        cbDisc.getSelectionModel().getSelectedItem().setQtdVTurma(cbDisc.getSelectionModel().getSelectedItem().getQtdVTurma() + 1);
+        
+        vProfxTurmas = cbProfx.getSelectionModel().getSelectedItem().getTurmas();
+        
+        vProfxTurmas[cbProfx.getSelectionModel().getSelectedItem().getQtdVTurmas()] = turma;
+        cbProfx.getSelectionModel().getSelectedItem().setTurmas(vProfxTurmas);        
+        cbProfx.getSelectionModel().getSelectedItem().setQtdVTurmas(cbProfx.getSelectionModel().getSelectedItem().getQtdVTurmas() + 1);
+        
+
+        
+        
+        //Integer x = Integer.parseInt(tfQtdMaxAl.getText());
+        //turma.setQtdMaxAl(x);
+        
+        
+        fechar();
         
     }
     
@@ -51,6 +114,14 @@ public class AltCadTurmaController implements Initializable {
         //Integer x = Integer.parseInt(tfQtdMaxAl.getText());
         tfQtdMaxAl.setText(MainSchool.getTurma().getQtdMaxAl() + "");
         
+        Disciplina disc = new Disciplina(MainSchool.getTurma().getCodDisc());
+        disc = MainSchool.getLdeDisc().consulta(disc);
+        
+        cbDisc.getSelectionModel().select(disc);
+        cbProfx.getSelectionModel().select(MainSchool.getTurma().getProfx());
+        
+        this.proff = MainSchool.getTurma().getProfx();
+        this.discc = disc;
         turma = MainSchool.getTurma();
     }
     

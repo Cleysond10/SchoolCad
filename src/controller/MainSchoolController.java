@@ -134,6 +134,16 @@ public class MainSchoolController implements Initializable {
     }
     
     @FXML
+    void acaoMouseLogo(MouseEvent event) throws IOException {
+        
+        Pane pane = (Pane)FXMLLoader.load(getClass().getResource("/FXML/TelaInicial.fxml"));        
+        JanelaPane.getChildren().add(pane);
+        paneStatus.setBackground(new Background(new BackgroundFill(Paint.valueOf("#050453"), CornerRadii.EMPTY, Insets.EMPTY)));
+        labelStatus.setText("SCHOOLCAD");            
+
+    }
+    
+    @FXML
     void acaoMouseSair(MouseEvent event) {
         
         MainSchool.getLdeAlunoPP().Finalizar("aluno.sc");

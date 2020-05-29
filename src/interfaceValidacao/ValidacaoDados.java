@@ -206,5 +206,29 @@ public class ValidacaoDados {
         return result;
     }
     
+    public int isValidCodTurma(String nome) {
+        
+        int result = 0;
+        //VALIDAR NOME
+        if(nome==null) {
+            result = 8;
+        }
+        else if(nome.trim().length()<3) {
+            result = 8;
+        }
+        
+        if(nome.substring(0, 1).equals( "[0-9]")) {
+            result = 8;
+        }
+        if(nome.substring(2, 2).equals( "[M-T]")) {
+            result = 8;
+        }
+        if(nome.substring(4, 4).equals( "[M-T]")) {
+            result = 8;
+        }
+        
+        return result;
+    }
+    
     
 }

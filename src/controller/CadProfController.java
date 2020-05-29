@@ -63,7 +63,16 @@ public class CadProfController implements Initializable {
             
             prof.setSexo(tfSexo.getText());
             
-            prof.setFormAcad(tfFormAcad.getText());            
+            prof.setFormAcad(tfFormAcad.getText());
+
+            if(MainSchool.getLdeProf().consulta(prof) == null) {
+                
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setTitle("VALIDAÇÃO");
+                alert.setContentText("Cadastro Salvo com Sucesso.");
+                alert.show();
+                
+            }
             
             MainSchool.getLdeProf().add(prof);
             

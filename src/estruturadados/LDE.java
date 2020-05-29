@@ -45,7 +45,7 @@ public class LDE <T extends Comparable<T>> {
                 } else {
                     aux = aux.getNext();
                 }
-            } while (aux != this.first);
+            } while (aux != null);
         }
 
         return null;
@@ -65,7 +65,7 @@ public class LDE <T extends Comparable<T>> {
                 } else {
                     aux = aux.getNext();
                 }
-            } while (aux != this.first);
+            } while (aux != null);
         }
 
         return null;
@@ -105,7 +105,6 @@ public class LDE <T extends Comparable<T>> {
                 this.last.setNext(novo);
                 this.last = novo;
                 this.qtd++;
-                
             }
             else {
                 NodeLDE<T> aux = this.first;
@@ -124,6 +123,8 @@ public class LDE <T extends Comparable<T>> {
                         aux.getPrev().setNext(novo);
                         aux.setPrev(novo);
                         this.qtd++;
+                        
+                        
                     }
                     else {
                         aux = aux.getNext();

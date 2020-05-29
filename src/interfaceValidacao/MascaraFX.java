@@ -404,10 +404,14 @@ public class MascaraFX {
            
             if(event.getCharacter().trim().length()==0){ // apagando
                
-                /*if(textField.getText().length()==3 && textField.getText().substring(1,2).equals("I")){
-                    textField.setText(textField.getText().substring(0,2));
+                if(textField.getText().length()==1 && textField.getText().substring(0,1).equals("[0-9]")){
+                    textField.setText(textField.getText().substring(0,1));
                     textField.positionCaret(textField.getText().length());
-                }*/
+                }
+                if(textField.getText().length()==3 && textField.getText().substring(2,4).equals("[M-T]")){
+                    textField.setText(textField.getText().substring(0,1));
+                    textField.positionCaret(textField.getText().length());
+                }
                 
                
             }else{ // escrevendo

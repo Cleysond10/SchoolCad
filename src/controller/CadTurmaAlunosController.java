@@ -66,7 +66,7 @@ public class CadTurmaAlunosController implements Initializable {
         else {
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("VALIDAÇÃO");
-            alert.setContentText("CPF Inválido!!! \n Tente Novamente");
+            alert.setContentText("CPF Não Encontrado!!! \n Tente Novamente");
             alert.show();            
         }
         

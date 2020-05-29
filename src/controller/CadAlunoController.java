@@ -8,19 +8,11 @@ import interfaceValidacao.ValidacaoDados;
 //import interfaceValidacao.Validacao;
 //import static interfaceValidacao.Validacao.isValidEmailAddress;
 import java.net.URL;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.ResourceBundle;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
-import javafx.scene.input.KeyEvent;
-import javax.mail.internet.AddressException;
-import javax.mail.internet.InternetAddress;
 import tiposdados.Aluno;
 
 /**
@@ -86,13 +78,17 @@ public class CadAlunoController implements Initializable {
             sexo = sexo.toUpperCase();
             aluno.setSexo(sexo);
             
-            
+            if(MainSchool.getLdeAlunoPP().consulta(aluno) == null) {
+                
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setTitle("VALIDAÇÃO");
+                alert.setContentText("Cadastro Salvo com Sucesso.");
+                alert.show();
+                
+            }
             MainSchool.getLdeAlunoPP().add(aluno);
             
-            Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setTitle("VALIDAÇÃO");
-            alert.setContentText("Cadastro Salvo com Sucesso.");
-            alert.show();                
+            MainSchool.getLdeAlunoPP().exibir();
             
             fechar();
         }
