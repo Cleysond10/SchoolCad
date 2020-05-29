@@ -2,19 +2,27 @@
 
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<Pane fx:id="JanelaPaneT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="383.0" prefWidth="532.0" style="-fx-background-color: #050453;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MainSchoolController">
+<Pane fx:id="JanelaPane" prefHeight="383.0" prefWidth="532.0" style="-fx-background-color: #130e7f;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Label layoutX="93.0" layoutY="82.0" prefHeight="58.0" prefWidth="212.0" text="BEM VINDO" textFill="WHITE">
+      <Label layoutX="43.0" layoutY="30.0" prefHeight="58.0" prefWidth="347.0" text="BEM VINDO DE VOLTA À TELA INICIAL!" textFill="WHITE">
          <font>
-            <Font size="18.0" />
+            <Font name="Arial" size="18.0" />
          </font>
       </Label>
-      <Label layoutX="143.0" layoutY="140.0" prefHeight="58.0" prefWidth="110.0" text="ao SchoolCad" textFill="WHITE">
+      <Label layoutX="128.0" layoutY="79.0" prefHeight="58.0" prefWidth="358.0" text="SchoolCad: O sistema ideal para sua instituição." textFill="WHITE">
          <font>
-            <Font size="14.0" />
+            <Font name="Arial" size="14.0" />
          </font>
       </Label>
+      <Label layoutX="37.0" layoutY="178.0" prefHeight="27.0" prefWidth="430.0" text="° Aqui você conta com diversas opções de controle acadêmico e administrativo :" textFill="WHITE" />
+      <Label layoutX="114.0" layoutY="218.0" text="- Cadastro de alunos, docentes, disciplinas e turmas;" textFill="WHITE" />
+      <Label layoutX="115.0" layoutY="250.0" text="- Alteração de dados  já cadastrados anteriormente;" textFill="WHITE" />
+      <Label layoutX="115.0" layoutY="283.0" prefHeight="17.0" prefWidth="289.0" text="- Sistema de busca e exibição de registros mais eficaz;" textFill="WHITE" />
+      <Label layoutX="115.0" layoutY="314.0" prefHeight="17.0" prefWidth="289.0" text="- Remoção de dados de forma totalmente segura;" textFill="WHITE" />
+      <Label layoutX="114.0" layoutY="344.0" prefHeight="17.0" prefWidth="400.0" text="- Exibição das listas de cadastros para melhor visualização geral." textFill="WHITE" />
+      <Line endX="490.0" layoutX="18.0" layoutY="145.0" startX="5.0" stroke="RED" />
    </children>
 </Pane>

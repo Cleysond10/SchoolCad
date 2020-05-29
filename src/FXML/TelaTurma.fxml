@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<Pane fx:id="JanelaPaneT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="383.0" prefWidth="532.0" style="-fx-background-color: #050453;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MainSchoolController">
+<Pane fx:id="JanelaPaneT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="383.0" prefWidth="532.0" style="-fx-background-color: #130e7f;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MainSchoolController">
    <children>
       <JFXButton fx:id="btCadTurma" buttonType="RAISED" graphicTextGap="10.0" layoutX="189.0" layoutY="77.0" onAction="#actionBtCadTurmaPane" prefHeight="37.0" prefWidth="155.0" ripplerFill="#ff4c71" style="-fx-background-color: white; -fx-background-radius: 5cm; -fx-border-radius: 5cm;" text="Cadastrar">
          <font>
@@ -68,5 +69,6 @@
             </ImageView>
          </graphic>
       </JFXButton>
+      <Label layoutX="140.0" layoutY="14.0" prefHeight="17.0" prefWidth="254.0" text="ADMINISTRAÇÃO ACADÊMICA PARA TURMAS:" textFill="WHITE" />
    </children>
 </Pane>

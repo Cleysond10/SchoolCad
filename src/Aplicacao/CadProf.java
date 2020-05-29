@@ -28,7 +28,7 @@ public class CadProf extends Application {
             scene.getStylesheets().add(getClass().getResource("/CSS/CSSMainSchool.css").toExternalForm());          
             
             
-            stage.setTitle("Cadastro - PROFESSOR");            
+            stage.setTitle("CADASTRAR - PROFESSOR");            
             stage.setScene(scene);
             //stage.setMaximized(true);
             //ESSA FUNÇÃO A BAIXO FAZ A TELA FICAR CHEIA

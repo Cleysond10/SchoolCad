@@ -30,7 +30,7 @@ public class ListarTurmaProf extends Application {
             scene.getStylesheets().add(getClass().getResource("/CSS/CSSMainSchool.css").toExternalForm());          
             
             
-            stage.setTitle("LISTAR - TURMAS");            
+            stage.setTitle("LISTAR - TURMA");            
             stage.setScene(scene);
             //stage.setMaximized(true);
             //ESSA FUNÇÃO A BAIXO FAZ A TELA FICAR CHEIA

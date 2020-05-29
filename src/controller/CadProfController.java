@@ -31,7 +31,12 @@ public class CadProfController implements Initializable {
     @FXML private JFXTextField tfFormAcad;
     private Professor prof;
     
-     @FXML
+    @FXML
+    void ActionBtCancelar(ActionEvent event) {
+        fechar();
+    }    
+    
+    @FXML
     void BtCadProf(ActionEvent event) {
         ValidacaoDados valida = new ValidacaoDados();
         String x = tfCpf.getText();

@@ -29,7 +29,7 @@ public class ExbCadProf extends Application {
             scene.getStylesheets().add(getClass().getResource("/CSS/CSSMainSchool.css").toExternalForm());          
             
             
-            stage.setTitle("EXIBIR CAD. PROFESSOR");            
+            stage.setTitle("EXIBIR - PROFESSOR");            
             stage.setScene(scene);
             //stage.setMaximized(true);
             //ESSA FUNÇÃO A BAIXO FAZ A TELA FICAR CHEIA

@@ -26,7 +26,7 @@ public class ExbProf extends Application {
             Scene scene = new Scene(fxmlMenu,600,400);           
             scene.getStylesheets().add(getClass().getResource("/CSS/CSSMainSchool.css").toExternalForm());          
             
-            stage.setTitle("Exibir Dados - PROFESSOR");            
+            stage.setTitle("EXIBIR - PROFESSOR");            
             stage.setScene(scene);
             //stage.setMaximized(true);
             //ESSA FUNÇÃO A BAIXO FAZ A TELA FICAR CHEIA

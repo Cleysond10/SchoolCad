@@ -5,20 +5,20 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AltCadProfController">
+<AnchorPane id="AnchorPane" prefHeight="500.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AltCadProfController">
    <children>
-      <JFXTextField fx:id="tfNome" layoutX="79.0" layoutY="40.0" prefHeight="33.0" prefWidth="463.0" promptText="Nome Completo" unFocusColor="RED" />
-      <JFXTextField fx:id="tfCpf" layoutX="78.0" layoutY="79.0" prefHeight="33.0" prefWidth="223.0" promptText="C.P.F." unFocusColor="RED" />
-      <JFXTextField fx:id="tfRg" layoutX="310.0" layoutY="79.0" prefHeight="33.0" prefWidth="234.0" promptText="R.G." unFocusColor="RED" />
-      <JFXTextField fx:id="tfTel" layoutX="78.0" layoutY="161.0" prefHeight="33.0" prefWidth="463.0" promptText="Telefone" unFocusColor="RED" />
-      <JFXButton buttonType="RAISED" layoutX="245.0" layoutY="352.0" onAction="#acaoBtEditar" prefHeight="25.0" prefWidth="108.0" ripplerFill="WHITE" style="-fx-background-color: #050453; -fx-background-radius: 5cm; -fx-border-radius: 5cm;" text="EDITAR" textFill="WHITE">
+      <JFXTextField fx:id="tfNome" layoutX="69.0" layoutY="82.0" prefHeight="33.0" prefWidth="463.0" promptText="Nome Completo" unFocusColor="RED" />
+      <JFXTextField fx:id="tfCpf" layoutX="68.0" layoutY="121.0" prefHeight="33.0" prefWidth="223.0" promptText="C.P.F." unFocusColor="RED" />
+      <JFXTextField fx:id="tfRg" layoutX="300.0" layoutY="121.0" prefHeight="33.0" prefWidth="234.0" promptText="R.G." unFocusColor="RED" />
+      <JFXTextField fx:id="tfDnasc" layoutX="66.0" layoutY="163.0" prefHeight="33.0" prefWidth="223.0" promptText="Data de Nascimento" unFocusColor="RED" />
+      <JFXTextField fx:id="tfSexo" layoutX="299.0" layoutY="163.0" prefHeight="33.0" prefWidth="234.0" promptText="Sexo" unFocusColor="RED" />
+      <JFXTextField fx:id="tfTel" layoutX="68.0" layoutY="203.0" prefHeight="33.0" prefWidth="463.0" promptText="Telefone" unFocusColor="RED" />
+      <JFXButton buttonType="RAISED" layoutX="235.0" layoutY="394.0" onAction="#acaoBtEditar" prefHeight="25.0" prefWidth="108.0" ripplerFill="WHITE" style="-fx-background-color: #050453; -fx-background-radius: 5cm; -fx-border-radius: 5cm;" text="EDITAR" textFill="WHITE">
          <font>
             <Font name="Arial Bold" size="12.0" />
          </font></JFXButton>
-      <JFXTextField fx:id="tfEnd" layoutX="79.0" layoutY="210.0" prefHeight="33.0" prefWidth="463.0" promptText="Endereço" unFocusColor="RED" />
-      <JFXTextField fx:id="tfDnasc" layoutX="76.0" layoutY="121.0" prefHeight="33.0" prefWidth="223.0" promptText="Data de Nascimento" unFocusColor="RED" />
-      <JFXTextField fx:id="tfSexo" layoutX="309.0" layoutY="121.0" prefHeight="33.0" prefWidth="234.0" promptText="Sexo" unFocusColor="RED" />
-      <JFXTextField fx:id="tfEmail" layoutX="79.0" layoutY="251.0" prefHeight="33.0" prefWidth="463.0" promptText="E-mail" unFocusColor="RED" />
-      <JFXTextField fx:id="tfFormAcad" layoutX="77.0" layoutY="292.0" prefHeight="33.0" prefWidth="463.0" promptText="Formação Acadêmica" unFocusColor="RED" />
+      <JFXTextField fx:id="tfEnd" layoutX="69.0" layoutY="252.0" prefHeight="33.0" prefWidth="463.0" promptText="Endereço" unFocusColor="RED" />
+      <JFXTextField fx:id="tfEmail" layoutX="69.0" layoutY="293.0" prefHeight="33.0" prefWidth="463.0" promptText="E-mail" unFocusColor="RED" />
+      <JFXTextField fx:id="tfFormAcad" layoutX="67.0" layoutY="334.0" prefHeight="33.0" prefWidth="463.0" promptText="Formação Acadêmica" unFocusColor="RED" />
    </children>
 </AnchorPane>

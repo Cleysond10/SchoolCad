@@ -26,7 +26,7 @@ public class AltCadProf extends Application {
             Scene scene = new Scene(fxmlMenu,600,400);           
             scene.getStylesheets().add(getClass().getResource("/CSS/CSSMainSchool.css").toExternalForm());          
             
-            stage.setTitle("Alterar Cadastro - PROFESSOR");           
+            stage.setTitle("ALTERAR - PROFESSOR");           
             stage.setScene(scene);
             //stage.setMaximized(true);
             //ESSA FUNÇÃO A BAIXO FAZ A TELA FICAR CHEIA

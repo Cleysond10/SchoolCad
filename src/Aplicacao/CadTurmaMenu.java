@@ -28,7 +28,7 @@ public class CadTurmaMenu extends Application {
             scene.getStylesheets().add(getClass().getResource("/CSS/CSSMainSchool.css").toExternalForm());          
             
             
-            stage.setTitle("Cadastro - TURMA");            
+            stage.setTitle("CADASTRAR - TURMA");            
             stage.setScene(scene);
             //stage.setMaximized(true);
             //ESSA FUNÇÃO A BAIXO FAZ A TELA FICAR CHEIA

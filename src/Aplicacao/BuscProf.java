@@ -26,7 +26,7 @@ public class BuscProf extends Application {
             Scene scene = new Scene(fxmlMenu,600,400);           
             scene.getStylesheets().add(getClass().getResource("/CSS/CSSMainSchool.css").toExternalForm());          
             
-            stage.setTitle("Buscar - PROFESSOR");            
+            stage.setTitle("BUSCAR - PROFESSOR");            
             stage.setScene(scene);
             //stage.setMaximized(true);
             //ESSA FUNÇÃO A BAIXO FAZ A TELA FICAR CHEIA
