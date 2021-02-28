@@ -1,4 +1,4 @@
 # SchoolCad
-Sistema de Cadastro Escolar, utilizando as plataformas JavaFX e SceneBuilder.
+Sistema de Cadastro Escolar, utilizando as plataformas Java: JavaFX e SceneBuilder.
 
-Co-desenvolvido com amigo de turma, José Gerson, durante a cadeira de Práticas de Programação na Universidade Católica de Pernambuco.
+SchoolCad foi co-desenvolvido durante a disciplina de 'Práticas de Programação' do curso de ciência da computação na Universidade Católica de Pernambuco.
